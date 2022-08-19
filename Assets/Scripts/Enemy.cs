@@ -1,13 +1,16 @@
 using UnityEngine;
+using System;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int _level;
 
     public int Level => _level;
+    public event Action<Enemy> Died;
 
     public void Die()
     {
-        Destroy(gameObject);
+        Died?.Invoke(this);
+        gameObject.SetActive(false);
     }
 }

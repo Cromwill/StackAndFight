@@ -15,18 +15,18 @@ public class Player : MonoBehaviour
         LevelChanged?.Invoke(_level);    
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.TryGetComponent(out Enemy enemy))
+        if(other.TryGetComponent(out Enemy enemy))
         {
-            if(enemy.Level < _level)
+            if(enemy.Level <= _level)
             {
                 IncreaseLevel(enemy.Level);
                 enemy.Die();
             }
             else
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }
