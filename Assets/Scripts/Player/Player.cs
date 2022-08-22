@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -9,8 +10,9 @@ public class Player : MonoBehaviour
 
     public PlayerAnimator PlayerAnimator => _playerAnimator;
     public LevelSystem LevelSystem => _levelSystem;
-
     public PlayerMover Mover => _mover;
+
+    public event Action CameraSwitched;
 
     private void Awake()
     {
@@ -27,6 +29,12 @@ public class Player : MonoBehaviour
                 //enemy.Die();
 
                 PushEnemy(enemy);
+
+                if(other.TryGetComponent(out Boss boss))
+                {
+                    StartCoroutine(KillBoss());
+                    boss.ActivateExplosion();
+                }
             }
         }
     }
@@ -45,5 +53,15 @@ public class Player : MonoBehaviour
 
         Vector3 veloctiy = (transform.forward + transform.up)* forceValue;
         enemy.Push(veloctiy);
+    }
+
+    private IEnumerator KillBoss()
+    {
+        Time.timeScale = 0.3f;
+        CameraSwitched?.Invoke();
+
+        yield return new WaitForSecondsRealtime(2f);
+
+        Time.timeScale = 1f;
     }
 }
