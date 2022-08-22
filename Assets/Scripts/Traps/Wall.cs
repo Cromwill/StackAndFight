@@ -5,6 +5,7 @@ using UnityEngine;
 public class Wall : Interactable
 {
     [SerializeField] public int _maxHitCount;
+    [SerializeField] private ShakeAnimation _shakeAnimation;
 
     private int _hitCounter;
 
@@ -14,13 +15,19 @@ public class Wall : Interactable
             _hitCounter++;
 
         if (_hitCounter < _maxHitCount)
-            player.Mover.MoveBack();//доделать: возможно будем вызывать после анимации удара об стену
+            OnHit(player);
         else
             Break();
     }
 
+    public void OnHit(Player player)
+    {
+        player.Mover.MoveBack();//доделать: возможно будем вызывать после анимации удара об стену
+        _shakeAnimation.Trigger();
+    }
+
     public void Break()
     {
-
+        
     }
 }

@@ -5,10 +5,17 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerMover _mover;
     [SerializeField] private int _level;
+    [SerializeField] private PlayerAnimator _playerAnimator;
+    [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
 
     public PlayerMover Mover => _mover;
 
     public event Action<int> LevelChanged;
+
+    private void Awake()
+    {
+        _mover.Init(_playerAnimator);
+    }
 
     private void Start()
     {
@@ -22,7 +29,10 @@ public class Player : MonoBehaviour
             if(enemy.Level <= _level)
             {
                 IncreaseLevel(enemy.Level);
-                enemy.Die();
+                //enemy.Die();
+
+
+                PushEnemy(enemy);
             }
             else
             {
@@ -31,9 +41,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void PushEnemy(Enemy enemy)
+    {
+        float forceValue = 0;
+        forceValue = Mathf.Clamp(forceValue, 100, 200);
+
+        Vector3 veloctiy = (transform.forward + transform.up)* forceValue;
+        enemy.Push(veloctiy);
+    }
+
     private void IncreaseLevel(int value)
     {
         _level += value;
+        //_skinnedMeshRenderer.SetBlendShapeWeight(0, _level);
         LevelChanged?.Invoke(_level);
     }
 }

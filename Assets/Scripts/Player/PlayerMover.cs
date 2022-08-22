@@ -12,6 +12,7 @@ public class PlayerMover : MonoBehaviour
     private const float _minDistance = 0.01f;
     private float _initialY;
     private PathPoint _previousPathPoint;
+    private PlayerAnimator _animator;
 
     public bool EnoughDistance { get; private set; }
     public bool IsMoving => _isMoving;
@@ -28,6 +29,11 @@ public class PlayerMover : MonoBehaviour
     {
         _currentPathPoint = GetClosestPathPoint();
         _initialY = transform.position.y;
+    }
+
+    public void Init(PlayerAnimator playerAnimator)
+    {
+        _animator = playerAnimator;
     }
 
     public void TryMove(Vector3 direction)
@@ -54,6 +60,7 @@ public class PlayerMover : MonoBehaviour
             _coroutine =  StartCoroutine(MovingTo(pathPoint.Position));
 
             transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+            _animator.TriggerHeadRun();
         }
     }
 
@@ -77,7 +84,10 @@ public class PlayerMover : MonoBehaviour
 
         StopMoving();
         _currentPathPoint = _previousPathPoint;
+        _animator.TriggerRun();
         _coroutine = StartCoroutine(MovingTo(_previousPathPoint.Position));
+
+        transform.rotation *= Quaternion.Euler(0, 180f, 0);
     }
 
     public void Teleport(PathPoint pathPoint)
@@ -90,19 +100,17 @@ public class PlayerMover : MonoBehaviour
     private IEnumerator MovingTo(Vector3 targetPosition)
     {
         _isMoving = true;
-        Vector3 nextPosition;
-        float distance = Vector3.Distance(targetPosition, transform.position);
 
         while (Vector3.Distance(targetPosition, transform.position) > _minDistance)
         {
-            nextPosition = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
-            transform.position = nextPosition;
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
 
              yield return null;
         }
 
         _isMoving = false;
         EnoughDistance = false;
+        _animator.TriggerIdle();
     }
 
     private void StopMoving()
