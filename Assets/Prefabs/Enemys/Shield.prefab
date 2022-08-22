@@ -31,6 +31,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1490519552402499895}
+  - {fileID: 4623023480467263332}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62,6 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beca74c42c3c7a944a4319efea955d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shakeAnimation: {fileID: 6808663489759619846}
 --- !u!65 &6131080981437423238
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92,7 +94,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1490519552402499895
 Transform:
   m_ObjectHideFlags: 0
@@ -122,7 +124,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4789820063172556814}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -156,3 +158,151 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &5161967544553695375
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 435233910488190912}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+      propertyPath: m_Name
+      value: Shield
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+--- !u!1 &5432352632842409438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+  m_PrefabInstance: {fileID: 5161967544553695375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4623023480467263332 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b99c5e577ed592f448ab6c4e8daac936, type: 3}
+  m_PrefabInstance: {fileID: 5161967544553695375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6808663489759619846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5432352632842409438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd3c345fb8073046a9ed226b30cab0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.15
+      value: -0.4
+      inSlope: -0.036778405
+      outSlope: -0.036778405
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.35028243
+    - serializedVersion: 3
+      time: 0.31415406
+      value: 0.294339
+      inSlope: 0.050803244
+      outSlope: 0.050803244
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.47728968
+      value: -0.1402746
+      inSlope: -1.477252
+      outSlope: -1.477252
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.5840276
+    - serializedVersion: 3
+      time: 0.66794425
+      value: 0.08980489
+      inSlope: -0.30485085
+      outSlope: -0.30485085
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.82009345
+      value: -0.11650607
+      inSlope: -0.3949297
+      outSlope: -0.3949297
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

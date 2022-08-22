@@ -17,6 +17,8 @@ public class RagdollHandler : MonoBehaviour
 
         foreach (var rigidbody in _rigidbodies)
         {
+            rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
+
             if(rigidbody.TryGetComponent(out CharacterJoint characterJoint))
             {
                 characterJoint.massScale = 0.5f;

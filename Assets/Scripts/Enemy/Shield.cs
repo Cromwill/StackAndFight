@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody), typeof(BoxCollider))]
 public class Shield : Interactable
 {
+    [SerializeField] private ShakeAnimation _shakeAnimation;
+
     private bool _isBroken;
 
     public override void Interact(Player player)
@@ -12,6 +14,7 @@ public class Shield : Interactable
         if (_isBroken)
             return;
 
+        _shakeAnimation.Trigger();
         player.Mover.MoveBack();
     }
 

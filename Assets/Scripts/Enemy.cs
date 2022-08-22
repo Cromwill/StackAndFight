@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Collider _collider;
     [SerializeField] private EnemyLevelCounter _levelCounter;
     [SerializeField] private Shield _shield;
+    [SerializeField] private EnemyRotation _rotation;
 
     public RagdollHandler RagdollHandler => _ragdollHandler;
     public int Level => _level;
@@ -22,6 +23,7 @@ public class Enemy : MonoBehaviour
         _levelCounter.gameObject.SetActive(false);
         RagdollHandler.ActivateRagdoll();
         RagdollHandler.Chest.Push(direction);
+        _rotation.Disable();
         Died?.Invoke(this);
     }
 
