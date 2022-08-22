@@ -4,55 +4,46 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerMover _mover;
-    [SerializeField] private int _level;
     [SerializeField] private PlayerAnimator _playerAnimator;
-    [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
+    [SerializeField] private LevelSystem _levelSystem;
+
+    public PlayerAnimator PlayerAnimator => _playerAnimator;
+    public LevelSystem LevelSystem => _levelSystem;
 
     public PlayerMover Mover => _mover;
 
-    public event Action<int> LevelChanged;
-
     private void Awake()
     {
-        _mover.Init(_playerAnimator);
-    }
-
-    private void Start()
-    {
-        LevelChanged?.Invoke(_level);    
+        _mover.Init(_playerAnimator, _levelSystem);
+        LevelSystem.IncreaseLevel(3);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent(out Enemy enemy))
         {
-            if(enemy.Level <= _level)
+            if(enemy.Level <= LevelSystem.Level)
             {
-                IncreaseLevel(enemy.Level);
                 //enemy.Die();
 
                 PushEnemy(enemy);
             }
-            else
-            {
-                gameObject.SetActive(false);
-            }
         }
     }
 
-    private void PushEnemy(Enemy enemy)
+    public void Die()
+    {
+        _playerAnimator.TriggerFall();
+        _mover.DisableMovement();
+    }
+
+    public void PushEnemy(Enemy enemy)
     {
         float forceValue = 0;
-        forceValue = Mathf.Clamp(forceValue, 100, 200);
+        forceValue = Mathf.Clamp(forceValue, 80, 120) + LevelSystem.Level;
+        LevelSystem.IncreaseLevel(enemy.Level);
 
         Vector3 veloctiy = (transform.forward + transform.up)* forceValue;
         enemy.Push(veloctiy);
-    }
-
-    private void IncreaseLevel(int value)
-    {
-        _level += value;
-        _skinnedMeshRenderer.SetBlendShapeWeight(0, _level);
-        LevelChanged?.Invoke(_level);
     }
 }

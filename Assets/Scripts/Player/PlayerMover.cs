@@ -5,7 +5,10 @@ public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _speed;
+    [SerializeField] private AnimationCurve _animationCurve;
+    [SerializeField] private float _jumpTime;
 
+    private bool _canMove = true;
     private bool _isMoving;
     private Coroutine _coroutine;
     private PathPoint _currentPathPoint;
@@ -13,6 +16,7 @@ public class PlayerMover : MonoBehaviour
     private float _initialY;
     private PathPoint _previousPathPoint;
     private PlayerAnimator _animator;
+    private JumpAttack _jumpAttack;
 
     public bool EnoughDistance { get; private set; }
     public bool IsMoving => _isMoving;
@@ -31,9 +35,15 @@ public class PlayerMover : MonoBehaviour
         _initialY = transform.position.y;
     }
 
-    public void Init(PlayerAnimator playerAnimator)
+    public void Init(PlayerAnimator playerAnimator, LevelSystem levelSystem)
     {
         _animator = playerAnimator;
+        _jumpAttack = new JumpAttack(levelSystem);
+    }
+
+    public void DisableMovement()
+    {
+        _canMove = false;
     }
 
     public void TryMove(Vector3 direction)
@@ -48,7 +58,7 @@ public class PlayerMover : MonoBehaviour
 
     public void Move(SwipeDirection swipeDirection)
     {
-        if (_isMoving)
+        if (_isMoving || _canMove == false)
             return;
 
         if(_currentPathPoint.TryGetPathPoint(swipeDirection, out PathPoint pathPoint))
@@ -66,7 +76,7 @@ public class PlayerMover : MonoBehaviour
 
     public void MoveToFinish(PathPoint pathPoint)
     {
-        if (_isMoving)
+        if (_isMoving || _canMove == false)
             StopCoroutine(_coroutine);
 
         Vector3 direction = (pathPoint.Position - transform.position).normalized;
@@ -79,7 +89,7 @@ public class PlayerMover : MonoBehaviour
 
     public void MoveBack()
     {
-        if (_previousPathPoint == null)
+        if (_previousPathPoint == null || _canMove == false)
             return;
 
         StopMoving();
@@ -90,11 +100,34 @@ public class PlayerMover : MonoBehaviour
         transform.rotation *= Quaternion.Euler(0, 180f, 0);
     }
 
-    public void Teleport(PathPoint pathPoint)
+    public void Jump(PathPoint pathPoint)
     {
-        transform.position = pathPoint.Position;//доделать: телепортировть после анимации
+        //transform.position = pathPoint.Position;//доделать: телепортировть после анимации
+        StartCoroutine(Jumping(pathPoint));
+
         _previousPathPoint = pathPoint;
         _currentPathPoint = pathPoint;
+    }
+
+    private IEnumerator Jumping(PathPoint pathPoint)
+    {
+        _isMoving = true;
+
+        float elapsedTime = 0;
+        Vector3 startPosition = transform.position;
+        _animator.JumpAnimation();
+
+        while (elapsedTime <= _jumpTime)
+        {
+            elapsedTime += Time.deltaTime;
+            transform.position = Vector3.Lerp(startPosition, pathPoint.Position, elapsedTime/ _jumpTime) + Vector3.up* _animationCurve.Evaluate(elapsedTime/ _jumpTime) *2f;
+
+            yield return null;
+        }
+
+        _isMoving = false;
+        _animator.DisableJump();
+        _jumpAttack.Perform(transform);
     }
 
     private IEnumerator MovingTo(Vector3 targetPosition)
@@ -113,7 +146,7 @@ public class PlayerMover : MonoBehaviour
         _animator.TriggerIdle();
     }
 
-    private void StopMoving()
+    public void StopMoving()
     {
         StopCoroutine(_coroutine);
         _isMoving = false;

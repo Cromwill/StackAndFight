@@ -8,14 +8,14 @@ public class EnemyRotation : MonoBehaviour
 
     private Player _player;
 
-    private void Start()
+    public void Init(Player player)
     {
-        _player = FindObjectOfType<Player>();
+        _player = player;
     }
 
     private void Update()
     {
-        if (_canRotate == false)
+        if (_canRotate == false || _player == null)
             return;
 
         Vector3 direction = (_player.transform.position - transform.position).normalized;
