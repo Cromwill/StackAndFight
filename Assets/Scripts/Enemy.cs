@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
         _levelCounter.gameObject.SetActive(false);
         RagdollHandler.ActivateRagdoll();
         RagdollHandler.Chest.Push(direction);
+        Died?.Invoke(this);
     }
 
     public void Die()

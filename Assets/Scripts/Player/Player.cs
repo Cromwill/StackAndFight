@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
                 IncreaseLevel(enemy.Level);
                 //enemy.Die();
 
-
                 PushEnemy(enemy);
             }
             else
@@ -53,7 +52,7 @@ public class Player : MonoBehaviour
     private void IncreaseLevel(int value)
     {
         _level += value;
-        //_skinnedMeshRenderer.SetBlendShapeWeight(0, _level);
+        _skinnedMeshRenderer.SetBlendShapeWeight(0, _level);
         LevelChanged?.Invoke(_level);
     }
 }
