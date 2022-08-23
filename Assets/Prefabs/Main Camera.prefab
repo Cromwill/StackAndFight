@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1878837724472297128}
   - component: {fileID: 1878837724472297129}
   - component: {fileID: 1400838725}
+  - component: {fileID: 2056572310}
+  - component: {fileID: 8625417794197571601}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -104,7 +106,7 @@ MonoBehaviour:
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 2
+    m_Time: 1
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -118,3 +120,30 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2056572310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878837724472297130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950e0d24438d7fe409234448e9bbd616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  _camera: {fileID: 0}
+  _camera2: {fileID: 0}
+--- !u!114 &8625417794197571601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878837724472297130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d9bb1f8c4f9f841ae97dd3652b53cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
