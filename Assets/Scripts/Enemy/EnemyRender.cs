@@ -13,15 +13,11 @@ public class EnemyRender : MonoBehaviour
     public void SetScared()
     {
         _skinnedMeshRenderer.material = _scaredMaterial;
-        _scared.SetActive(true);
-        _angry.SetActive(false);
     }
 
     public void SetDefaultd()
     {
         _skinnedMeshRenderer.material = _defaultMaterial;
-        _scared.SetActive(false);
-        _angry.SetActive(true);
     }
 
     private void ChangeState()

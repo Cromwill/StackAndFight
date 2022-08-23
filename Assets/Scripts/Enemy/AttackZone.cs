@@ -22,7 +22,6 @@ public class AttackZone : Interactable
     {
         yield return new WaitForSeconds(0.025f);
 
-        FindObjectOfType<SlowMotion>().TriggerSlowMotion();
         player.Die();
         player.Mover.StopMoving();
     }

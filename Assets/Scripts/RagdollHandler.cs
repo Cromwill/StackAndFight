@@ -18,6 +18,7 @@ public class RagdollHandler : MonoBehaviour
         foreach (var rigidbody in _rigidbodies)
         {
             rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
+            rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
 
             if(rigidbody.TryGetComponent(out CharacterJoint characterJoint))
             {
