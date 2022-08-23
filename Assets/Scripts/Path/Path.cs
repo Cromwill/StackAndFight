@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Path : MonoBehaviour
@@ -9,13 +7,15 @@ public class Path : MonoBehaviour
 
     private bool _isActivated;
 
+    public bool IsActivated => _isActivated;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent(out Player player) && _isActivated == false)
             Activate();
     }
 
-    private void Activate()
+    public void Activate()
     {
         _isActivated = true;
         _pathCellRenderer.Colorize();

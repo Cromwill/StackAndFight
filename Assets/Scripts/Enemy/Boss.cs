@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Boss : Enemy
 {
-    [SerializeField] private ParticleSystem _explosion;
+    [SerializeField] private ParticleSystem _deathEffect;
 
-    public void ActivateExplosion()
+    public void ActivateDeathEffect()
     {
-        _explosion.Play();
+        _deathEffect.Play();
     }
 }

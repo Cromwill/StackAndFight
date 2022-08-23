@@ -153,6 +153,11 @@ public class PlayerMover : MonoBehaviour
         _isMoving = false;
     }
 
+    public void DecreaseSpeed()
+    {
+        _speed /= 2;
+    }
+
     private void Rotate(Vector3 direction)
     {
         print(Quaternion.Euler(direction));

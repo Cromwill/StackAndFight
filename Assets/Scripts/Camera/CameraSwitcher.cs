@@ -7,8 +7,8 @@ public class CameraSwitcher : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private CinemachineVirtualCamera _camera;
     [SerializeField] private CinemachineVirtualCamera _camera2;
-    private void OnEnable() => _player.CameraSwitched += ChangeCamera;
 
+    private void OnEnable() => _player.CameraSwitched += ChangeCamera;
 
     private void OnDisable() => _player.CameraSwitched -= ChangeCamera;
 
@@ -22,7 +22,7 @@ public class CameraSwitcher : MonoBehaviour
         _camera.Priority = 0;
         _camera2.Priority = 1;
 
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(3.5f);
 
         _camera.Priority = 1;
         _camera2.Priority = 0;

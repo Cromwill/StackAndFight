@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AtCameraLooker : MonoBehaviour
@@ -8,5 +6,6 @@ public class AtCameraLooker : MonoBehaviour
     {
         transform.LookAt(Camera.main.transform);
         transform.Rotate(new Vector3(0, 180, 0));
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0f, 0f);
     }
 }

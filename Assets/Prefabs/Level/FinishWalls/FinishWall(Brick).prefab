@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 740374791366026849}
   - component: {fileID: 740374791366026862}
   m_Layer: 0
-  m_Name: FinishWall
+  m_Name: FinishWall(Brick)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21b1aa703c5a5e48a6a3f0cb7a445cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wallLevel: 0
   _enableSlowMotion: 0
   _wallLevelUI: {fileID: 2246675343475601376}
 --- !u!1 &740374791471461679
@@ -427,7 +426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b56868dea9dfc43a5d93972ad71a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _finishWall: {fileID: 740374791366026862}
   _level: {fileID: 2654978795175101541}
 --- !u!1 &8569212319280567751
 GameObject:

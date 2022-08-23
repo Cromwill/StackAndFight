@@ -1,12 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class KickTrigger : MonoBehaviour
+public class KickTrigger : Interactable
 {
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] private CameraSwitcher _cameraSwitcher;
+
+    public override void Interact(Player player)
     {
-        if(other.TryGetComponent(out Player player))
+        _cameraSwitcher.ChangeCamera();
+        player.Mover.DecreaseSpeed();
+        Time.timeScale = 0.5f;
         player.PlayerAnimator.PlayKick();
     }
 }
