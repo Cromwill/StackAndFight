@@ -4,27 +4,46 @@ using UnityEngine;
 
 public class FinishWall : Interactable
 {
-    [SerializeField] private FinishWallPiece _leftPiece;
-    [SerializeField] private FinishWallPiece _rightPiece;
     [SerializeField] private bool _enableSlowMotion;
+    [SerializeField] private WallLevelUI _wallLevelUI;
 
+    private Brick[] _bricks;
     private SlowMotion _slowMotion;
+
+    public int WallLevel { get; private set; }
+    public WallLevelUI WallLevelUI => _wallLevelUI;
+
+    private void Awake()
+    {
+        _bricks = GetComponentsInChildren<Brick>();
+    }
 
     private void Start()
     {
         _slowMotion = FindObjectOfType<SlowMotion>();
     }
 
+    public void Init(int level)
+    {
+        WallLevel = level;
+        _wallLevelUI.UpdateUI(level);
+    }
+
     public override void Interact(Player player)
     {
-        Break(player);
+        if(WallLevel < player.LevelSystem.Level)
+            Break(player);
+        else
+            player.Die();
     }
 
     private void Break(Player player)
     {
-        Vector3 additionalDirection = Vector3.forward * 3 + Vector3.up * 2;
-        _leftPiece.Push(Vector3.left + additionalDirection);
-        _rightPiece.Push(Vector3.right + additionalDirection);
+        foreach (var brick in _bricks)
+        {
+            brick.Break();
+            //brick.Explode(player.transform.position, 10f);
+        }
 
         if (_enableSlowMotion)
             _slowMotion.TriggerSlowMotion();

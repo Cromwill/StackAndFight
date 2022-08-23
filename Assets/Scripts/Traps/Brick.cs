@@ -19,12 +19,12 @@ public class Brick : MonoBehaviour
             Break();
     }
 
-    public void Explode(Vector3 explosionPosition)
+    public void Explode(Vector3 explosionPosition, float explosionForce = 25f)
     {
-        _rigidbody.AddExplosionForce(25f, explosionPosition, 2f, 0.2f, ForceMode.Impulse);
+        _rigidbody.AddExplosionForce(explosionForce, explosionPosition, 2f, 0.2f, ForceMode.Impulse);
     }
 
-    private void Break()
+    public void Break()
     {
         _rigidbody.isKinematic = false;
         _rigidbody.useGravity = true;

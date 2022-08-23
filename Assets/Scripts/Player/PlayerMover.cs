@@ -44,6 +44,7 @@ public class PlayerMover : MonoBehaviour
     public void DisableMovement()
     {
         _canMove = false;
+        StopMoving();
     }
 
     public void TryMove(Vector3 direction)
