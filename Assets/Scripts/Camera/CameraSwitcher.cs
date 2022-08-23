@@ -20,11 +20,11 @@ public class CameraSwitcher : MonoBehaviour
     private IEnumerator Changing()
     {
         _camera.Priority = 0;
-        _camera2.Priority = 1;
+        _camera2.Priority = 3;
 
         yield return new WaitForSecondsRealtime(3.5f);
 
-        _camera.Priority = 1;
+        _camera.Priority = 3;
         _camera2.Priority = 0;
     }
 }

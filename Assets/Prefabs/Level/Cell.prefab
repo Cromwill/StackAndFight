@@ -236,8 +236,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.5
-      value: 1
+      time: 0.50198364
+      value: 1.0083717
       inSlope: 0.00042518915
       outSlope: 0.00042518915
       tangentMode: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _duration: 0.5
-  _height: 0.2
+  _height: 0.35
 --- !u!65 &5389976696733812166
 BoxCollider:
   m_ObjectHideFlags: 0
