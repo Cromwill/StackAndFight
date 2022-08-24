@@ -25,6 +25,18 @@ MonoBehaviour:
     m_Address: Assets/Scenes/02_SF.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 110ef89800a36c344987078b06d43835
+    m_Address: Assets/Scenes/03_SF.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ae8768b731f48eb4aaa164cfd25ae9c3
+    m_Address: Assets/Scenes/04_SF.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7117ccc49fe22784ebdeb6d8f7a443f2
+    m_Address: Assets/Scenes/05_SF.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 66a9fc61b42be234da01b72da7a8c981, type: 2}
   m_SchemaSet:
