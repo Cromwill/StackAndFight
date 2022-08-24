@@ -9,6 +9,6 @@ public class WallLevelUI : MonoBehaviour
 
     public void UpdateUI(int level)
     {
-        _level.text = $"Level: {level}";
+        _level.text = $"{level}";
     }
 }
