@@ -15,9 +15,57 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 90.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3003935219489744787, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003935219489744787, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003935219489744787, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003935219489744787, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003935219489744787, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003935219489744787, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLevelFailed
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003935219489744787, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestartLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003935219489744787, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelsHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003935219489744787, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LevelsHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003935219489744787, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003935219489744787, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5649822470926987251, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
       propertyPath: m_Name
       value: LoseScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649822470926987251, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5788982937759729247, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
       propertyPath: m_text

@@ -8,11 +8,15 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerAnimator _playerAnimator;
     [SerializeField] private LevelSystem _levelSystem;
 
+    private bool _isDead;
+
     public PlayerAnimator PlayerAnimator => _playerAnimator;
     public LevelSystem LevelSystem => _levelSystem;
     public PlayerMover Mover => _mover;
+    public bool IsDead => _isDead;
 
     public event Action CameraSwitched;
+    public event Action<Player> DeathChecked;
 
     private void Awake()
     {
@@ -33,7 +37,6 @@ public class Player : MonoBehaviour
                 if(other.TryGetComponent(out Boss boss))
                 {
                     StartCoroutine(KillBoss());
-                    //boss.ActivateDeathEffect();
                 }
             }
         }
@@ -43,6 +46,8 @@ public class Player : MonoBehaviour
     {
         _playerAnimator.TriggerFall();
         _mover.DisableMovement();
+        _isDead = true;
+        DeathChecked?.Invoke(this);
     }
 
     public void PushEnemy(Enemy enemy)
@@ -55,14 +60,12 @@ public class Player : MonoBehaviour
         enemy.Push(veloctiy);
     }
 
-    private void ActivateRow(Collider[] colliders)
+    private void Activate(Collider[] colliders)
     {
         foreach (var collider in colliders)
         {
-            if (collider.GetComponent<Path>())
+            if (collider.TryGetComponent(out Path path))
             {
-                Path path = collider.GetComponent<Path>();
-
                 if (path.IsActivated == false)
                     path.Activate();
             }
@@ -77,31 +80,22 @@ public class Player : MonoBehaviour
         yield return new WaitForSecondsRealtime(3f);
 
         Time.timeScale = 1f;
+        DeathChecked?.Invoke(this);
     }
 
     private IEnumerator AcitvatingAll()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 1.5f);
-        ActivateRow(colliders);
+        Collider[] colliders;
+        int maxRadius = 5;
+        float radius = 1.5f;
 
-        yield return new WaitForSeconds(0.1f);
+        while (radius <= maxRadius)
+        {
+            colliders = Physics.OverlapSphere(transform.position, radius);
+            Activate(colliders);
+            radius += 0.5f;
 
-        Collider[] colliders2 = Physics.OverlapSphere(transform.position, 2f);
-        ActivateRow(colliders2);
-
-        yield return new WaitForSeconds(0.1f);
-
-        Collider[] colliders3 = Physics.OverlapSphere(transform.position, 3f);
-        ActivateRow(colliders3);
-
-        yield return new WaitForSeconds(0.1f);
-
-        Collider[] colliders4 = Physics.OverlapSphere(transform.position, 4f);
-        ActivateRow(colliders4);
-
-        yield return new WaitForSeconds(0.1f);
-
-        Collider[] colliders5 = Physics.OverlapSphere(transform.position, 5f);
-        ActivateRow(colliders5);
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }
