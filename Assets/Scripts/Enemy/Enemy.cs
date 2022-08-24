@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyAnimator _animator;
     [SerializeField] private EnemyRender _enemyRender;
     [SerializeField] private EnemyEffectsHandler _enemyEffectsHandler;
+    [SerializeField] private CameraImpulseGenerator _cameraImpulseGenerator;
 
     private Player _player;
     private bool _isDead;
@@ -48,11 +49,15 @@ public class Enemy : MonoBehaviour
     public void Push(Vector3 direction)
     {
         _isDead = true;
+
+        _cameraImpulseGenerator.ShakeCamera();
         _enemyRender.SetDead();
         _enemyEffectsHandler.PlayDeathEffect();
 
         if (_shield != null)
+        {
             _shield.Drop();
+        }
 
         _collider.enabled = false;
         _levelCounter.gameObject.SetActive(false);

@@ -257,6 +257,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fc940e674ddc0478ed0df5213e665c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4624633983290574436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5565025719064185434, guid: b21bc96107552e946807c0b0e2e27052, type: 3}
+  m_PrefabInstance: {fileID: 942643697722838078}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171928476675904457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed9b5494676d0a4d919b6eed0d429e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6982992860826659872 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7925317679759400990, guid: b21bc96107552e946807c0b0e2e27052, type: 3}
@@ -305,6 +316,7 @@ MonoBehaviour:
   _animator: {fileID: 2640771603010058158}
   _enemyRender: {fileID: 6157486751490655660}
   _enemyEffectsHandler: {fileID: 5450691356211096016}
+  _cameraImpulseGenerator: {fileID: 4624633983290574436}
 --- !u!1001 &4071065331272725659
 PrefabInstance:
   m_ObjectHideFlags: 0
