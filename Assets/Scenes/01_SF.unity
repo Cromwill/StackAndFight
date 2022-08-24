@@ -6885,6 +6885,38 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &843124578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 787620806, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
+  m_PrefabInstance: {fileID: 654689376193127793}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &843124581
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843124578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 0
+  m_LookaheadIgnoreY: 0
+  m_HorizontalDamping: 0.5
+  m_VerticalDamping: 0.5
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
+  m_BiasX: 0
+  m_BiasY: 0
+  m_CenterOnActivate: 1
 --- !u!1001 &856578642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18575,6 +18607,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 345778769}
     m_Modifications:
+    - target: {fileID: 1496276655, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
+      propertyPath: m_Priority
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 65321633402597596, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 0.0019314784
