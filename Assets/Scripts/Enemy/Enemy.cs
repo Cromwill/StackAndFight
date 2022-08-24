@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyRender _enemyRender;
 
     private Player _player;
+    private bool _isDead;
 
     public EnemyAnimator EnemyAnimator => _animator;
     public RagdollHandler RagdollHandler => _ragdollHandler;
@@ -28,6 +29,9 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (_isDead)
+            return;
+
         if (_player.LevelSystem.Level < _level)
         {
             _enemyRender.SetDefaultd();
@@ -42,6 +46,9 @@ public class Enemy : MonoBehaviour
 
     public void Push(Vector3 direction)
     {
+        _isDead = true;
+        _enemyRender.SetDead();
+
         if (_shield != null)
             _shield.Drop();
 

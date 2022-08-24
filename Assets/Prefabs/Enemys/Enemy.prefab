@@ -164,6 +164,7 @@ MonoBehaviour:
   _skinnedMeshRenderer: {fileID: 684462310551342565}
   _defaultMaterial: {fileID: 2100000, guid: a5807fb624a37a34698ec6e1d040c27c, type: 2}
   _scaredMaterial: {fileID: 2100000, guid: b0180c2c29111434db3ba8d486793cb4, type: 2}
+  _deadMaterial: {fileID: 2100000, guid: b06e0c04e6981754589c368f7203203c, type: 2}
   _angry: {fileID: 2491885551209534982}
   _scared: {fileID: 4448411875229021639}
 --- !u!1 &2491885551209534982
