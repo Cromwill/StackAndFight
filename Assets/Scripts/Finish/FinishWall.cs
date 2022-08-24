@@ -42,7 +42,7 @@ public class FinishWall : Interactable
         foreach (var brick in _bricks)
         {
             brick.Break();
-            //brick.Explode(player.transform.position, 10f);
+            brick.Explode(player.transform.position, 10f);
         }
 
         if (_enableSlowMotion)
