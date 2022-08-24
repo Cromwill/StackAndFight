@@ -17,14 +17,19 @@ public class LevelSectionHandler : MonoBehaviour
 
         _levelSectionViews = GetComponentsInChildren<LevelSectionView>().ToList();
 
+        int counter = 0;
+        foreach (var section in _levelSectionViews)
+        {
+            counter++;
+
+            section.Init(counter);
+            DeactivateSectionView(section);
+        }
+
+
         foreach (var trigger in _levelSectionTriggers)
         {
             _levelSectionViews.Add(trigger.LevelSectionView);
-        }
-
-        foreach (var section in _levelSectionViews)
-        {
-            DeactivateSectionView(section);
         }
 
         SetCurrentSectionView(_levelSectionViews[0]);
@@ -43,6 +48,9 @@ public class LevelSectionHandler : MonoBehaviour
 
     private void SetCurrentSectionView(LevelSectionView sectionView)
     {
+        if (CurrentLevelSectionView == sectionView)
+            return;
+
         sectionView.ActivateBackground();
         CurrentLevelSectionView = sectionView;
     }

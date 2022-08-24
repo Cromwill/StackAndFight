@@ -558,10 +558,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLevelUI
       objectReference: {fileID: 0}
-    - target: {fileID: 9082031625146669624, guid: 820f6d032d5a73343a31ac589be49bb2, type: 3}
-      propertyPath: m_fontSize
-      value: 0.85
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 820f6d032d5a73343a31ac589be49bb2, type: 3}
 --- !u!224 &9086864245953825209 stripped
