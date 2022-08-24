@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyRotation _rotation;
     [SerializeField] private EnemyAnimator _animator;
     [SerializeField] private EnemyRender _enemyRender;
+    [SerializeField] private EnemyEffectsHandler _enemyEffectsHandler;
 
     private Player _player;
     private bool _isDead;
@@ -48,6 +49,7 @@ public class Enemy : MonoBehaviour
     {
         _isDead = true;
         _enemyRender.SetDead();
+        _enemyEffectsHandler.PlayDeathEffect();
 
         if (_shield != null)
             _shield.Drop();

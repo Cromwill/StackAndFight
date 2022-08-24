@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
                 if(other.TryGetComponent(out Boss boss))
                 {
                     StartCoroutine(KillBoss());
-                    boss.ActivateDeathEffect();
+                    //boss.ActivateDeathEffect();
                 }
             }
         }
