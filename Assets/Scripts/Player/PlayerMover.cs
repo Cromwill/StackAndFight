@@ -7,6 +7,7 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private AnimationCurve _animationCurve;
     [SerializeField] private float _jumpTime;
+    [SerializeField] private BoxCollider _finishCollider;
 
     private bool _canMove = true;
     private bool _isMoving;
@@ -108,6 +109,16 @@ public class PlayerMover : MonoBehaviour
 
         _previousPathPoint = pathPoint;
         _currentPathPoint = pathPoint;
+    }
+
+    public void EnableFinishCollider()
+    {
+        _finishCollider.enabled = true;
+    }
+
+    public void DisableFinishCollider()
+    {
+        _finishCollider.enabled = false;
     }
 
     private IEnumerator Jumping(PathPoint pathPoint)
