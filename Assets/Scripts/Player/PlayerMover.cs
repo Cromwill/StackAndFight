@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
@@ -21,6 +22,8 @@ public class PlayerMover : MonoBehaviour
 
     public bool EnoughDistance { get; private set; }
     public bool IsMoving => _isMoving;
+
+    public event Action Moved;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -63,7 +66,9 @@ public class PlayerMover : MonoBehaviour
         if (_isMoving || _canMove == false)
             return;
 
-        if(_currentPathPoint.TryGetPathPoint(swipeDirection, out PathPoint pathPoint))
+        Moved?.Invoke();
+
+        if (_currentPathPoint.TryGetPathPoint(swipeDirection, out PathPoint pathPoint))
         {
             Vector3 direction = (pathPoint.Position - transform.position).normalized;
             CheckDistance(direction);

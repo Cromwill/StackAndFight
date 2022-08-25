@@ -19,7 +19,7 @@ public class ButtonAnimation : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        PlayAnimation(transform, _duration, _animationCurve);
+        //PlayAnimation(transform, _duration, _animationCurve);
     }
 
     public void PlayAnimation()

@@ -7,14 +7,15 @@ public class MoneyMultiplierUpgrade : Upgrade
 {
     [SerializeField] private float _multiplierPerUpgrade;
 
-    private void Awake()
-    {
-        UpgradeName = UpgradeName.Money;
-    }
-
     public override void Buy()
     {
         Player.MoneyMultiplier.Increase(_multiplierPerUpgrade);
         base.Buy();
+    }
+
+    protected override void OnInitilize()
+    {
+        UpgradeName = UpgradeName.Money;
+        Value = Player.MoneyMultiplier;
     }
 }

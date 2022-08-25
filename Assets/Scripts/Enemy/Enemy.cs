@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     private Player _player;
     private bool _isDead;
 
+    public int Cost { get; private set; } = 5;
     public EnemyAnimator EnemyAnimator => _animator;
     public RagdollHandler RagdollHandler => _ragdollHandler;
     public int Level => _level;

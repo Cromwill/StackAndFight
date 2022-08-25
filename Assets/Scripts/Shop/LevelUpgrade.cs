@@ -7,14 +7,15 @@ public class LevelUpgrade : Upgrade
 {
     [SerializeField] private int _lvlPerUpgrade;
 
-    private void Awake()
-    {
-        UpgradeName = UpgradeName.Level;
-    }
-
     public override void Buy()
     {
-        Player.AdditionalLevel.Increase(_lvlPerUpgrade);
+        Player.LevelSystem.UpgradeLevels(_lvlPerUpgrade);
         base.Buy();
+    }
+
+    protected override void OnInitilize()
+    {
+        UpgradeName = UpgradeName.Level;
+        Value = Player.LevelSystem.AdditionalLevel;
     }
 }

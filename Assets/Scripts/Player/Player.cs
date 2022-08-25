@@ -10,9 +10,8 @@ public class Player : MonoBehaviour
 
     private bool _isDead;
 
-    public ValueHandler AdditionalLevel { get; private set; } = new ValueHandler(3, 500, "PlayerLevel");
-    public ValueHandler MoneyMultiplier { get; private set; } = new ValueHandler(0, 20, "PlayerCurrencyMultiplier");
     public ValueHandler Wallet { get; private set; } = new ValueHandler(0, 10000, "WalletSaveWord");
+    public ValueHandler MoneyMultiplier { get; private set; } = new ValueHandler(1, 20, "MoneyMultilierSaveWord");
     public PlayerAnimator PlayerAnimator => _playerAnimator;
     public LevelSystem LevelSystem => _levelSystem;
     public PlayerMover Mover => _mover;
@@ -24,8 +23,9 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _mover.Init(_playerAnimator, _levelSystem);
-        AdditionalLevel.LoadAmount();
-        LevelSystem.IncreaseLevel((int)AdditionalLevel.Value);
+        _levelSystem.Init();
+        Wallet.LoadAmount();
+        MoneyMultiplier.LoadAmount();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -59,9 +59,15 @@ public class Player : MonoBehaviour
         float forceValue = 0;
         forceValue = Mathf.Clamp(forceValue, 80, 120) + LevelSystem.Level;
         LevelSystem.IncreaseLevel(enemy.Level);
+        IncreaseMoney(enemy.Cost);
 
         Vector3 veloctiy = (transform.forward + transform.up)* forceValue;
         enemy.Push(veloctiy);
+    }
+
+    public void IncreaseMoney(float value)
+    {
+        Wallet.Increase(value * MoneyMultiplier.Value);
     }
 
     private void Activate(Collider[] colliders)

@@ -12,9 +12,10 @@ public abstract class Upgrade: MonoBehaviour
 
     protected Player Player;
     public ValueHandler CostHandler { get; private set; }
+    public ValueHandler Value { get; protected set; }
 
     public Sprite Sprite => _sprite;
-    public UpgradeType UpgradeType => _upgradeType;
+    public UpgradeType Type => _upgradeType;
     public UpgradeName UpgradeName { get; protected set; }
 
     public void Init(Player player)
@@ -22,10 +23,13 @@ public abstract class Upgrade: MonoBehaviour
         Player = player;
         CostHandler = new ValueHandler(_startCost, 1000, $"{_upgradeType}SaveWord");
         CostHandler.LoadAmount();
+        OnInitilize();
     }
 
     public virtual void Buy()
     {
         CostHandler.Increase(_costPerBuy);
     }
+
+    protected abstract void OnInitilize();
 }
