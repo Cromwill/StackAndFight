@@ -31,19 +31,19 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (_isDead)
-            return;
+        //if (_isDead)
+        //    return;
 
-        if (_player.LevelSystem.Level < _level)
-        {
-            _enemyRender.SetDefaultd();
-            _animator.SetAggresive();
-        }
-        else
-        {
-            _animator.SetDefault();
-            _enemyRender.SetScared();
-        }
+        //if (_player.LevelSystem.Level < _level)
+        //{
+        //    _enemyRender.SetDefaultd();
+        //    _animator.SetAggresive();
+        //}
+        //else
+        //{
+        //    _animator.SetDefault();
+        //    _enemyRender.SetScared();
+        //}
     }
 
     public void Push(Vector3 direction)

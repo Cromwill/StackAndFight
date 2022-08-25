@@ -6,6 +6,8 @@ public class FinishWall : Interactable
 {
     [SerializeField] private bool _enableSlowMotion;
     [SerializeField] private WallLevelUI _wallLevelUI;
+    [SerializeField] private CameraImpulseGenerator _cameraImpulseGenerator;
+    [SerializeField] private ParticleSystem _hitEffect;
 
     private Brick[] _bricks;
     private SlowMotion _slowMotion;
@@ -31,6 +33,8 @@ public class FinishWall : Interactable
 
     public override void Interact(Player player)
     {
+        _cameraImpulseGenerator.ShakeCamera();
+
         if(WallLevel < player.LevelSystem.Level)
             Break(player);
         else
@@ -39,6 +43,8 @@ public class FinishWall : Interactable
 
     private void Break(Player player)
     {
+        _hitEffect.Play();
+
         foreach (var brick in _bricks)
         {
             brick.Break();
