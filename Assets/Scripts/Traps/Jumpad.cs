@@ -12,7 +12,6 @@ public class Jumpad : MonoBehaviour
         {
             player.Mover.Jump(_pathPoint);
             _bouncePad.transform.DOShakeScale(1f);
-
         }
     }
 }

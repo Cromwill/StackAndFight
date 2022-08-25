@@ -14,15 +14,20 @@ public class AttackZone : Interactable
         {
             _isKicked = true;
             _enemy.EnemyAnimator.TriggerKick();
-            StartCoroutine(Delay(player));
+
+            StartCoroutine(Delay(player, GetComponentInParent<Boss>()));
         }
     }
 
-    private IEnumerator Delay(Player player)
+    private IEnumerator Delay(Player player, Boss boss)
     {
         yield return new WaitForSeconds(0.025f);
 
-        player.Die();
         player.Mover.StopMoving();
+
+        if (boss == null)
+            player.Die();
+        else
+            player.Fall();
     }
 }

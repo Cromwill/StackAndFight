@@ -38,7 +38,7 @@ public class FinishWall : Interactable
         if(WallLevel < player.LevelSystem.Level)
             Break(player);
         else
-            player.Die();
+            player.Fall();
     }
 
     private void Break(Player player)

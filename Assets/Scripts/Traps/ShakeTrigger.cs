@@ -8,6 +8,5 @@ public class ShakeTrigger : Interactable
     public override void Interact(Player player)
     {
         _bouncePad.transform.DOShakeScale(0.5f);
-        print("interact");
     }
 }

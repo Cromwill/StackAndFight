@@ -48,9 +48,14 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        _playerAnimator.TriggerFall();
-        _mover.DisableMovement();
         _isDead = true;
+        Fall();
+    }
+
+    public void Fall()
+    {
+        _mover.DisableMovement();
+        _playerAnimator.TriggerFall();
         DeathChecked?.Invoke(this);
     }
 
