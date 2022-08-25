@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
 
     private bool _isDead;
 
+    public ValueHandler AdditionalLevel { get; private set; } = new ValueHandler(3, 500, "PlayerLevel");
+    public ValueHandler MoneyMultiplier { get; private set; } = new ValueHandler(0, 20, "PlayerCurrencyMultiplier");
+    public ValueHandler Wallet { get; private set; } = new ValueHandler(0, 10000, "WalletSaveWord");
     public PlayerAnimator PlayerAnimator => _playerAnimator;
     public LevelSystem LevelSystem => _levelSystem;
     public PlayerMover Mover => _mover;
@@ -21,7 +24,8 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _mover.Init(_playerAnimator, _levelSystem);
-        LevelSystem.IncreaseLevel(3);
+        AdditionalLevel.LoadAmount();
+        LevelSystem.IncreaseLevel((int)AdditionalLevel.Value);
     }
 
     private void OnTriggerEnter(Collider other)
