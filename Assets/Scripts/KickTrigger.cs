@@ -8,6 +8,11 @@ public class KickTrigger : Interactable
     {
         _cameraSwitcher.ChangeCamera();
         player.Mover.DisableFinishCollider();
+        var boss = FindObjectOfType<Boss>();
+
+        if (boss.Level >= player.LevelSystem.Level)
+            return;
+
         player.Mover.DecreaseSpeed();
         Time.timeScale = 0.5f;
         player.PlayerAnimator.PlayKick();

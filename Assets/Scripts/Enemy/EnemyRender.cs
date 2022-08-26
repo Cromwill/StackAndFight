@@ -24,8 +24,8 @@ public class EnemyRender : MonoBehaviour
         _skinnedMeshRenderer.material = _deadMaterial;
     }
 
-    private void ChangeState()
-    {
+    //private void ChangeState()
+    //{
 
-    }
+    //}
 }

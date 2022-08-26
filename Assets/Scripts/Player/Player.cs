@@ -28,24 +28,6 @@ public class Player : MonoBehaviour
         MoneyMultiplier.LoadAmount();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.TryGetComponent(out Enemy enemy))
-        {
-            if(enemy.Level <= LevelSystem.Level)
-            {
-                //enemy.Die();
-
-                PushEnemy(enemy);
-
-                if(other.TryGetComponent(out Boss boss))
-                {
-                    StartCoroutine(KillBoss());
-                }
-            }
-        }
-    }
-
     public void Die()
     {
         _isDead = true;
@@ -75,6 +57,11 @@ public class Player : MonoBehaviour
         Wallet.Increase(value * MoneyMultiplier.Value);
     }
 
+    public void KillBoss()
+    {
+        StartCoroutine(KillingBoss());
+    }
+
     private void Activate(Collider[] colliders)
     {
         foreach (var collider in colliders)
@@ -87,7 +74,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private IEnumerator KillBoss()
+    private IEnumerator KillingBoss()
     {
         _mover.StopMoving();
         StartCoroutine(AcitvatingAll());

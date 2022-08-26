@@ -47,6 +47,15 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.TryGetComponent(out Player player))
+        {
+            if (player.LevelSystem.Level > _level)
+                player.PushEnemy(this);
+        }
+    }
+
     public void Push(Vector3 direction)
     {
         _isDead = true;
