@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonTrigger : MonoBehaviour
@@ -16,5 +14,4 @@ public class ButtonTrigger : MonoBehaviour
                 _button.SwitchToPressedState();
         }
     }
-
 }

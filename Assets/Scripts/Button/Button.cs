@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Button : MonoBehaviour
@@ -18,7 +16,6 @@ public class Button : MonoBehaviour
         _buttonAnimator.PlayPress();
         _buttonRenderer.ChangeToPressed();
         _trapWall.Enable();
-        print("press");
     }
 
     public void SwitchToUnpressedState()
@@ -27,6 +24,5 @@ public class Button : MonoBehaviour
         _buttonAnimator.PlayRevert();
         _buttonRenderer.ChangeToUnpressed();
         _trapWall.Disable();
-        print("revert");
     }
 }
