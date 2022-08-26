@@ -215,6 +215,6 @@ public class PlayerMover : MonoBehaviour
     private void CheckDistance(Vector3 direction)
     {
         if (Physics.Raycast(transform.position, direction, out RaycastHit raycastHit))
-            EnoughDistance = raycastHit.distance > 5f;
+            EnoughDistance = raycastHit.distance > 2f;
     }
 }
