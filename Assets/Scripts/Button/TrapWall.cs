@@ -8,7 +8,7 @@ public class TrapWall : Interactable
 
     public override void Interact(Player player)
     {
-        player.Mover.MoveBack();
+        //player.Mover.MoveBack();
     }
 
     public void Enable()

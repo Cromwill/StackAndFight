@@ -9,12 +9,12 @@ public class PathInitializer : MonoBehaviour
 
     private void Awake()
     {
-        pathPoints = FindObjectsOfType<PathPoint>();
+        //pathPoints = FindObjectsOfType<PathPoint>();
 
-        foreach (var pathPoint in pathPoints)
-        {
-            pathPoint.Init(CreatePathPointData(pathPoint));
-        }
+        //foreach (var pathPoint in pathPoints)
+        //{
+        //    pathPoint.Init(CreatePathPointData(pathPoint));
+        //}
     }
 
     private List<PathPointData> CreatePathPointData(PathPoint pathPoint)

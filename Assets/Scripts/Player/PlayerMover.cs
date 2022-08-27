@@ -7,7 +7,6 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _speed;
     [SerializeField] private AnimationCurve _animationCurve;
-    [SerializeField] private float _jumpTime;
     [SerializeField] private BoxCollider _finishCollider;
 
     private bool _canMove = true;
@@ -107,10 +106,9 @@ public class PlayerMover : MonoBehaviour
         transform.rotation *= Quaternion.Euler(0, 180f, 0);
     }
 
-    public void Jump(PathPoint pathPoint)
+    public void Jump(PathPoint pathPoint, float jumpTime)
     {
-        //transform.position = pathPoint.Position;//доделать: телепортировть после анимации
-        StartCoroutine(Jumping(pathPoint));
+        StartCoroutine(Jumping(pathPoint, jumpTime));
 
         _previousPathPoint = pathPoint;
         _currentPathPoint = pathPoint;
@@ -126,7 +124,7 @@ public class PlayerMover : MonoBehaviour
         _finishCollider.enabled = false;
     }
 
-    private IEnumerator Jumping(PathPoint pathPoint)
+    private IEnumerator Jumping(PathPoint pathPoint, float jumpTime)
     {
         _isMoving = true;
 
@@ -134,10 +132,10 @@ public class PlayerMover : MonoBehaviour
         Vector3 startPosition = transform.position;
         _animator.JumpAnimation();
 
-        while (elapsedTime <= _jumpTime)
+        while (elapsedTime <= jumpTime)
         {
             elapsedTime += Time.deltaTime;
-            transform.position = Vector3.Lerp(startPosition, pathPoint.Position, elapsedTime/ _jumpTime) + Vector3.up* _animationCurve.Evaluate(elapsedTime/ _jumpTime) *2f;
+            transform.position = Vector3.Lerp(startPosition, pathPoint.Position, elapsedTime/ jumpTime) + Vector3.up* _animationCurve.Evaluate(elapsedTime/ jumpTime) *2f;
 
             yield return null;
         }

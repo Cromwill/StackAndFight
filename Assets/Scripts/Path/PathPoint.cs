@@ -17,18 +17,24 @@ public class PathPoint : MonoBehaviour
     {
         pathPoint = null;
 
-        foreach (var pathPointData in _pathPointDatas)
-        {
-            if (pathPointData.SwipeDirection == swipeDirection)
-            {
-                pathPoint = pathPointData.PathPoint;
+        PathData.DirectionPairs.TryGetValue(swipeDirection, out Vector3 direction);
+        RaycastHit[] hits = Physics.RaycastAll(Position, direction, 50);
 
-                return true;
+        foreach (var hit in hits)
+        {
+            if (hit.transform.TryGetComponent(out PathPoint tempPathPoint))
+            {
+                if (tempPathPoint.CanGoFrom(swipeDirection) == false || hit.transform.TryGetComponent(out TrapWall trapWall))
+                    break;
+
+                pathPoint = tempPathPoint;
             }
         }
 
-        return false;
+        return pathPoint != null;
     }
+
+
 
     public bool CanGoFrom(SwipeDirection swipeDirection)
     {
@@ -37,6 +43,6 @@ public class PathPoint : MonoBehaviour
 
     public bool HaveGround(Vector3 direction)
     {
-        return Physics.Raycast(transform.position, direction + Vector3.down, out RaycastHit hit) && hit.transform.TryGetComponent(out Path path);
+        return Physics.Raycast(transform.position, direction, out RaycastHit hit, 2f) && hit.transform.TryGetComponent(out Path path);
     }
 }

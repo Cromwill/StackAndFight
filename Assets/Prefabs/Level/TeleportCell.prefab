@@ -156,3 +156,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pathPoint: {fileID: 0}
   _bouncePad: {fileID: 5833224875701294210}
+  _jumpDuration: 0.5
