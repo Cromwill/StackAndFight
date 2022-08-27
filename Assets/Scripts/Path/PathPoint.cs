@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PathPoint : MonoBehaviour
 {
@@ -19,12 +20,16 @@ public class PathPoint : MonoBehaviour
 
         PathData.DirectionPairs.TryGetValue(swipeDirection, out Vector3 direction);
         RaycastHit[] hits = Physics.RaycastAll(Position, direction, 50);
+        hits = hits.OrderBy(hit => hit.distance).ToArray();
 
         foreach (var hit in hits)
         {
+            if (hit.transform.TryGetComponent(out TrapWall trapWall))
+                break;
+
             if (hit.transform.TryGetComponent(out PathPoint tempPathPoint))
             {
-                if (tempPathPoint.CanGoFrom(swipeDirection) == false || hit.transform.TryGetComponent(out TrapWall trapWall))
+                if (tempPathPoint.CanGoFrom(swipeDirection) == false)
                     break;
 
                 pathPoint = tempPathPoint;

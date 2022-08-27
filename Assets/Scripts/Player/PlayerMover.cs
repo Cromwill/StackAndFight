@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
@@ -67,13 +68,13 @@ public class PlayerMover : MonoBehaviour
 
         Moved?.Invoke();
 
-        if (_currentPathPoint.TryGetPathPoint(swipeDirection, out PathPoint pathPoint))
+        if (TryGetPathPoint(swipeDirection, out PathPoint pathPoint))
         {
             Vector3 direction = (pathPoint.Position - transform.position).normalized;
             CheckDistance(direction);
             _previousPathPoint = _currentPathPoint;
             _currentPathPoint = pathPoint;
-            _coroutine =  StartCoroutine(MovingTo(pathPoint.Position));
+            _coroutine =  StartCoroutine(MovingTo(pathPoint.Position, swipeDirection));
 
             transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
             _animator.TriggerHeadRun();
@@ -145,15 +146,23 @@ public class PlayerMover : MonoBehaviour
         _jumpAttack.Perform(transform);
     }
 
-    private IEnumerator MovingTo(Vector3 targetPosition)
+    private IEnumerator MovingTo(Vector3 targetPosition, SwipeDirection swipeDirection = SwipeDirection.None)
     {
         _isMoving = true;
+        float distance = Vector3.Distance(targetPosition, transform.position);
 
-        while (Vector3.Distance(targetPosition, transform.position) > _minDistance)
+        while (distance > _minDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
+            if (swipeDirection != SwipeDirection.None && TryGetPathPoint(swipeDirection, out PathPoint pathPoint))
+            {
+                targetPosition = pathPoint.Position;
+                Debug.Log(pathPoint.name);
+            }
 
-             yield return null;
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
+            distance = Vector3.Distance(targetPosition, transform.position);
+
+            yield return null;
         }
 
         _isMoving = false;
@@ -170,6 +179,37 @@ public class PlayerMover : MonoBehaviour
     public void DecreaseSpeed()
     {
         _speed /= 2;
+    }
+
+    public bool TryGetPathPoint(SwipeDirection swipeDirection, out PathPoint pathPoint)
+    {
+        pathPoint = null;
+
+        PathData.DirectionPairs.TryGetValue(swipeDirection, out Vector3 direction);
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, direction, 50);
+        hits = hits.OrderBy(hit => hit.distance).ToArray();
+
+        foreach (var hit in hits)
+        {
+
+            if (hit.transform.TryGetComponent(out TrapWall trapWall))
+                break;
+
+            if (hit.transform.TryGetComponent(out PathPoint tempPathPoint))
+            {
+                if (tempPathPoint.CanGoFrom(swipeDirection) == false)
+                {
+                    Debug.Log("Hi");
+                    break;
+                }
+
+                pathPoint = tempPathPoint;
+            }
+
+            
+        }
+
+        return pathPoint != null;
     }
 
     private void Rotate(Vector3 direction)

@@ -62,5 +62,6 @@ public enum SwipeDirection
     Forward,
     Back,
     Left,
-    Right
+    Right,
+    None
 }
