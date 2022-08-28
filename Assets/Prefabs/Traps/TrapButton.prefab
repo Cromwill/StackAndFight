@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dustEffect: {fileID: 8111612336505950809}
+  _boxCollider: {fileID: 2732647849207585494}
 --- !u!1001 &1948435264802590984
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
     {
         if(other.TryGetComponent(out Player player))
         {
-            if (player.LevelSystem.Level > _level)
+            if (player.LevelSystem.Level >= _level)
                 player.PushEnemy(this);
         }
     }

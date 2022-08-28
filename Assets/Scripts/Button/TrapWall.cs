@@ -5,6 +5,7 @@ using DG.Tweening;
 public class TrapWall : Interactable
 {
     [SerializeField] private ParticleSystem _dustEffect;
+    [SerializeField] private BoxCollider _boxCollider;
 
     private Coroutine _coroutine;
 
@@ -16,6 +17,7 @@ public class TrapWall : Interactable
     public void Enable()
     {
         gameObject.SetActive(true);
+        _boxCollider.enabled = true;
 
         if (_coroutine != null)
             StopCoroutine(_coroutine);
@@ -33,14 +35,15 @@ public class TrapWall : Interactable
 
     private IEnumerator Enabling()
     {
-        transform.DOLocalMoveY(1f, 0.5f);
+        transform.DOLocalMoveY(2f, 0.5f);
 
         yield return null;
     }
 
     private IEnumerator Disabling()
     {
-        transform.DOLocalMoveY(-1f, 0.5f);
+        transform.DOLocalMoveY(-2f, 0.5f);
+        _boxCollider.enabled = false;
 
         yield return new WaitForSeconds(0.5f);
 

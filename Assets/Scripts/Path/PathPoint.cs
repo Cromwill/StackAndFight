@@ -48,6 +48,6 @@ public class PathPoint : MonoBehaviour
 
     public bool HaveGround(Vector3 direction)
     {
-        return Physics.Raycast(transform.position, direction, out RaycastHit hit, 2f) && hit.transform.TryGetComponent(out Path path);
+        return Physics.Raycast(transform.position, direction, out RaycastHit hit, 1f) && hit.transform.TryGetComponent(out Path path);
     }
 }

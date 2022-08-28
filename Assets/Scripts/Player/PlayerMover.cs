@@ -9,6 +9,7 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private AnimationCurve _animationCurve;
     [SerializeField] private BoxCollider _finishCollider;
+    [SerializeField] private LayerMask _brickWall;
 
     private bool _canMove = true;
     private bool _isMoving;
@@ -19,6 +20,7 @@ public class PlayerMover : MonoBehaviour
     private PathPoint _previousPathPoint;
     private PlayerAnimator _animator;
     private JumpAttack _jumpAttack;
+
 
     public bool EnoughDistance { get; private set; }
     public bool IsMoving => _isMoving;
@@ -154,10 +156,7 @@ public class PlayerMover : MonoBehaviour
         while (distance > _minDistance)
         {
             if (swipeDirection != SwipeDirection.None && TryGetPathPoint(swipeDirection, out PathPoint pathPoint))
-            {
                 targetPosition = pathPoint.Position;
-                Debug.Log(pathPoint.name);
-            }
 
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
             distance = Vector3.Distance(targetPosition, transform.position);
@@ -172,7 +171,9 @@ public class PlayerMover : MonoBehaviour
 
     public void StopMoving()
     {
-        StopCoroutine(_coroutine);
+        if(_coroutine != null)
+            StopCoroutine(_coroutine);
+
         _isMoving = false;
     }
 
@@ -198,10 +199,7 @@ public class PlayerMover : MonoBehaviour
             if (hit.transform.TryGetComponent(out PathPoint tempPathPoint))
             {
                 if (tempPathPoint.CanGoFrom(swipeDirection) == false)
-                {
-                    Debug.Log("Hi");
                     break;
-                }
 
                 pathPoint = tempPathPoint;
             }
@@ -252,7 +250,7 @@ public class PlayerMover : MonoBehaviour
 
     private void CheckDistance(Vector3 direction)
     {
-        if (Physics.Raycast(transform.position, direction, out RaycastHit raycastHit))
-            EnoughDistance = raycastHit.distance > 2f;
+        if (Physics.Raycast(transform.position, direction, out RaycastHit raycastHit, 50, _brickWall))
+            EnoughDistance = raycastHit.distance > 1f;
     }
 }

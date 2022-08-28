@@ -6,6 +6,7 @@ public class Wall : Interactable
 {
     [SerializeField] public int _maxHitCount;
     [SerializeField] private ShakeAnimation _shakeAnimation;
+    [SerializeField] private BoxCollider _boxCollider;
 
     private int _hitCounter;
     private Brick[] _bricks;
@@ -34,6 +35,8 @@ public class Wall : Interactable
 
     public void Break(Player player)
     {
+        _boxCollider.enabled = false;
+
         foreach (var brick in _bricks)
             brick.Explode(player.transform.position);
     }

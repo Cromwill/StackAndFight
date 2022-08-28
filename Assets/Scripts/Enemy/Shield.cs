@@ -21,6 +21,7 @@ public class Shield : Interactable
     public void Drop()
     {
         GetComponent<Rigidbody>().isKinematic = false;
+        transform.parent = null;
         _isBroken = true;
     }
 }

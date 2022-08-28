@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1714784713581974742}
   - component: {fileID: 1714784713581974741}
   - component: {fileID: 1714784713581974740}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,8 +95,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &1714784713581974740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHitCount: 2
   _shakeAnimation: {fileID: 5385292121051727519}
+  _boxCollider: {fileID: 1714784713581974741}
 --- !u!1 &5592173824997449968
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1226109189532408016}
   - component: {fileID: 5385292121051727519}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
