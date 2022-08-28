@@ -6,6 +6,8 @@ public class TrapWall : Interactable
 {
     [SerializeField] private ParticleSystem _dustEffect;
 
+    private Coroutine _coroutine;
+
     public override void Interact(Player player)
     {
         //player.Mover.MoveBack();
@@ -14,19 +16,31 @@ public class TrapWall : Interactable
     public void Enable()
     {
         gameObject.SetActive(true);
-        //_dustEffect.Play();
-        transform.DOLocalMoveY(1f, 0.5f);
+
+        if (_coroutine != null)
+            StopCoroutine(_coroutine);
+
+        _coroutine = StartCoroutine(Enabling());
     }
 
     public void Disable()
     {
-        StartCoroutine(Disabling());
+        if(_coroutine != null)
+            StopCoroutine(_coroutine);
+
+        _coroutine = StartCoroutine(Disabling());
+    }
+
+    private IEnumerator Enabling()
+    {
+        transform.DOLocalMoveY(1f, 0.5f);
+
+        yield return null;
     }
 
     private IEnumerator Disabling()
     {
         transform.DOLocalMoveY(-1f, 0.5f);
-        //_dustEffect.Play();
 
         yield return new WaitForSeconds(0.5f);
 
