@@ -29,10 +29,16 @@ public class PathPoint : MonoBehaviour
 
             if (hit.transform.TryGetComponent(out PathPoint tempPathPoint))
             {
-                if (tempPathPoint.CanGoFrom(swipeDirection) == false)
-                    break;
+                if (tempPathPoint.CanGoNext(swipeDirection) == false)
+                {
+                    pathPoint = tempPathPoint;
+                    return true;
+                }
 
-                pathPoint = tempPathPoint;
+                //if (tempPathPoint.CanGoFrom(swipeDirection) == false)
+                //    break;
+
+                //pathPoint = tempPathPoint;
             }
         }
 
@@ -44,6 +50,11 @@ public class PathPoint : MonoBehaviour
     public bool CanGoFrom(SwipeDirection swipeDirection)
     {
         return PathData.OppositeDirectionPairs.TryGetValue(swipeDirection, out Vector3 direction) && HaveGround(direction);
+    }
+
+    public bool CanGoNext(SwipeDirection swipeDirection)
+    {
+        return PathData.DirectionPairs.TryGetValue(swipeDirection, out Vector3 direction) && HaveGround(direction);
     }
 
     public bool HaveGround(Vector3 direction)
