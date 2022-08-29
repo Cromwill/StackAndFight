@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
         _levelSystem.Init();
         Wallet.LoadAmount();
         MoneyMultiplier.LoadAmount();
+        Wallet.Increase(500);
     }
 
     public void Die()
