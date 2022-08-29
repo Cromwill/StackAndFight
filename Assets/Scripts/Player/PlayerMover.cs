@@ -127,6 +127,11 @@ public class PlayerMover : MonoBehaviour
         _finishCollider.enabled = false;
     }
 
+    public void Disable()
+    {
+        _canMove = false;
+    }
+
     private IEnumerator Jumping(PathPoint pathPoint, float jumpTime)
     {
         _isMoving = true;
