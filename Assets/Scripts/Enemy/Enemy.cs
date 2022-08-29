@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     public int Cost { get; private set; } = 5;
     public EnemyAnimator EnemyAnimator => _animator;
     public RagdollHandler RagdollHandler => _ragdollHandler;
+    public EnemyRotation Rotation => _rotation;
     public int Level => _level;
 
     public event Action<Enemy> Died;

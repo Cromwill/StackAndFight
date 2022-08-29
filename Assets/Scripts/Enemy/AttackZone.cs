@@ -11,20 +11,20 @@ public class AttackZone : Interactable
     {
         if (_enemy.Level > player.LevelSystem.Level && _isKicked == false)
         {
+            _enemy.Rotation.Disable();
             _isKicked = true;
             _enemy.EnemyAnimator.TriggerKick();
-
-            StartCoroutine(Delay(player, GetComponentInParent<Boss>()));
+            StartCoroutine(Delay(player, _enemy));
         }
     }
 
-    private IEnumerator Delay(Player player, Boss boss)
+    private IEnumerator Delay(Player player, Enemy enemy)
     {
         yield return new WaitForSeconds(0.025f);
 
         player.Mover.StopMoving();
 
-        if (boss == null)
+        if (enemy is Enemy)
             player.Die();
         else
             player.Fall();

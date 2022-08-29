@@ -10,18 +10,19 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private AnimationCurve _animationCurve;
     [SerializeField] private BoxCollider _finishCollider;
     [SerializeField] private LayerMask _brickWall;
+    [SerializeField] private LayerMask _moveLayer;
 
     private bool _canMove = true;
     private bool _isMoving;
     private Coroutine _coroutine;
     private PathPoint _currentPathPoint;
     private const float _minDistance = 0.01f;
-    private float _initialY;
     private PathPoint _previousPathPoint;
     private PlayerAnimator _animator;
     private JumpAttack _jumpAttack;
 
 
+    public bool IsMovingBack { get; private set; }
     public bool EnoughDistance { get; private set; }
     public bool IsMoving => _isMoving;
 
@@ -38,7 +39,6 @@ public class PlayerMover : MonoBehaviour
     private void Awake()
     {
         _currentPathPoint = GetClosestPathPoint();
-        _initialY = transform.position.y;
     }
 
     public void Init(PlayerAnimator playerAnimator, LevelSystem levelSystem)
@@ -78,8 +78,8 @@ public class PlayerMover : MonoBehaviour
             _currentPathPoint = pathPoint;
             _coroutine =  StartCoroutine(MovingTo(pathPoint.Position, swipeDirection));
 
-            transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
             _animator.TriggerHeadRun();
+            transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
         }
     }
 
@@ -101,12 +101,15 @@ public class PlayerMover : MonoBehaviour
         if (_previousPathPoint == null || _canMove == false)
             return;
 
+        IsMovingBack = true;
         StopMoving();
         _currentPathPoint = _previousPathPoint;
         _animator.TriggerRun();
-        _coroutine = StartCoroutine(MovingTo(_previousPathPoint.Position));
 
         transform.rotation *= Quaternion.Euler(0, 180f, 0);
+
+        _coroutine = StartCoroutine(MovingTo(_previousPathPoint.Position));
+
     }
 
     public void Jump(PathPoint pathPoint, float jumpTime)
@@ -171,6 +174,7 @@ public class PlayerMover : MonoBehaviour
 
         _isMoving = false;
         EnoughDistance = false;
+        IsMovingBack = false;
         _animator.TriggerIdle();
     }
 
@@ -192,7 +196,7 @@ public class PlayerMover : MonoBehaviour
         pathPoint = null;
 
         PathData.DirectionPairs.TryGetValue(swipeDirection, out Vector3 direction);
-        RaycastHit[] hits = Physics.RaycastAll(transform.position, direction, 50);
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, direction, 50, _moveLayer);
         hits = hits.OrderBy(hit => hit.distance).ToArray();
 
         foreach (var hit in hits)

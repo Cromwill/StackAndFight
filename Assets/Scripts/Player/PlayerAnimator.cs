@@ -20,6 +20,7 @@ public class PlayerAnimator : MonoBehaviour
     public void TriggerHeadRun()
     {
         _animator.SetTrigger(HeadRun);
+        _animator.ResetTrigger(Idle);
     }
 
     public void JumpAnimation()
