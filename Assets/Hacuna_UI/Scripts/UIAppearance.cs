@@ -63,7 +63,7 @@ public class UIAppearance : MonoBehaviour
 
         float widthMultiplier = canvasScaler.matchWidthOrHeight;
         _screenCenter = _canvasRect.rect.size / 2f;
-        _modifier = new Vector2(_screenCenter.x / (Screen.width * widthMultiplier), _screenCenter.y / (Screen.height * (1 - widthMultiplier))) +Vector2.one*0.5f;
+        _modifier = new Vector2(_screenCenter.x / (Screen.width * widthMultiplier), _screenCenter.y / (Screen.height * (1 - widthMultiplier))) + Vector2.one*5;
         //_modifier = new Vector2(canvasScaler.matchWidthOrHeight, 1 - canvasScaler.matchWidthOrHeight);
     }
 

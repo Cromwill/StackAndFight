@@ -293,8 +293,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.78263587
-      value: 1.165972
+      time: 0.7718667
+      value: 1.0538758
       inSlope: -0.17726074
       outSlope: -0.17726074
       tangentMode: 0
@@ -313,7 +313,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _animationTime: 0.5
+  _animationTime: 1
   _animateOnEnable: 1
 --- !u!1 &4713838335734805805
 GameObject:
