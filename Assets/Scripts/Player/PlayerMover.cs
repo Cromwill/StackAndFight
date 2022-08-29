@@ -169,6 +169,13 @@ public class PlayerMover : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
             distance = Vector3.Distance(targetPosition, transform.position);
 
+            if (swipeDirection != SwipeDirection.None)
+            {
+                PathData.DirectionPairs.TryGetValue(swipeDirection, out Vector3 direction);
+                transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+            }
+
+
             yield return null;
         }
 
