@@ -10,6 +10,7 @@ public class PlayerAnimator : MonoBehaviour
     private const string Jump = "Jump";
     private const string Fall = "Fall";
     private const string Kick = "Kick";
+    private const string LevelUp = "LevelUp";
 
     public void TriggerRun()
     {
@@ -39,6 +40,11 @@ public class PlayerAnimator : MonoBehaviour
     public void PlayKick()
     {
         _animator.Play(Kick);
+    }
+
+    public void PlayeLevelUp()
+    {
+        _animator.Play(LevelUp);
     }
 
     public void TriggerIdle()
