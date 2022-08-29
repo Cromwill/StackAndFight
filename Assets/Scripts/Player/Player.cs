@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMover _mover;
     [SerializeField] private PlayerAnimator _playerAnimator;
     [SerializeField] private PlayerCanvasHandler _canvasHandler;
+    [SerializeField] private PlayerEffectsHandler _effectsHandler;
     [SerializeField] private LevelSystem _levelSystem;
 
     private bool _isDead;
@@ -62,6 +63,16 @@ public class Player : MonoBehaviour
     public void KillBoss()
     {
         StartCoroutine(KillingBoss());
+    }
+
+    public void OnBuying(UpgradeType upgradeType)
+    {
+        _playerAnimator.PlayeLevelUp();
+
+        if (upgradeType == UpgradeType.StartLevel)
+            _effectsHandler.PlayLevelUp();
+        else
+            _effectsHandler.PlayMoneyUp();
     }
 
     private void Activate(Collider[] colliders)

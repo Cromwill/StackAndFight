@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PlayerEffectsHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private ParticleSystem _levelUpEffect;
+    [SerializeField] private ParticleSystem _moneyUpEffect;
+
+    public void PlayLevelUp()
     {
-        
+        _levelUpEffect.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayMoneyUp()
     {
-        
+        _moneyUpEffect.Play();
     }
 }

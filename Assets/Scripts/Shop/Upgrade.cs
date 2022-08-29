@@ -29,6 +29,7 @@ public abstract class Upgrade: MonoBehaviour
     public virtual void Buy()
     {
         CostHandler.Increase(_costPerBuy);
+        Player.OnBuying(_upgradeType);
     }
 
     protected abstract void OnInitilize();
