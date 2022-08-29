@@ -9,7 +9,7 @@ public class LevelSystem
     [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
 
     public ValueHandler AdditionalLevel { get; private set; } = new ValueHandler(3, 500, "PlayerLevel");
-    private int _startLevel = 3;
+    private int _startLevel = 2;
 
     public int Level { get; private set; } 
 
