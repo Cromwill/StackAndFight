@@ -31,6 +31,12 @@ public class Wall : Interactable
     {
         player.Mover.MoveBack();//доделать: возможно будем вызывать после анимации удара об стену
         _shakeAnimation.Trigger();
+
+        if (player.Mover.EnoughDistance)
+        {
+            foreach (var brick in _bricks)
+                brick.Shatter(transform.position);
+        }
     }
 
     public void Break(Player player)
