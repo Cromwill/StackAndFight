@@ -8,6 +8,7 @@ public class BossTrigger : Interactable
     {
         if(_boss.Level < player.LevelSystem.Level)
         {
+            player.CanvasHandler.Disable();
             player.KillBoss();
         }
     }

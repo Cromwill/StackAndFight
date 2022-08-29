@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 4210449633401716382}
   - component: {fileID: 4210449633401716383}
   - component: {fileID: 1246083214343667999}
+  - component: {fileID: 5281112067663005246}
   - component: {fileID: 4928269356479130360}
   - component: {fileID: 5159051204059987243}
   m_Layer: 0
@@ -232,6 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mover: {fileID: 4210449633401716383}
   _playerAnimator: {fileID: 1246083214343667999}
+  _canvasHandler: {fileID: 5281112067663005246}
   _levelSystem:
     _skinnedMeshRenderer: {fileID: 7659145750019033488}
 --- !u!114 &4210449633401716383
@@ -298,6 +300,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 2978598161079061929}
+--- !u!114 &5281112067663005246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4210449633401716377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ffe4eb68bcbb4468f1fcf775ebaff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelCanvas: {fileID: 4210449633803474108}
 --- !u!136 &4928269356479130360
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerMover _mover;
     [SerializeField] private PlayerAnimator _playerAnimator;
+    [SerializeField] private PlayerCanvasHandler _canvasHandler;
     [SerializeField] private LevelSystem _levelSystem;
 
     private bool _isDead;
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     public PlayerAnimator PlayerAnimator => _playerAnimator;
     public LevelSystem LevelSystem => _levelSystem;
     public PlayerMover Mover => _mover;
+    public PlayerCanvasHandler CanvasHandler => _canvasHandler;
     public bool IsDead => _isDead;
 
     public event Action CameraSwitched;
