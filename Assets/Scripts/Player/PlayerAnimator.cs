@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
@@ -49,5 +47,4 @@ public class PlayerAnimator : MonoBehaviour
         _animator.ResetTrigger(HeadRun);
         _animator.ResetTrigger(Run);
     }
-
 }
