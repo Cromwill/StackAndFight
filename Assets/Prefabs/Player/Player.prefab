@@ -781,7 +781,7 @@ PrefabInstance:
     - target: {fileID: -4477608946179850914, guid: 7edec98bc79d4664e8dda8a7233dc7e3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1c96258e2fb7fe24e951bcf2f1720131, type: 2}
+      objectReference: {fileID: 2100000, guid: 7315e0d7cf2191d42ab8dafc9eba39a4, type: 2}
     - target: {fileID: 919132149155446097, guid: 7edec98bc79d4664e8dda8a7233dc7e3, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -789,7 +789,7 @@ PrefabInstance:
     - target: {fileID: 1330337516203325864, guid: 7edec98bc79d4664e8dda8a7233dc7e3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 49accffa093fc5e4f83c4ddf57425244, type: 2}
+      objectReference: {fileID: 2100000, guid: cd0fe3906d6350047ae42e9fc5ea7577, type: 2}
     - target: {fileID: 1330337516203325864, guid: 7edec98bc79d4664e8dda8a7233dc7e3, type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 1
