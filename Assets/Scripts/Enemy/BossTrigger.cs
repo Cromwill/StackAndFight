@@ -3,6 +3,7 @@ using UnityEngine;
 public class BossTrigger : Interactable
 {
     [SerializeField] private Boss _boss;
+    [SerializeField] private WinEffectsActivator _winEffectsActivator;
 
     public override void Interact(Player player)
     {
@@ -10,6 +11,7 @@ public class BossTrigger : Interactable
         {
             player.CanvasHandler.Disable();
             player.KillBoss();
+            _winEffectsActivator.Activate();
         }
     }
 }
