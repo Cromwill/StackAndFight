@@ -1449,7 +1449,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 988f788189a27fa4f8f7c2e28ac025e3, type: 2}
+  - {fileID: 2100000, guid: 7e610a353166460498fc334f963f1673, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3648,7 +3648,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 988f788189a27fa4f8f7c2e28ac025e3, type: 2}
+  - {fileID: 2100000, guid: 7e610a353166460498fc334f963f1673, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12529,7 +12529,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 988f788189a27fa4f8f7c2e28ac025e3, type: 2}
+  - {fileID: 2100000, guid: 7e610a353166460498fc334f963f1673, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14402,7 +14402,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 988f788189a27fa4f8f7c2e28ac025e3, type: 2}
+  - {fileID: 2100000, guid: 7e610a353166460498fc334f963f1673, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14880,7 +14880,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 988f788189a27fa4f8f7c2e28ac025e3, type: 2}
+  - {fileID: 2100000, guid: 7e610a353166460498fc334f963f1673, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15329,7 +15329,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 988f788189a27fa4f8f7c2e28ac025e3, type: 2}
+  - {fileID: 2100000, guid: 7e610a353166460498fc334f963f1673, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21689,7 +21689,7 @@ PrefabInstance:
     - target: {fileID: 496190636521289469, guid: 887c942d4df85e749aee1efab3bbe4d3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 959e6b708e5d8d143b2ccff59fe36ab0, type: 2}
+      objectReference: {fileID: 2100000, guid: 1bd6a11279f8dba4b96ef120f4365e4f, type: 2}
     - target: {fileID: 496190636521289471, guid: 887c942d4df85e749aee1efab3bbe4d3, type: 3}
       propertyPath: m_Name
       value: FogPlane
