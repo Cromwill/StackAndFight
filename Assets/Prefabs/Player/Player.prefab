@@ -281,8 +281,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _jumpTime: 0.4
   _finishCollider: {fileID: 5159051204059987243}
+  _brickWall:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &1246083214343667999
 MonoBehaviour:
   m_ObjectHideFlags: 0

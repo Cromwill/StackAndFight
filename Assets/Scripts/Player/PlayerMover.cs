@@ -251,6 +251,9 @@ public class PlayerMover : MonoBehaviour
     private void CheckDistance(Vector3 direction)
     {
         if (Physics.Raycast(transform.position, direction, out RaycastHit raycastHit, 50, _brickWall))
+        {
+            Debug.Log(raycastHit.distance);
             EnoughDistance = raycastHit.distance > 1f;
+        }
     }
 }

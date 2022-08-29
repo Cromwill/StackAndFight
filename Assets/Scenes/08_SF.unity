@@ -32199,10 +32199,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4210449633401716383, guid: 1ff72a481913aa64da0384b495e0f6be, type: 3}
-      propertyPath: _brickWall.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
     - target: {fileID: 7331024411112903366, guid: 1ff72a481913aa64da0384b495e0f6be, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.539
