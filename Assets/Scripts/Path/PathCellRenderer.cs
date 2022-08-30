@@ -8,7 +8,7 @@ public class PathCellRenderer : MonoBehaviour
 
     public void Colorize()
     {
-        //_meshRenderer.material.color = _activatedColor;
-        _spriteRenderer.color = _activatedColor;
+        _meshRenderer.material.color = _activatedColor;
+        //_spriteRenderer.color = _activatedColor;
     }
 }

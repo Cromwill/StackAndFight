@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3539422495243627949, guid: 852d165922be04b4894ec3dc83ee38d4, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3862828861025539210, guid: 852d165922be04b4894ec3dc83ee38d4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3862828861025539211, guid: 852d165922be04b4894ec3dc83ee38d4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 636ced8604f05f84e88e3817ad5664b6, type: 2}
+    - target: {fileID: 3862828861025539213, guid: 852d165922be04b4894ec3dc83ee38d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3862828862564541154, guid: 852d165922be04b4894ec3dc83ee38d4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -55,11 +71,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PathPointCell
       objectReference: {fileID: 0}
+    - target: {fileID: 4642007146976784930, guid: 852d165922be04b4894ec3dc83ee38d4, type: 3}
+      propertyPath: _meshRenderer
+      value: 
+      objectReference: {fileID: 1597483998440968537}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 852d165922be04b4894ec3dc83ee38d4, type: 3}
 --- !u!1 &4140190066326635643 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3862828862564541158, guid: 852d165922be04b4894ec3dc83ee38d4, type: 3}
+  m_PrefabInstance: {fileID: 932085210953623197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1597483998440968537 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1928677209358792644, guid: 852d165922be04b4894ec3dc83ee38d4, type: 3}
   m_PrefabInstance: {fileID: 932085210953623197}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &8565451244005309212
@@ -71,7 +96,7 @@ BoxCollider:
   m_GameObject: {fileID: 4140190066326635643}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 1.5, z: 0}
