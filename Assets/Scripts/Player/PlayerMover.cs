@@ -120,7 +120,6 @@ public class PlayerMover : MonoBehaviour
     public void PushBack()
     {
         StartCoroutine(PushingBack());
-        print("push");
     }
 
     private IEnumerator Jumping(PathPoint pathPoint, float jumpTime)

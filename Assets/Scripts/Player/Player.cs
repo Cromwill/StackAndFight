@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
         _mover.PushBack();
         _playerAnimator.TriggerFall();
         _effectsHandler.PlayDeath();
+        _canvasHandler.Disable();
         DeathChecked?.Invoke(this);
     }
 
