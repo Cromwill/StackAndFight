@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4329208932990995781, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e438e6f872b98da47bb8931b6735c964, type: 3}
     - target: {fileID: 5649822470926987251, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
       propertyPath: m_Name
       value: LoseScreen
@@ -75,6 +79,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 55.75
       objectReference: {fileID: 0}
+    - target: {fileID: 8564800762746255360, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f50c81626b85524385f8a5c459d0f79, type: 3}
     - target: {fileID: 9222981959993015014, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7120565389105001693}
   - component: {fileID: 5695388421073492141}
   - component: {fileID: 535809101152657957}
-  - component: {fileID: 3728356449492631968}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -122,9 +121,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RestartButton, Assembly-CSharp
-        m_MethodName: OnButtonClicked
+      - m_Target: {fileID: 2778536381579514253}
+        m_TargetAssemblyTypeName: LevelsHandler, Assembly-CSharp
+        m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -134,18 +133,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3728356449492631968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511634021389372756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3b12efe519338c4a81eb620f38f10b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      - m_Target: {fileID: 2778536381579514253}
+        m_TargetAssemblyTypeName: LevelsHandler, Assembly-CSharp
+        m_MethodName: OnLevelFailed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4742910572943519938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,6 +1501,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68eec935ba99a00408bf033777e35818, type: 3}
+--- !u!224 &8288954948173276303 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 358776017673801924, guid: 68eec935ba99a00408bf033777e35818, type: 3}
+  m_PrefabInstance: {fileID: 8643226240502068299}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7215969325558927510 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1429520862267827421, guid: 68eec935ba99a00408bf033777e35818, type: 3}
@@ -1513,8 +1517,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6017e7ba10c104bb1c817cd87bbc54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &8288954948173276303 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 358776017673801924, guid: 68eec935ba99a00408bf033777e35818, type: 3}
-  m_PrefabInstance: {fileID: 8643226240502068299}
-  m_PrefabAsset: {fileID: 0}
