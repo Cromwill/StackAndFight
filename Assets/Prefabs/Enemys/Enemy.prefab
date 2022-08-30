@@ -1748,6 +1748,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2114290282809352179}
     m_Modifications:
+    - target: {fileID: 1987635536131265888, guid: 40584b69a9e3f48489b87466dd4cf8ad, type: 3}
+      propertyPath: m_fontSize
+      value: 42.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987635536131265888, guid: 40584b69a9e3f48489b87466dd4cf8ad, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 113481e24db8b2c4499d478f5aff6acb, type: 2}
+    - target: {fileID: 1987635536131265888, guid: 40584b69a9e3f48489b87466dd4cf8ad, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6564307676393061607, guid: 113481e24db8b2c4499d478f5aff6acb, type: 2}
     - target: {fileID: 2606288284973933444, guid: 40584b69a9e3f48489b87466dd4cf8ad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.65900004, g: 0.65900004, b: 0.65900004, a: 1}
+  m_Color: {r: 0.823, g: 0.823, b: 0.823, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshRenderer: {fileID: 3862828862564541156}
-  _activatedColor: {r: 0, g: 0.53511393, b: 0.93333334, a: 1}
+  _activatedColor: {r: 0.36900002, g: 0.72740823, b: 1, a: 1}
   _spriteRenderer: {fileID: 3862828861025539211}
 --- !u!114 &2636855904476012905
 MonoBehaviour:

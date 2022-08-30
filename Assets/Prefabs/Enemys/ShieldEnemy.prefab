@@ -55,6 +55,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shield
       objectReference: {fileID: 0}
+    - target: {fileID: 5792591744194671627, guid: 1329fe7187c860e46a2e5355a9fcdeab, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f0c485bae674624eabc066629a6435a, type: 2}
+    - target: {fileID: 5792591744194671627, guid: 1329fe7187c860e46a2e5355a9fcdeab, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 96c8dcfa3546fe44ebb7a9d7cc60ff36, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1329fe7187c860e46a2e5355a9fcdeab, type: 3}
 --- !u!114 &632108480917229459 stripped
