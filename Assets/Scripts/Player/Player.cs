@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     public void Fall()
     {
         _mover.DisableMovement();
+        _mover.PushBack();
         _playerAnimator.TriggerFall();
         _effectsHandler.PlayDeath();
         DeathChecked?.Invoke(this);

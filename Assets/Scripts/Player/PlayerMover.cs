@@ -28,14 +28,6 @@ public class PlayerMover : MonoBehaviour
 
     public event Action Moved;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        //if (collision.gameObject.TryGetComponent(out Obstacle _))
-        //{
-        //    StopMoving();
-        //}
-    }
-
     private void Awake()
     {
         _currentPathPoint = GetClosestPathPoint();
@@ -51,16 +43,6 @@ public class PlayerMover : MonoBehaviour
     {
         _canMove = false;
         StopMoving();
-    }
-
-    public void TryMove(Vector3 direction)
-    {
-        if(_coroutine != null)
-            StopCoroutine(_coroutine);
-
-        Rotate(direction);
-        _isMoving = true;
-        _coroutine = StartCoroutine(Moving(direction));
     }
 
     public void Move(SwipeDirection swipeDirection)
@@ -135,6 +117,12 @@ public class PlayerMover : MonoBehaviour
         _canMove = false;
     }
 
+    public void PushBack()
+    {
+        StartCoroutine(PushingBack());
+        print("push");
+    }
+
     private IEnumerator Jumping(PathPoint pathPoint, float jumpTime)
     {
         _isMoving = true;
@@ -185,6 +173,21 @@ public class PlayerMover : MonoBehaviour
         _animator.TriggerIdle();
     }
 
+    private IEnumerator PushingBack()
+    {
+        float speed = 3;
+        float timer = 0;
+        Vector3 targetPosition = transform.position - transform.forward * 3;
+
+        while (timer < 1f)
+        {
+            //transform.Translate(speed * Time.deltaTime * Vector3.back);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, timer/1f);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+    }
+
     public void StopMoving()
     {
         if(_coroutine != null)
@@ -219,27 +222,9 @@ public class PlayerMover : MonoBehaviour
 
                 pathPoint = tempPathPoint;
             }
-
-            
         }
 
         return pathPoint != null;
-    }
-
-    private void Rotate(Vector3 direction)
-    {
-        print(Quaternion.Euler(direction));
-    }
-
-    private IEnumerator Moving(Vector3 direction)
-    {
-        while(_isMoving)
-        {
-            _rigidbody.MovePosition(transform.position + _speed * Time.deltaTime * direction.normalized);
-            //transform.Translate(_speed * Time.deltaTime * direction); 
-
-            yield return null;
-        }
     }
 
     private PathPoint GetClosestPathPoint()
