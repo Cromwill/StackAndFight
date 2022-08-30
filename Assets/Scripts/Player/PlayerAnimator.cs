@@ -43,7 +43,7 @@ public class PlayerAnimator : MonoBehaviour
         _animator.Play(Kick);
     }
 
-    public void PlayeLevelUp()
+    public void PlayLevelUp()
     {
         _animator.Play(LevelUp);
     }

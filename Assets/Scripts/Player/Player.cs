@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     {
         _mover.DisableMovement();
         _playerAnimator.TriggerFall();
+        _effectsHandler.PlayDeath();
         DeathChecked?.Invoke(this);
     }
 
@@ -67,7 +68,7 @@ public class Player : MonoBehaviour
 
     public void OnBuying(UpgradeType upgradeType)
     {
-        _playerAnimator.PlayeLevelUp();
+        _playerAnimator.PlayLevelUp();
 
         if (upgradeType == UpgradeType.StartLevel)
             _effectsHandler.PlayLevelUp();
