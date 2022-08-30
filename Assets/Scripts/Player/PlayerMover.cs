@@ -46,10 +46,13 @@ public class PlayerMover : MonoBehaviour
         StopMoving();
     }
 
-    public void Move(SwipeDirection swipeDirection)
+    public void Move(SwipeDirection swipeDirection, bool isRetranslator = false)
     {
-        if (_isMoving || _canMove == false)
-            return;
+        if(isRetranslator == false)
+        {
+            if (_isMoving || _canMove == false)
+                return;
+        }
 
         Moved?.Invoke();
 
