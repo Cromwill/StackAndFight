@@ -14,19 +14,27 @@ public class AttackZone : Interactable
             _enemy.Rotation.Disable();
             _isKicked = true;
             _enemy.EnemyAnimator.TriggerKick();
-            StartCoroutine(Delay(player, _enemy));
+
+            player.Mover.StopMoving();
+
+            if (_enemy is Enemy)
+                player.Die();
+            else
+                player.Fall();
+
+           // StartCoroutine(Delay(player, _enemy));
         }
     }
 
-    private IEnumerator Delay(Player player, Enemy enemy)
-    {
-        yield return new WaitForSeconds(0.025f);
+    //private IEnumerator Delay(Player player, Enemy enemy)
+    //{
+    //    yield return new WaitForSeconds(0.025f);
 
-        player.Mover.StopMoving();
+    //    player.Mover.StopMoving();
 
-        if (enemy is Enemy)
-            player.Die();
-        else
-            player.Fall();
-    }
+    //    if (enemy is Enemy)
+    //        player.Die();
+    //    else
+    //        player.Fall();
+    //}
 }
