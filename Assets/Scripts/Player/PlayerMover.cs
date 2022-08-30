@@ -11,6 +11,7 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private BoxCollider _finishCollider;
     [SerializeField] private LayerMask _brickWall;
     [SerializeField] private LayerMask _moveLayer;
+    [SerializeField] private DecalSpawner _decalSpawner;
 
     private bool _canMove = true;
     private bool _isMoving;
@@ -162,7 +163,6 @@ public class PlayerMover : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
             }
 
-
             yield return null;
         }
 
@@ -170,6 +170,7 @@ public class PlayerMover : MonoBehaviour
         EnoughDistance = false;
         IsMovingBack = false;
         _animator.TriggerIdle();
+        _decalSpawner.Spawn();
     }
 
     private IEnumerator PushingBack()
