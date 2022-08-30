@@ -23,22 +23,16 @@ public class Enemy : MonoBehaviour
     public EnemyAnimator EnemyAnimator => _animator;
     public RagdollHandler RagdollHandler => _ragdollHandler;
     public EnemyRotation Rotation => _rotation;
-    public int Level => _level;
+    public int Level { get; private set; }
 
     public event Action<Enemy> Died;
-
-    private void Start()
-    {
-        _player = FindObjectOfType<Player>();
-        _rotation.Init(_player);
-    }
 
     private void Update()
     {
         if (_isDead)
             return;
 
-        if (_player.LevelSystem.Level < _level)
+        if (_player.LevelSystem.Level < Level)
         {
             //_enemyRender.SetDefaultd();
             _animator.SetAggresive();
@@ -54,9 +48,21 @@ public class Enemy : MonoBehaviour
     {
         if(other.TryGetComponent(out Player player))
         {
-            if (player.LevelSystem.Level >= _level)
+            if (player.LevelSystem.Level >= Level)
                 player.PushEnemy(this);
         }
+    }
+
+    public void Init(Player player, int additonalLevels)
+    {
+        _player = player;
+        _rotation.Init(_player);
+
+        if (this is Boss)
+            _level = 0;
+
+        Level = _level + (int)_player.LevelSystem.AdditionalLevel.Value - 2 + additonalLevels;
+        Level = Mathf.Clamp(Level, 1, 1000);
     }
 
     public void Push(Vector3 direction)

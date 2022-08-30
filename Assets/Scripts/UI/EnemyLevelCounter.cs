@@ -6,8 +6,8 @@ public class EnemyLevelCounter : MonoBehaviour
     [SerializeField] private Enemy _enemy;
     [SerializeField] private TMP_Text _level;
 
-    private void Start()
+    private void Update()
     {
-        _level.text = _enemy.Level.ToString();
+        _level.text = $"{_enemy.Level}";
     }
 }

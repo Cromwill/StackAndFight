@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boss: {fileID: 4915496792351660056}
+  _winEffectsActivator: {fileID: 0}
 --- !u!114 &4915496792351660056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d7a1c8f2eb05e4680d8a1a0070046f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _level: 8
+  _level: 0
   _ragdollHandler: {fileID: 7815691101619826881}
   _collider: {fileID: 1171928476675904456}
   _levelCounter: {fileID: 6982992860826659872}
