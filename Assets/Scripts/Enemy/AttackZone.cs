@@ -17,12 +17,12 @@ public class AttackZone : Interactable
 
             player.Mover.StopMoving();
 
-            if (_enemy is Enemy)
-                player.Die();
-            else
+            if (_enemy is Boss)    
                 player.Fall();
+            else
+                player.Die();
 
-           // StartCoroutine(Delay(player, _enemy));
+            // StartCoroutine(Delay(player, _enemy));
         }
     }
 

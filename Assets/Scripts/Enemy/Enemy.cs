@@ -1,5 +1,7 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
+using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
@@ -76,11 +78,31 @@ public class Enemy : MonoBehaviour
         RagdollHandler.Chest.Push(direction);
         _rotation.Disable();
         Died?.Invoke(this);
+        StartCoroutine(GoingDown());
     }
 
     public void Die()
     {
         Died?.Invoke(this);
         gameObject.SetActive(false);
+
+    }
+
+    private IEnumerator GoingDown()
+    {
+        float elapsedTime = 0;
+
+        yield return new WaitForSeconds(5f);
+
+        GetComponent<Collider>().enabled = false;
+        _ragdollHandler.DeactivateRagdoll();
+
+        while (elapsedTime < 5)
+        {
+            transform.position += Vector3.down * Time.deltaTime * 5f;
+            elapsedTime += Time.deltaTime;
+
+            yield return null;
+        }
     }
 }

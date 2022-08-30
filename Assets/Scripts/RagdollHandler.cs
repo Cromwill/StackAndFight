@@ -34,6 +34,11 @@ public class RagdollHandler : MonoBehaviour
         ChangeRagdollState(false);
     }
 
+    public void DeactivateRagdoll()
+    {
+        ChangeRagdollState(true);
+    }
+
     private void ChangeRagdollState(bool isDisabled)
     {
         foreach (var rigidbody in _rigidbodies)
