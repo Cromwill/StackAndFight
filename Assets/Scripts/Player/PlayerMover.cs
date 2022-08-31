@@ -53,6 +53,7 @@ public class PlayerMover : MonoBehaviour
             if (_isMoving || _canMove == false)
                 return;
         }
+
         StopMoving();
 
         Moved?.Invoke();
@@ -152,13 +153,24 @@ public class PlayerMover : MonoBehaviour
     {
         _isMoving = true;
         float distance = Vector3.Distance(targetPosition, transform.position);
+        Vector3 nextPosition;
 
         while (distance > _minDistance)
         {
             if (swipeDirection != SwipeDirection.None && TryGetPathPoint(swipeDirection, out PathPoint pathPoint))
                 targetPosition = pathPoint.Position;
 
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
+            nextPosition = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
+
+            if(swipeDirection == SwipeDirection.Left || swipeDirection == SwipeDirection.Right)
+                transform.position = new Vector3(nextPosition.x, nextPosition.y, Mathf.RoundToInt(nextPosition.z));
+
+            if (swipeDirection == SwipeDirection.Forward || swipeDirection == SwipeDirection.Back)
+                transform.position = new Vector3(Mathf.RoundToInt(nextPosition.x), nextPosition.y, nextPosition.z);
+
+            if (swipeDirection == SwipeDirection.None)
+                transform.position = nextPosition;
+
             distance = Vector3.Distance(targetPosition, transform.position);
 
             if (swipeDirection != SwipeDirection.None)
