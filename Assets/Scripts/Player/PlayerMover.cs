@@ -53,6 +53,7 @@ public class PlayerMover : MonoBehaviour
             if (_isMoving || _canMove == false)
                 return;
         }
+        StopMoving();
 
         Moved?.Invoke();
 
@@ -62,10 +63,10 @@ public class PlayerMover : MonoBehaviour
             CheckDistance(direction);
             _previousPathPoint = _currentPathPoint;
             _currentPathPoint = pathPoint;
+            transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
             _coroutine =  StartCoroutine(MovingTo(pathPoint.Position, swipeDirection));
 
             _animator.TriggerHeadRun();
-            transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
         }
     }
 
@@ -189,6 +190,8 @@ public class PlayerMover : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
+
+        _rigidbody.isKinematic = false;
     }
 
     public void StopMoving()
