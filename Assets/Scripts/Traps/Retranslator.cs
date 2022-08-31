@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class Retranslator : Interactable
+public class Retranslator : MonoBehaviour
 {
     [SerializeField] private SwipeDirection _direction;
 
-    public override void Interact(Player player)
+    private void OnTriggerEnter(Collider other)
     {
-        player.Mover.Move(_direction, true);
-        transform.DOShakeScale(1f);
+        if(other.TryGetComponent(out Player player) && other.isTrigger)
+        {
+            player.Mover.Move(_direction, true);
+            transform.DOShakeScale(1f);
+        }
     }
 }

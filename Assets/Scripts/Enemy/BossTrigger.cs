@@ -12,6 +12,7 @@ public class BossTrigger : Interactable
             player.CanvasHandler.Disable();
             player.KillBoss();
             _winEffectsActivator.Activate();
+            print("boss");
         }
     }
 }

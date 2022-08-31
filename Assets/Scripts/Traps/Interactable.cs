@@ -6,7 +6,7 @@ public abstract class Interactable : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Player player) && other.isTrigger)
+        if (other.TryGetComponent(out Player player))
             Interact(player);
     }
 
