@@ -52,8 +52,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8261087, y: 1, z: 1}
-  m_Center: {x: 0.41305444, y: 0, z: 1.2355661e-15}
+  m_Size: {x: 0.85, y: 1.6, z: 2.5}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &740374791366026862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,6 +70,8 @@ MonoBehaviour:
   _wallLevelUI: {fileID: 2246675343475601376}
   _cameraImpulseGenerator: {fileID: 8637486777046088118}
   _hitEffect: {fileID: 1985186959482864952}
+  _currencyPrefab: {fileID: 2020007771474549319, guid: c35eebcfc5652f844ac49caa6bf27439, type: 3}
+  _boxCollider: {fileID: 740374791366026849}
 --- !u!114 &8637486777046088118
 MonoBehaviour:
   m_ObjectHideFlags: 0
