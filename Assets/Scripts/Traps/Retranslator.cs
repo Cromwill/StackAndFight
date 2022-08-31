@@ -12,7 +12,7 @@ public class Retranslator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out Player player) && other.isTrigger && _isChecking == false)
+        if(other.TryGetComponent(out Player player) && other.isTrigger)
         {
             //StartCoroutine(CheckingPlayerPosition(player));
             player.Mover.StopMoving();
