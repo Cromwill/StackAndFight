@@ -6,6 +6,7 @@ using DG.Tweening;
 public class Retranslator : MonoBehaviour
 {
     [SerializeField] private SwipeDirection _direction;
+    [SerializeField] private ArrowRender _arrowRender;
 
     private bool _isChecking;
 
@@ -16,7 +17,7 @@ public class Retranslator : MonoBehaviour
             //StartCoroutine(CheckingPlayerPosition(player));
             player.Mover.StopMoving();
             player.Mover.Move(_direction, true);
-            transform.DOShakeScale(1f);
+            _arrowRender.Shake();
         }
     }
 
@@ -38,7 +39,7 @@ public class Retranslator : MonoBehaviour
 
         player.Mover.StopMoving();
         player.Mover.Move(_direction, true);
-        transform.DOShakeScale(1f);
+        //transform.DOShakeScale(1f);
         _isChecking = false;
     }
 }
