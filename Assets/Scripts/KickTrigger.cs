@@ -13,7 +13,7 @@ public class KickTrigger : Interactable
         if (boss.Level >= player.LevelSystem.Level)
             return;
 
-        player.Mover.DecreaseSpeed();
+        player.Mover.DecreaseSpeed(2f);
         Time.timeScale = 0.5f;
         player.PlayerAnimator.PlayKick();
     }

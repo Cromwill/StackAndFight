@@ -214,9 +214,14 @@ public class PlayerMover : MonoBehaviour
         _isMoving = false;
     }
 
-    public void DecreaseSpeed()
+    public void DecreaseSpeed(float value)
     {
-        _speed /= 2;
+        _speed /= value;
+    }
+
+    public void IncreaseSpeed(float value)
+    {
+        _speed *= value;
     }
 
     public bool TryGetPathPoint(SwipeDirection swipeDirection, out PathPoint pathPoint)
