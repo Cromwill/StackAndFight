@@ -21,7 +21,8 @@ public class Finish : MonoBehaviour
         foreach (var finishWall in _finishWalls)
         {
             currentLevel += _levelStep;
-            finishWall.Init(currentLevel);
+            int value = currentLevel - (currentLevel % 10);
+            finishWall.Init(value);
         }
     }
 }

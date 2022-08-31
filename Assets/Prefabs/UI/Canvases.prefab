@@ -1147,6 +1147,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoseScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 728569503251907171, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025675489650640748, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
+      propertyPath: _walletView
+      value: 
+      objectReference: {fileID: 9138213683845131003}
     - target: {fileID: 4290462296937076598, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
