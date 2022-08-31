@@ -831,9 +831,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2778536381579514253}
+    - target: {fileID: 5354705105921747708, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: _walletView
+      value: 
+      objectReference: {fileID: 9138213683845131003}
     - target: {fileID: 5649822470926987251, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
       propertyPath: m_Name
       value: WinScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649822470926987251, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9222981959993015014, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
       propertyPath: m_Pivot.x
@@ -1112,6 +1120,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8e7498665bc8334a828572ae3660ec7, type: 3}
+--- !u!114 &9138213683845131003 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7468070941110055427, guid: b8e7498665bc8334a828572ae3660ec7, type: 3}
+  m_PrefabInstance: {fileID: 1833701831884921080}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f88e29d79e9694abc6e5dcd9d07fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5716404476821158602 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6207686023436788274, guid: b8e7498665bc8334a828572ae3660ec7, type: 3}
