@@ -11,6 +11,7 @@ public class Retranslator : MonoBehaviour
     {
         if(other.TryGetComponent(out Player player) && other.isTrigger)
         {
+            player.Mover.StopMoving();
             player.Mover.Move(_direction, true);
             transform.DOShakeScale(1f);
         }
