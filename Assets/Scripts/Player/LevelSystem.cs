@@ -6,8 +6,6 @@ using UnityEngine;
 [System.Serializable]
 public class LevelSystem
 {
-    [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
-
     public ValueHandler AdditionalLevel { get; private set; } = new ValueHandler(2, 500, "PlayerLevel");
 
     public int Level { get; private set; } 
@@ -23,7 +21,6 @@ public class LevelSystem
     public void IncreaseLevel(int value)
     {
         Level += value;
-        _skinnedMeshRenderer.SetBlendShapeWeight(0, Mathf.Clamp(Level, 0 ,100));
 
         LevelChanged?.Invoke(Level);
     }
