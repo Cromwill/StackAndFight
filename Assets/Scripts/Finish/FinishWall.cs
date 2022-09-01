@@ -10,6 +10,7 @@ public class FinishWall : Interactable
     [SerializeField] private ParticleSystem _hitEffect;
     [SerializeField] private Currency _currencyPrefab;
     [SerializeField] private BoxCollider _boxCollider;
+    [SerializeField] private Transform _exlodePoint;
 
     private Brick[] _bricks;
     private List<Currency> _currencies = new List<Currency>();
@@ -63,7 +64,7 @@ public class FinishWall : Interactable
         foreach (var brick in _bricks)
         {
             brick.Break();
-            brick.Explode(player.transform.position, 10f);
+            brick.Explode(_exlodePoint.position, 15f);
         }
 
         if (_enableSlowMotion)

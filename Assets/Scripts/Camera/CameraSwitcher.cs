@@ -8,7 +8,19 @@ public class CameraSwitcher : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera _camera;
     [SerializeField] private CinemachineVirtualCamera _camera2;
 
-    private void OnEnable() => _player.CameraSwitched += ChangeCamera;
+    private void Start()
+    {
+        _player = FindObjectOfType<Player>();
+        _camera = FindObjectOfType<CameraLockX>().GetComponent<CinemachineVirtualCamera>();
+        _player.CameraSwitched += ChangeCamera;
+    }
+
+    private void OnEnable()
+    {
+        if(_player != null)
+            _player.CameraSwitched += ChangeCamera;
+
+    }
 
     private void OnDisable() => _player.CameraSwitched -= ChangeCamera;
 

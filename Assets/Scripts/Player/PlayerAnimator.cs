@@ -20,6 +20,7 @@ public class PlayerAnimator : MonoBehaviour
     public void TriggerHeadRun()
     {
         _animator.SetTrigger(HeadRun);
+        _animator.ResetTrigger("Stop");
         _animator.ResetTrigger(Idle);
     }
 
@@ -38,6 +39,11 @@ public class PlayerAnimator : MonoBehaviour
         _animator.SetTrigger(Fall);
     }
 
+    public void TriggerStop()
+    {
+        _animator.SetTrigger("Stop");
+    }
+
     public void PlayKick()
     {
         _animator.Play(Kick);
@@ -50,6 +56,7 @@ public class PlayerAnimator : MonoBehaviour
 
     public void TriggerIdle()
     {
+        //_animator.ResetTrigger("Stop");
         _animator.SetTrigger(Idle);
         _animator.ResetTrigger(HeadRun);
         _animator.ResetTrigger(Run);

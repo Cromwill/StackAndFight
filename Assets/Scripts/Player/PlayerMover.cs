@@ -13,6 +13,7 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private LayerMask _moveLayer;
     [SerializeField] private DecalSpawner _decalSpawner;
     [SerializeField] private ParticleSystem _runField;
+    [SerializeField] private ParticleSystem _landParticles;
 
     private bool _canMove = true;
     private bool _isMoving;
@@ -140,26 +141,36 @@ public class PlayerMover : MonoBehaviour
     {
         _animator.JumpAnimation();
         Vector3 initialPosition = transform.position;
-        transform.position = transform.position + Vector3.up * 5f;
-        StartCoroutine(AnimatingMove(initialPosition, 0.2f, true));
+        transform.position = transform.position + Vector3.up * 10f;
+        StartCoroutine(AnimatingMove(initialPosition, 0.3f, true, OnLanding));
     }
 
-    private IEnumerator AnimatingMove(Vector3 targetPosition, float duration, bool isKinematic = false)
+    private IEnumerator AnimatingMove(Vector3 targetPosition, float duration, bool isKinematic = false, Action endAction = null)
     {
         float elapsedTime = 0;
         Vector3 startPosition = transform.position;
-        _runField.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        _runField.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        _canMove = false;
 
         while (elapsedTime < duration)
         {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
+
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / duration);
 
             yield return null;
         }
 
         _rigidbody.isKinematic = isKinematic;
+        endAction?.Invoke();
+        _canMove = true;
+    }
+
+    private void OnLanding()
+    {
+        _landParticles.Play();
         _animator.DisableJump();
+        FindObjectOfType<CameraImpulseGenerator>().ShakeCamera();
     }
 
     private IEnumerator Jumping(PathPoint pathPoint, float jumpTime)
@@ -220,6 +231,7 @@ public class PlayerMover : MonoBehaviour
         _isMoving = false;
         EnoughDistance = false;
         IsMovingBack = false;
+        //_animator.TriggerStop();
         _animator.TriggerIdle();
         _decalSpawner.Spawn();
         _runField.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
@@ -227,13 +239,11 @@ public class PlayerMover : MonoBehaviour
 
     private IEnumerator PushingBack()
     {
-        float speed = 3;
         float timer = 0;
         Vector3 targetPosition = transform.position - transform.forward * 3;
 
         while (timer < 1f)
         {
-            //transform.Translate(speed * Time.deltaTime * Vector3.back);
             transform.position = Vector3.Lerp(transform.position, targetPosition, timer/1f);
             timer += Time.deltaTime;
             yield return null;
@@ -248,6 +258,7 @@ public class PlayerMover : MonoBehaviour
             StopCoroutine(_coroutine);
 
         _isMoving = false;
+        _runField.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
     public void DecreaseSpeed(float value)
