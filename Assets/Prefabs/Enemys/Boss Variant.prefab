@@ -79,6 +79,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2114290282809352182, guid: b21bc96107552e946807c0b0e2e27052, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2114290282809352183, guid: b21bc96107552e946807c0b0e2e27052, type: 3}
       propertyPath: m_Name
       value: Boss Variant

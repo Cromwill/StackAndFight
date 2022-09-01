@@ -5823,7 +5823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1878837724472297135, guid: 670cd73ad362e2b48a54e85d65d24f10, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.000004
+      value: 32.000004
       objectReference: {fileID: 0}
     - target: {fileID: 1878837724472297135, guid: 670cd73ad362e2b48a54e85d65d24f10, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5831,7 +5831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1878837724472297135, guid: 670cd73ad362e2b48a54e85d65d24f10, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.800007
+      value: 6.800005
       objectReference: {fileID: 0}
     - target: {fileID: 1878837724472297135, guid: 670cd73ad362e2b48a54e85d65d24f10, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8858,6 +8858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KickTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 3753787737408825592, guid: c9adabe4a1098da41a1226878f4a43ee, type: 3}
+      propertyPath: _boss
+      value: 
+      objectReference: {fileID: 1119120802906273223}
     - target: {fileID: 3753787737408825592, guid: c9adabe4a1098da41a1226878f4a43ee, type: 3}
       propertyPath: _cameraSwitcher
       value: 

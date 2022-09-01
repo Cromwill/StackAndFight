@@ -12,6 +12,7 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private LayerMask _brickWall;
     [SerializeField] private LayerMask _moveLayer;
     [SerializeField] private DecalSpawner _decalSpawner;
+    [SerializeField] private ParticleSystem _runField;
 
     private bool _canMove = true;
     private bool _isMoving;
@@ -38,6 +39,7 @@ public class PlayerMover : MonoBehaviour
     {
         _animator = playerAnimator;
         _jumpAttack = new JumpAttack(levelSystem);
+        Appear();
     }
 
     public void DisableMovement()
@@ -128,6 +130,38 @@ public class PlayerMover : MonoBehaviour
         StartCoroutine(PushingBack());
     }
 
+    public void Kick(Vector3 targetPosition)
+    {
+        StopMoving();
+        StartCoroutine(AnimatingMove(targetPosition,1f));
+    }
+
+    private void Appear()
+    {
+        _animator.JumpAnimation();
+        Vector3 initialPosition = transform.position;
+        transform.position = transform.position + Vector3.up * 5f;
+        StartCoroutine(AnimatingMove(initialPosition, 0.2f, true));
+    }
+
+    private IEnumerator AnimatingMove(Vector3 targetPosition, float duration, bool isKinematic = false)
+    {
+        float elapsedTime = 0;
+        Vector3 startPosition = transform.position;
+        _runField.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+
+        while (elapsedTime < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+
+            yield return null;
+        }
+
+        _rigidbody.isKinematic = isKinematic;
+        _animator.DisableJump();
+    }
+
     private IEnumerator Jumping(PathPoint pathPoint, float jumpTime)
     {
         _isMoving = true;
@@ -154,6 +188,7 @@ public class PlayerMover : MonoBehaviour
         _isMoving = true;
         float distance = Vector3.Distance(targetPosition, transform.position);
         Vector3 nextPosition;
+        _runField.Play();
 
         while (distance > _minDistance)
         {
@@ -187,6 +222,7 @@ public class PlayerMover : MonoBehaviour
         IsMovingBack = false;
         _animator.TriggerIdle();
         _decalSpawner.Spawn();
+        _runField.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
     private IEnumerator PushingBack()
