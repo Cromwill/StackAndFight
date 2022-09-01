@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshRenderer: {fileID: 1928677209358792644}
-  _activatedColor: {r: 0.06898499, g: 0.31881958, b: 0.511, a: 1}
+  _activatedColor: {r: 0.26517445, g: 0.42910346, b: 0.5566038, a: 1}
   _spriteRenderer: {fileID: 3862828861025539211}
 --- !u!114 &2636855904476012905
 MonoBehaviour:
