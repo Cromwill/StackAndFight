@@ -35,6 +35,7 @@ public class FinishWall : Interactable
         _wallLevelUI.UpdateUI(level);
         _currencyReward = level / 10;
         _currencyReward = Mathf.Clamp(_currencyReward, 1, 1000);
+        SpawnCurrency();
     }
 
     public override void Interact(Player player)
@@ -44,14 +45,20 @@ public class FinishWall : Interactable
         if(WallLevel < player.LevelSystem.Level)
             Break(player);
         else
-            player.Fall();
+            player.Die();
     }
 
     private void Break(Player player)
     {
         _hitEffect.Play();
         player.Wallet.Increase(_currencyReward);
-        SpawnCurrency();
+
+        foreach (var currency in _currencies)
+        {
+              currency.Rigidbody.isKinematic = false;
+              currency.Rigidbody.AddForce(Vector3.forward * 10, ForceMode.VelocityChange);
+              currency.Rigidbody.AddTorque(RandomPointInBounds(_boxCollider.bounds).normalized * 180);
+        }
 
         foreach (var brick in _bricks)
         {
@@ -70,15 +77,7 @@ public class FinishWall : Interactable
             var currency = Instantiate(_currencyPrefab, transform);
             _currencies.Add(currency);
 
-            currency.transform.position = RandomPointInBounds(_boxCollider.bounds);
-            currency.transform.rotation = Random.rotation;
-
-            if (currency.TryGetComponent(out Rigidbody rigidbody))
-            {
-                rigidbody.isKinematic = false;
-                rigidbody.AddForce(Vector3.forward*10, ForceMode.VelocityChange);
-                rigidbody.AddTorque(RandomPointInBounds(_boxCollider.bounds).normalized * 180);
-            }
+            currency.transform.position = RandomPointInBounds(new Bounds(transform.position, new Vector3(2f, 1.6f,0.5f)));
         }
     }
 

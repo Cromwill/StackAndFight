@@ -7,8 +7,14 @@ public class FinishTrigger : Interactable
     [SerializeField] private PathPoint _finalPathPoint;
     [SerializeField] private CinemachineVirtualCamera _wallsCamera;
 
+    private bool _interacted;
+
     public override void Interact(Player player)
     {
+        if (_interacted)
+            return;
+
+        _interacted = true;
         player.Mover.MoveToFinish(_finalPathPoint);
         player.Mover.EnableFinishCollider();
         player.Mover.Disable();

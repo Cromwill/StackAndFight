@@ -12,6 +12,7 @@ public class Finish : MonoBehaviour
 
     private void Start()
     {
+        _levelStep = 20;
         _enemyInitializer.Init();
 
         _finishWalls = GetComponentsInChildren<FinishWall>();
@@ -22,6 +23,7 @@ public class Finish : MonoBehaviour
         {
             currentLevel += _levelStep;
             int value = currentLevel - (currentLevel % 10);
+            value = Mathf.Clamp(value, 5, 1000);
             finishWall.Init(value);
         }
     }

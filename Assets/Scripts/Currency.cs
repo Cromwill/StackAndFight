@@ -2,10 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Currency : Interactable
 {
     [SerializeField] private ParticleSystem _particleSystem;
     [SerializeField] private bool _isDecorative;
+
+    public Rigidbody Rigidbody { get; private set; }
+
+    private void Awake()
+    {
+        Rigidbody = GetComponent<Rigidbody>();
+    }
 
     public override void Interact(Player player)
     {
