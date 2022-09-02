@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class Enemy : MonoBehaviour
 
     private Player _player;
     private bool _isDead;
+    private string _id;
+    private int _savedLoop;
+    private string _loopSaveWord;
 
     public int Cost { get; private set; } = 5;
     public EnemyAnimator EnemyAnimator => _animator;
@@ -53,16 +57,17 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Init(Player player, int additonalLevels)
+    public void Init(Player player, int additonalLevels, int index)
     {
+        _id = $"{index}{SceneManager.GetActiveScene().name}";
+        _loopSaveWord = $"{_id}loop";
         _player = player;
         _rotation.Init(_player);
 
         if (this is Boss)
             _level = 0;
 
-        Level = _level + (int)_player.LevelSystem.AdditionalLevel.Value - 2 + additonalLevels;
-        Level = Mathf.Clamp(Level, 1, 1000);
+        Level = LoadLevel(additonalLevels);
     }
 
     public void Push(Vector3 direction)
@@ -110,5 +115,21 @@ public class Enemy : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    private int LoadLevel(float additonalLevels)
+    {
+        _savedLoop = SaveSystem.LoadLevelLoop();
+
+        if (PlayerPrefs.HasKey(_id) && PlayerPrefs.HasKey(_loopSaveWord) && _savedLoop == PlayerPrefs.GetInt(_loopSaveWord))
+            return PlayerPrefs.GetInt(_id);
+
+        int level = (int)(_level + (int)_player.LevelSystem.AdditionalLevel.Value - 2 + additonalLevels);
+        level = Mathf.Clamp(level, 1, 1000);
+
+        PlayerPrefs.SetInt(_id, level);
+        PlayerPrefs.SetInt(_loopSaveWord, _savedLoop);
+
+        return level;
     }
 }

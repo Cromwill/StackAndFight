@@ -41,6 +41,7 @@ public class PlayerAnimator : MonoBehaviour
 
     public void TriggerStop()
     {
+        _animator.ResetTrigger(Run);
         _animator.SetTrigger("Stop");
     }
 
