@@ -20,7 +20,7 @@ public class FinishTrigger : Interactable
         player.Mover.Disable();
         _wallsCamera.transform.SetParent(player.transform);
         _wallsCamera.m_LookAt = player.transform;
-        _wallsCamera.Priority = 2;
+        //_wallsCamera.Priority = 2;
         //Time.timeScale = 0.5f;
     }
 }
