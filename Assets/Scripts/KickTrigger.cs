@@ -9,6 +9,7 @@ public class KickTrigger : Interactable
     {
         _cameraSwitcher.ChangeCamera();
         player.Mover.DisableFinishCollider();
+        player.CanvasHandler.Disable();
 
         if (_boss.Level >= player.LevelSystem.Level)
             return;
