@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _upgradeType: 0
-  _sprite: {fileID: 21300000, guid: 53809af60015f8347a709583adc702a0, type: 3}
+  _sprite: {fileID: 21300000, guid: 93a28bf636265194fb0bd3694ffc42a4, type: 3}
   _startCost: 10
   _costPerBuy: 30
   _lvlPerUpgrade: 1
