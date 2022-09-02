@@ -5158,11 +5158,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2931851912980598165, guid: 4cd04e80960b1af42886f1cbb4597c38, type: 3}
   m_PrefabInstance: {fileID: 364101893}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &406184271 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4210449633401716381, guid: 1ff72a481913aa64da0384b495e0f6be, type: 3}
-  m_PrefabInstance: {fileID: 4210449633117076065}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &411569581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26921,7 +26916,7 @@ PrefabInstance:
     - target: {fileID: 1291548102169863960, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 406184271}
+      objectReference: {fileID: 0}
     - target: {fileID: 1291548102169863962, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -26970,6 +26965,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM vcam1(Player)
       objectReference: {fileID: 0}
+    - target: {fileID: 3588754682635329106, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 285787391}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
 --- !u!1001 &1714784713977342408

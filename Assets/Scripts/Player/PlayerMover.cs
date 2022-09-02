@@ -141,7 +141,7 @@ public class PlayerMover : MonoBehaviour
     {
         _animator.JumpAnimation();
         Vector3 initialPosition = transform.position;
-        transform.position = transform.position + Vector3.up * 10f;
+        transform.position = transform.position + Vector3.up * 20f;
         StartCoroutine(AnimatingMove(initialPosition, 0.3f, true, OnLanding));
     }
 
