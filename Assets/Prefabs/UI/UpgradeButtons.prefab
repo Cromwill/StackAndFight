@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _upgradeType: 0
-  _sprite: {fileID: 21300000, guid: 91c5e3fd86c4d5845bd73a8506458442, type: 3}
+  _sprite: {fileID: 21300000, guid: 53809af60015f8347a709583adc702a0, type: 3}
   _startCost: 10
   _costPerBuy: 30
   _lvlPerUpgrade: 1
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _upgradeType: 1
-  _sprite: {fileID: 21300000, guid: a6a3f9b5bd7477449a8dbbbdc371f8be, type: 3}
+  _sprite: {fileID: 21300000, guid: f2cd433a891876349a9aa0aaf058399f, type: 3}
   _startCost: 10
   _costPerBuy: 50
   _multiplierPerUpgrade: 0.5
@@ -154,7 +154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
       propertyPath: m_AnchorMin.x
@@ -162,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
       propertyPath: m_SizeDelta.x
@@ -202,11 +202,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -175.921
       objectReference: {fileID: 0}
     - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -223,6 +223,10 @@ PrefabInstance:
     - target: {fileID: 4627048084541415667, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
       propertyPath: m_Name
       value: UpgradeButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627048084541415667, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}

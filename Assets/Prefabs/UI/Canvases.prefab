@@ -1368,26 +1368,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8068548157551557984}
     m_Modifications:
-    - target: {fileID: 1416275835257326650, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002187863620860223, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002187863620860223, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002187863620860223, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 8002187863620860223, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -175.921
-      objectReference: {fileID: 0}
     - target: {fileID: 8068516571834083849, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
       propertyPath: m_Name
       value: UpgradeButtons
