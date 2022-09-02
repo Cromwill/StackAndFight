@@ -223,6 +223,7 @@ public class PlayerMover : MonoBehaviour
             {
                 PathData.DirectionPairs.TryGetValue(swipeDirection, out Vector3 direction);
                 transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+
             }
 
             yield return null;
@@ -233,7 +234,7 @@ public class PlayerMover : MonoBehaviour
         IsMovingBack = false;
         //_animator.TriggerStop();
         _animator.TriggerIdle();
-        _decalSpawner.Spawn();
+        _decalSpawner.Spawn(swipeDirection);
         _runField.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
