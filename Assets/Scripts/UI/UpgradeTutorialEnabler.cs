@@ -5,6 +5,7 @@ using UnityEngine;
 public class UpgradeTutorialEnabler : MonoBehaviour
 {
     [SerializeField] private Canvas _canvas;
+    [SerializeField] private Canvas _blacScreen;
     [SerializeField] private float _delay;
 
     private void Start()
@@ -17,5 +18,6 @@ public class UpgradeTutorialEnabler : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
        _canvas.gameObject.SetActive(true);
+        _blacScreen.gameObject.SetActive(true);
     }
 }
