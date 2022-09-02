@@ -6879,11 +6879,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4655023145761158413, guid: 6f7f72779bdeb084d8019953cb7e73fc, type: 3}
   m_PrefabInstance: {fileID: 404437928}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &406184271 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4210449633401716381, guid: 1ff72a481913aa64da0384b495e0f6be, type: 3}
-  m_PrefabInstance: {fileID: 4210449633117076065}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &411947279
 GameObject:
   m_ObjectHideFlags: 0
@@ -41055,7 +41050,7 @@ PrefabInstance:
     - target: {fileID: 1291548102169863960, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 406184271}
+      objectReference: {fileID: 0}
     - target: {fileID: 1291548102169863962, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -41104,6 +41099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM vcam1(Player)
       objectReference: {fileID: 0}
+    - target: {fileID: 3588754682635329106, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 285787391}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
 --- !u!1001 &1714784713977342408

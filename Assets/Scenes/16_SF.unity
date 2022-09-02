@@ -6010,11 +6010,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6265528558248049570, guid: f23b4007c61ded44595ee1ba0c544762, type: 3}
   m_PrefabInstance: {fileID: 382430251}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &406184271 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4210449633401716381, guid: 1ff72a481913aa64da0384b495e0f6be, type: 3}
-  m_PrefabInstance: {fileID: 4210449633117076065}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &408100374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22264,9 +22259,9 @@ Transform:
   - {fileID: 779203083}
   - {fileID: 784883823}
   - {fileID: 2083642468}
-  - {fileID: 88206247}
   - {fileID: 1142488449}
   - {fileID: 261396117}
+  - {fileID: 88206247}
   - {fileID: 1661783876}
   - {fileID: 911576349}
   - {fileID: 1526632146}
@@ -34043,7 +34038,7 @@ PrefabInstance:
     - target: {fileID: 1291548102169863960, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 406184271}
+      objectReference: {fileID: 0}
     - target: {fileID: 1291548102169863962, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -34092,6 +34087,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM vcam1(Player)
       objectReference: {fileID: 0}
+    - target: {fileID: 3588754682635329106, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 285787391}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
 --- !u!1001 &1714784713977342408
