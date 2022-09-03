@@ -19,11 +19,18 @@ public class EnemyInitializer : MonoBehaviour
 
         foreach (var enemy in _enemies)
         {
-            enemy.Init(_player, 0, counter);
+            if(counter%5!=0)
+                enemy.Init(_player, 0, counter);
+
+            if(counter%5 == 0)
+                enemy.Init(_player, Random.Range(1,3), counter);
+
             counter++;
 
             if(enemy is Boss == false)
                 EnemyLevels += enemy.Level;
+
+
         }
 
         _boss.Init(_player, (int)(EnemyLevels *0.9f), counter);
