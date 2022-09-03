@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class EnemyInitializer : MonoBehaviour
 {
@@ -17,13 +18,14 @@ public class EnemyInitializer : MonoBehaviour
         _enemies = FindObjectsOfType<Enemy>();
         _player = FindObjectOfType<Player>();
 
+        _enemies = _enemies.OrderBy(enemy => enemy.InititalLevel).ToArray();
+
         foreach (var enemy in _enemies)
         {
-            if(counter%5!=0)
-                enemy.Init(_player, 0, counter);
+            enemy.Init(_player, 0, counter);
 
-            if(counter%5 == 0)
-                enemy.Init(_player, Random.Range(1,3), counter);
+            if(counter%5 == 0 && SaveSystem.LoadLevelNumber() % 3 == 0)
+                enemy.Init(_player, Random.Range(2,4), counter);
 
             counter++;
 

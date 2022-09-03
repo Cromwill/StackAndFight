@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
     public EnemyAnimator EnemyAnimator => _animator;
     public RagdollHandler RagdollHandler => _ragdollHandler;
     public EnemyRotation Rotation => _rotation;
+    public int InititalLevel => _level;
     public int Level { get; private set; }
 
     public event Action<Enemy> Died;
@@ -122,7 +123,7 @@ public class Enemy : MonoBehaviour
         _savedLoop = SaveSystem.LoadLevelLoop();
 
         if (PlayerPrefs.HasKey(_id) && PlayerPrefs.HasKey(_loopSaveWord) && _savedLoop == PlayerPrefs.GetInt(_loopSaveWord))
-            return PlayerPrefs.GetInt(_id);
+            return PlayerPrefs.GetInt(_id) + (int)additonalLevels;
 
         int level = (int)(_level + (int)_player.LevelSystem.AdditionalLevel.Value - 2 + additonalLevels);
         level = Mathf.Clamp(level, 1, 1000);
