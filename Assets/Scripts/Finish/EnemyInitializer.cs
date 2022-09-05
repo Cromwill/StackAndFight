@@ -49,6 +49,9 @@ public class EnemyInitializer : MonoBehaviour
                 if (level > 30)
                     additionalLevels = -Random.Range(5, 11);
 
+                if (level > 200)
+                    level /= 3;
+
                 enemy.Init(_player, level, additionalLevels, counter);
             }
 
