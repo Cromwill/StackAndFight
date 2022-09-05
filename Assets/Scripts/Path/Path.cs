@@ -20,5 +20,6 @@ public class Path : MonoBehaviour
         _isActivated = true;
         _pathCellRenderer.Colorize();
         _cellAnimation.Trigger();
+        
     }
 }

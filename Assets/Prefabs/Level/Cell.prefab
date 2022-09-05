@@ -211,8 +211,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshRenderer: {fileID: 1928677209358792644}
-  _activatedColor: {r: 0.26517445, g: 0.42910346, b: 0.5566038, a: 1}
-  _spriteRenderer: {fileID: 3862828861025539211}
+  _color: 0
+  _blue: {r: 0.26666668, g: 0.42745098, b: 0.5568628, a: 1}
+  _orange: {r: 0.56, g: 0.3907892, b: 0.26880002, a: 1}
+  _purple: {r: 0.3115093, g: 0.26880002, b: 0.56, a: 1}
 --- !u!114 &2636855904476012905
 MonoBehaviour:
   m_ObjectHideFlags: 0
