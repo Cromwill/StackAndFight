@@ -7,10 +7,11 @@ public class UpgradeTutorialDisabler : MonoBehaviour
     [SerializeField] private Canvas _canvas;
     [SerializeField] private Canvas _background;
     [SerializeField] private SwipeHandler _swipeHandler;
+    [SerializeField] private LevelUpgrade _upgrade;
 
     public void OnButtonClick()
     {
-        print("click");
+        _upgrade.Buy();
 
         if(_canvas != null)
         _canvas.gameObject.SetActive(false);
