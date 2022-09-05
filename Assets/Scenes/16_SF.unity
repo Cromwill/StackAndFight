@@ -33727,10 +33727,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 2908470010139664532, guid: 6f7f72779bdeb084d8019953cb7e73fc, type: 3}
-      propertyPath: m_Center.x
-      value: 0.45
-      objectReference: {fileID: 0}
     - target: {fileID: 4655023145761158413, guid: 6f7f72779bdeb084d8019953cb7e73fc, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -33774,10 +33770,6 @@ PrefabInstance:
     - target: {fileID: 4655023145761158413, guid: 6f7f72779bdeb084d8019953cb7e73fc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5898583383698850146, guid: 6f7f72779bdeb084d8019953cb7e73fc, type: 3}
-      propertyPath: _direction
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f7f72779bdeb084d8019953cb7e73fc, type: 3}

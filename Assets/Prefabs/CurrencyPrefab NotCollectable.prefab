@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1286700044083992406, guid: f23b4007c61ded44595ee1ba0c544762, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286700044083992406, guid: f23b4007c61ded44595ee1ba0c544762, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286700044083992406, guid: f23b4007c61ded44595ee1ba0c544762, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5056132091022101376, guid: f23b4007c61ded44595ee1ba0c544762, type: 3}
       propertyPath: m_Name
       value: CurrencyPrefab NotCollectable
@@ -115,8 +127,7 @@ PrefabInstance:
       propertyPath: _isDecorative
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7683983825378407886, guid: f23b4007c61ded44595ee1ba0c544762, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f23b4007c61ded44595ee1ba0c544762, type: 3}
 --- !u!1 &963823504358469315 stripped
 GameObject:
