@@ -7576,6 +7576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 735725265}
+  _background: {fileID: 0}
 --- !u!43 &762378451
 Mesh:
   m_ObjectHideFlags: 0

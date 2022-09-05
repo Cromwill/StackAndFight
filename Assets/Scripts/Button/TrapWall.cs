@@ -14,6 +14,11 @@ public class TrapWall : Interactable
         //player.Mover.MoveBack();
     }
 
+    private void Start()
+    {
+        _dustEffect.transform.SetParent(null);
+    }
+
     public void Enable()
     {
         gameObject.SetActive(true);
@@ -35,6 +40,7 @@ public class TrapWall : Interactable
 
     private IEnumerator Enabling()
     {
+        _dustEffect.Play();
         transform.DOLocalMoveY(2f, 0.5f);
 
         yield return null;
@@ -43,6 +49,7 @@ public class TrapWall : Interactable
     private IEnumerator Disabling()
     {
         transform.DOLocalMoveY(-2f, 0.5f);
+        _dustEffect.Play();
         _boxCollider.enabled = false;
 
         yield return new WaitForSeconds(0.5f);

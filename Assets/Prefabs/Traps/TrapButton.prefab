@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 23fa30743d7f66240a3d631ea143da5b, type: 2}
+  - {fileID: 2100000, guid: 6fc63b2ba298ce94cb5331d42486cf34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -328,11 +328,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 424984, guid: 43b9bf553e725724f82ca109c5362dba, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 424984, guid: 43b9bf553e725724f82ca109c5362dba, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 424984, guid: 43b9bf553e725724f82ca109c5362dba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
