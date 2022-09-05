@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     private string _id;
     private int _savedLoop;
     private string _loopSaveWord;
+    private int _currentLevel;
 
     public int Cost { get; private set; } = 5;
     public EnemyAnimator EnemyAnimator => _animator;
@@ -58,12 +59,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Init(Player player, int additonalLevels, int index)
+    public void Init(Player player,int level, int additonalLevels, int index)
     {
         _id = $"{index}{SceneManager.GetActiveScene().name}";
         _loopSaveWord = $"{_id}loop";
         _player = player;
         _rotation.Init(_player);
+        _currentLevel = level;
 
         if (this is Boss)
             _level = 0;
@@ -123,9 +125,9 @@ public class Enemy : MonoBehaviour
         _savedLoop = SaveSystem.LoadLevelLoop();
 
         if (PlayerPrefs.HasKey(_id) && PlayerPrefs.HasKey(_loopSaveWord) && _savedLoop == PlayerPrefs.GetInt(_loopSaveWord))
-            return PlayerPrefs.GetInt(_id) + (int)additonalLevels;
+            return PlayerPrefs.GetInt(_id);
 
-        int level = (int)(_level + (int)_player.LevelSystem.AdditionalLevel.Value - 2 + (int)additonalLevels);
+        int level = (int)(_currentLevel + (int)_player.LevelSystem.AdditionalLevel.Value - 2 + (int)additonalLevels);
         level = Mathf.Clamp(level, 1, 1000);
 
         PlayerPrefs.SetInt(_id, level);

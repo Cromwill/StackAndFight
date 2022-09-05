@@ -15,6 +15,9 @@ public class EnemyInitializer : MonoBehaviour
     public void Init()
     {
         var counter =0 ;
+        var level = 1;
+        var previousLevel = 0;
+        var previousInitialLevel = 0;
         _enemies = FindObjectsOfType<Enemy>();
         _player = FindObjectOfType<Player>();
 
@@ -22,17 +25,39 @@ public class EnemyInitializer : MonoBehaviour
 
         foreach (var enemy in _enemies)
         {
-            if(counter%5 == 0 && SaveSystem.LoadLevelNumber() % 3 == 0)
-                enemy.Init(_player, Random.Range(5,11), counter);
-            else
-                enemy.Init(_player, 0, counter);
+            if (enemy is Boss)
+                continue;
 
             counter++;
 
-            if(enemy is Boss == false)
-                EnemyLevels += enemy.Level;
+
+            if (enemy.InititalLevel == previousInitialLevel == false)
+            {
+                level += previousLevel;
+                Debug.Log(level);
+                previousInitialLevel = enemy.InititalLevel;
+            }
+
+            if (counter%5 == 0 && SaveSystem.LoadLevelNumber() % 3 == 0)
+            {
+                enemy.Init(_player, level, Random.Range(2,4), counter);
+            }
+            else
+            {
+                var additionalLevels = 0;
+
+                if (level > 30)
+                    additionalLevels = -Random.Range(5, 11);
+
+                enemy.Init(_player, level, additionalLevels, counter);
+            }
+
+            previousLevel = enemy.Level;
+
+
+            EnemyLevels += enemy.Level;
         }
 
-        _boss.Init(_player, (int)(EnemyLevels *0.9f), counter);
+        _boss.Init(_player,0, (int)(EnemyLevels *0.2f), counter);
     }
 }
