@@ -55,6 +55,16 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler
     {
 
     }
+
+    public void Disable()
+    {
+        enabled = false;
+    }
+
+    public void Enable()
+    {
+        enabled = true;
+    }
 }
 
 public enum SwipeDirection

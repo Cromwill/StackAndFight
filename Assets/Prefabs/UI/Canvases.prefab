@@ -835,6 +835,10 @@ PrefabInstance:
       propertyPath: _walletView
       value: 
       objectReference: {fileID: 9138213683845131003}
+    - target: {fileID: 5622628117651459383, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.0290222
+      objectReference: {fileID: 0}
     - target: {fileID: 5649822470926987251, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
       propertyPath: m_Name
       value: WinScreen
@@ -1239,6 +1243,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5029454040861228159, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 9.829712
+      objectReference: {fileID: 0}
     - target: {fileID: 7909528942424656387, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1368,6 +1376,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8068548157551557984}
     m_Modifications:
+    - target: {fileID: 164316952106554754, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 164316952106554754, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 164316952106554754, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 164316952106554754, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 164316952106554754, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 164316952106554754, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UpgradeTutorialDisabler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 164316952106554754, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5199900534949662319, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: _disabler
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002187863620860223, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002187863620860223, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002187863620860223, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002187863620860223, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -175.921
+      objectReference: {fileID: 0}
     - target: {fileID: 8068516571834083849, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
       propertyPath: m_Name
       value: UpgradeButtons
