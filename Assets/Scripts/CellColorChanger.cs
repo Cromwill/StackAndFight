@@ -11,7 +11,7 @@ public class CellColorChanger : MonoBehaviour
     {
         PathCellRenderer[] cellRenderers = FindObjectsOfType<PathCellRenderer>();
 
-        foreach(var cellRenderer in cellRenderers)
+        foreach (var cellRenderer in cellRenderers)
         {
             cellRenderer.ChooseColor(_color);
         }
