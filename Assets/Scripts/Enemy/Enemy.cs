@@ -125,7 +125,7 @@ public class Enemy : MonoBehaviour
         if (PlayerPrefs.HasKey(_id) && PlayerPrefs.HasKey(_loopSaveWord) && _savedLoop == PlayerPrefs.GetInt(_loopSaveWord))
             return PlayerPrefs.GetInt(_id) + (int)additonalLevels;
 
-        int level = (int)(_level + (int)_player.LevelSystem.AdditionalLevel.Value - 2 + additonalLevels);
+        int level = (int)(_level + (int)_player.LevelSystem.AdditionalLevel.Value - 2 + (int)additonalLevels);
         level = Mathf.Clamp(level, 1, 1000);
 
         PlayerPrefs.SetInt(_id, level);
