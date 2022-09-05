@@ -232,9 +232,8 @@ public class PlayerMover : MonoBehaviour
         _isMoving = false;
         EnoughDistance = false;
         IsMovingBack = false;
-        Debug.Log("hi");
-        _animator.TriggerStop();
-        //_animator.TriggerIdle();
+        //_animator.TriggerStop();
+        _animator.TriggerIdle();
         _decalSpawner.Spawn(swipeDirection);
         _runField.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
