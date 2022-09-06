@@ -75,6 +75,7 @@ public class LevelsHandler : MonoBehaviour
     {
         //_integrationMetric.OnRestartLevel(Counter);
         AssetReference scene = _levelList.GetCurrentScene();
+        SaveSystem.SaveRestarted();
 
         Addressables.LoadSceneAsync(scene);
     }

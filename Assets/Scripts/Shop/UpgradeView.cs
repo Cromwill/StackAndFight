@@ -14,6 +14,7 @@ public class UpgradeView : MonoBehaviour
     [SerializeField] private ButtonAnimation _buttonAnimation;
     [SerializeField] private UIAppearance _uiAppearance;
     [SerializeField] private GameObject _veil;
+    [SerializeField] private LevelUpReminder _levelUpReminder;
 
     private Upgrade _upgrade;
     private PlayerUpgradeSystem _playerUpgradeSystem;
@@ -31,6 +32,9 @@ public class UpgradeView : MonoBehaviour
         IsMultiplier = upgrade.Type == UpgradeType.MoneyMultiplier;
         UpdateInfo();
         CheckBuyPossibilty();
+
+        if(_upgrade.CostHandler.Value <= playerUpgradeSystem.Player.Wallet.Value && upgrade.Type == UpgradeType.StartLevel && _levelUpReminder != null)
+            _levelUpReminder.Init();
     }
 
     public void Buy()

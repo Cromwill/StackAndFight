@@ -9,6 +9,7 @@ public static class SaveSystem
     private const string LevelNumber = "levelNumber";
     private const string Level = "level";
     private const string LevelLoop = "levelLoop";
+    private const string RestartedSaveWord = "RestartedSaveWord";
 
     public static void SaveLevelsProgression(int index)
     {
@@ -65,5 +66,20 @@ public static class SaveSystem
             return PlayerPrefs.GetInt(LevelLoop);
 
         return 0;
+    }
+
+    public static void SaveRestarted()
+    {
+        PlayerPrefs.SetString(RestartedSaveWord, RestartedSaveWord);
+    }
+
+    public static void DeleteRestarted()
+    {
+        PlayerPrefs.DeleteKey(RestartedSaveWord);
+    }
+
+    public static bool IsRestarted()
+    {
+        return PlayerPrefs.HasKey(RestartedSaveWord);
     }
 }

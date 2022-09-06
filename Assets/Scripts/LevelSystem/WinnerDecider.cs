@@ -58,6 +58,7 @@ public class WinnerDecider : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         ShowScreen(_winScreen);
+        SaveSystem.DeleteRestarted();
     }
 
     private IEnumerator DelayedLose(float delay)
