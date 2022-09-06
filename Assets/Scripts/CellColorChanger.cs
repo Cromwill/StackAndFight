@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static PathCellRenderer;
 
 //[ExecuteInEditMode]
 public class CellColorChanger : MonoBehaviour
 {
-    [SerializeField] private CellColor _color;
+    [SerializeField] private PathCellRenderer.CellColor _color;
 
     private void Start()
     {
