@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedAppIndex: 0
   clientTokens:
-  - 
+  - b0d645d4b5ea528a887a93620c5458da
   appIds:
-  - 0
+  - 3273398106308990
   appLabels:
-  - App Name
+  - Level Up Maze
   cookie: 1
-  logging: 1
+  logging: 0
   status: 1
   xfbml: 0
   frictionlessRequests: 1
-  androidKeystorePath: 
+  androidKeystorePath: Key/user.keystore
   iosURLSuffix: 
   appLinkSchemes:
   - list: []
