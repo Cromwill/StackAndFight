@@ -34,7 +34,6 @@ public class EnemyInitializer : MonoBehaviour
             if (enemy.InititalLevel == previousInitialLevel == false)
             {
                 level += previousLevel;
-                Debug.Log(level);
                 previousInitialLevel = enemy.InititalLevel;
             }
 
