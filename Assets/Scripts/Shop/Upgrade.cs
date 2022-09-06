@@ -5,13 +5,13 @@ using UnityEngine;
 [System.Serializable]
 public abstract class Upgrade: MonoBehaviour
 {
-    [SerializeField] private UpgradeType _upgradeType;
+    [SerializeField] protected UpgradeType _upgradeType;
     [SerializeField] private Sprite _sprite;
-    [SerializeField] private float _startCost;
+    [SerializeField] protected float _startCost;
     [SerializeField] private float _costPerBuy;
 
     protected Player Player;
-    public ValueHandler CostHandler { get; private set; }
+    public ValueHandler CostHandler { get; protected set; }
     public ValueHandler Value { get; protected set; }
 
     public Sprite Sprite => _sprite;
@@ -21,9 +21,8 @@ public abstract class Upgrade: MonoBehaviour
     public void Init(Player player)
     {
         Player = player;
-        CostHandler = new ValueHandler(_startCost, 1000, $"{_upgradeType}SaveWord");
-        CostHandler.LoadAmount();
         OnInitilize();
+        CostHandler.LoadAmount();
     }
 
     public virtual void Buy()

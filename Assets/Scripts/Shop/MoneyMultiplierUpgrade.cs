@@ -17,5 +17,6 @@ public class MoneyMultiplierUpgrade : Upgrade
     {
         UpgradeName = UpgradeName.Money;
         Value = Player.MoneyMultiplier;
+        CostHandler = new ValueHandler(_startCost, 10000, $"{_upgradeType}SaveWord");
     }
 }
