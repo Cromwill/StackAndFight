@@ -47,8 +47,8 @@ public class LevelsHandler : MonoBehaviour
 
             SaveSystem.SaveLevelsProgression(Counter);
 
-            //_integrationMetric.OnLevelStart(_levelNumber, levelName, Counter - 1, GetNumber(), _levelLoop);
-            //print($"On level start. 1)levels_number: { _levelNumber}  2)level_name: {levelName} 3)level_count: {Counter - 1} 4)level_random {GetNumber()} 5)level_loop {_levelLoop}");
+            _integrationMetric.OnLevelStart(_levelNumber, levelName, Counter - 1, GetNumber(), _levelLoop);
+            print($"On level start. 1)levels_number: { _levelNumber}  2)level_name: {levelName} 3)level_count: {Counter - 1} 4)level_random {GetNumber()} 5)level_loop {_levelLoop}");
         }
     }
 
@@ -86,8 +86,8 @@ public class LevelsHandler : MonoBehaviour
         string levelName = SceneManager.GetActiveScene().name;
         int progress = 100;
 
-        //_integrationMetric.OnLevelComplete(GetTime(), _levelNumber, levelName, Counter - 1, GetNumber(), GetLevelResult(), CheckLoop(), progress);
-        //print($"On level completed.  1)level_number: {_levelNumber }, 2)level_name: {levelName}, 3)level_count: {Counter - 1}, 4)level_random: {GetNumber()}, 5)result: {GetLevelResult()} 5)level_loop {_levelLoop} 6)progress {progress}");
+        _integrationMetric.OnLevelComplete(GetTime(), _levelNumber, levelName, Counter - 1, GetNumber(), GetLevelResult(), CheckLoop(), progress);
+        print($"On level completed.  1)level_number: {_levelNumber }, 2)level_name: {levelName}, 3)level_count: {Counter - 1}, 4)level_random: {GetNumber()}, 5)result: {GetLevelResult()} 5)level_loop {_levelLoop} 6)progress {progress}");
 
         _levelNumber++;
         _count++;
@@ -102,8 +102,8 @@ public class LevelsHandler : MonoBehaviour
         string levelName = SceneManager.GetActiveScene().name;
         int progress = 0;
 
-        //_integrationMetric.OnLevelComplete(GetTime(), _levelNumber, levelName, Counter - 1, GetNumber(), GetLevelResult(), _levelLoop, progress);
-        //print($"On level failed.  1)level_number: {_levelNumber }, 2)level_name: {levelName}, 3)level_count: {Counter -1}, 4)level_random: {GetNumber()}, 5)result: {GetLevelResult()} 5)level_loop {_levelLoop} 6)progress {progress}");
+        _integrationMetric.OnLevelComplete(GetTime(), _levelNumber, levelName, Counter - 1, GetNumber(), GetLevelResult(), _levelLoop, progress);
+        print($"On level failed.  1)level_number: {_levelNumber }, 2)level_name: {levelName}, 3)level_count: {Counter -1}, 4)level_random: {GetNumber()}, 5)result: {GetLevelResult()} 5)level_loop {_levelLoop} 6)progress {progress}");
 
         //_integrationMetric.OnLevelFail(GetTime(), Counter);
     }

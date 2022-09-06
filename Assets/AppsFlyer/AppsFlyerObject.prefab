@@ -48,4 +48,4 @@ MonoBehaviour:
   UWPAppID: 
   macOSAppID: 
   isDebug: 0
-  getConversionData: 0
+  getConversionData: 1

@@ -12,7 +12,7 @@ public class GameLoader : MonoBehaviour
     private void Start()
     {
         //GameAnalytics.Initialize();
-        //_integrationMetric.OnGameStart();
+        _integrationMetric.OnGameStart();
         _levelsHandler.LoadNextLevel();
         //_integrationMetric.SetUserProperty();
     }

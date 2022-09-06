@@ -12,7 +12,7 @@ public class CellColorChanger : MonoBehaviour
         //if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
         //    return;
 
-        print("updated");
+        //print("updated");
         PathCellRenderer[] cellRenderers = FindObjectsOfType<PathCellRenderer>();
 
         foreach (var cellrenderer in cellRenderers)
