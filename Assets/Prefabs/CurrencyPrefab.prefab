@@ -469,4 +469,4 @@ MonoBehaviour:
   _xSpeed: 0
   _zDistance: 0
   _zSpeed: 0
-  _rotationSpeed: 0
+  _rotationSpeed: 70

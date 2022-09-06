@@ -2,26 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeTutorialEnabler : MonoBehaviour
+public class Delayer : MonoBehaviour
 {
-    [SerializeField] private Background _background;
     [SerializeField] private float _delay;
-    [SerializeField] private SwipeHandler _swipeHandler;
+    [SerializeField] private Background _background;
+    [SerializeField] private HandCanvas _handCanvas;
+
+    private SwipeHandler _swipeHandler;
 
 
     private void Start()
     {
-        _background = FindObjectOfType<Background>();
         _swipeHandler = FindObjectOfType<SwipeHandler>();
+        _swipeHandler.Disable();
         StartCoroutine(Delay(_delay));
     }
 
     private IEnumerator Delay(float delay)
     {
-        _swipeHandler.Disable();
-
         yield return new WaitForSeconds(delay);
 
-       _background.gameObject.SetActive(true);
+        _background.gameObject.SetActive(true);
+        _handCanvas.gameObject.SetActive(true);
     }
 }

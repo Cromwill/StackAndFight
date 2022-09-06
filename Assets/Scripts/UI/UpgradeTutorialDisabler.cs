@@ -1,26 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UpgradeTutorialDisabler : MonoBehaviour
 {
-    [SerializeField] private Canvas _canvas;
-    [SerializeField] private Canvas _background;
-    [SerializeField] private SwipeHandler _swipeHandler;
-    [SerializeField] private LevelUpgrade _upgrade;
+    private Background _background;
+    private SwipeHandler _swipeHandler;
+    private HandCanvas _handCanvas;
 
     public void OnButtonClick()
     {
-        _upgrade.Buy();
+        _swipeHandler = FindObjectOfType<SwipeHandler>();
+        _background = FindObjectOfType<Background>();
+        _handCanvas = FindObjectOfType<HandCanvas>();
 
-        if(_canvas != null)
-        _canvas.gameObject.SetActive(false);
+        if(_handCanvas != null)
+            _handCanvas.gameObject.SetActive(false);
 
         if (_background != null)
             _background.gameObject.SetActive(false);
 
         if(_swipeHandler != null)
-        _swipeHandler.Enable();
+            _swipeHandler.Enable();
 
         enabled = false;
     }

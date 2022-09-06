@@ -50,7 +50,7 @@ public class WinnerDecider : MonoBehaviour
     private void SetLose()
     {
         _isWinned = false;
-        StartCoroutine(DelayedLose(3f));
+        StartCoroutine(DelayedLose(1.5f));
     }
 
     private IEnumerator DelayedEnable()

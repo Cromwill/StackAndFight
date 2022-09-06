@@ -27,7 +27,7 @@ public class Shifting : MonoBehaviour
 
 
         transform.localPosition = new Vector3(xPos, yPos, zPos);
-        transform.Rotate(Vector3.forward * _rotationSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up * _rotationSpeed * Time.deltaTime);
     }
 
     public void IncreaseRotation(float speed)

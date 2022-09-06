@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[SelectionBase]
 public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerMover _mover;

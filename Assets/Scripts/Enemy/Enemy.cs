@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+[SelectionBase]
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int _level;
