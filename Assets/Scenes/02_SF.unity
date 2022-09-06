@@ -7102,6 +7102,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Water
       objectReference: {fileID: 0}
+    - target: {fileID: 1077884947941971289, guid: 026d2dd71a30d3141a755f8067c509d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2242124418767748734, guid: 026d2dd71a30d3141a755f8067c509d9, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -22666,6 +22670,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744388443}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1753068033
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8120039724778140151, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120039724778140151, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120039724778140151, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120039724778140151, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 67.7768
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120039724778140151, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120039724778140151, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120039724778140151, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120039724778140151, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120039724778140151, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120039724778140151, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120039724778140151, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120039724778140153, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 959e6b708e5d8d143b2ccff59fe36ab0, type: 2}
+    - target: {fileID: 8120039724778140155, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
+      propertyPath: m_Name
+      value: FogPlaneSky
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 38d68625b619eca4f9e2dc8e70b125ab, type: 3}
 --- !u!4 &1760341941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 654689375532747460, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
