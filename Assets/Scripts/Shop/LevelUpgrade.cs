@@ -17,5 +17,6 @@ public class LevelUpgrade : Upgrade
     {
         UpgradeName = UpgradeName.Level;
         Value = Player.LevelSystem.AdditionalLevel;
+        CostHandler = new ValueHandler(_startCost, 200, $"{_upgradeType}SaveWord");
     }
 }
