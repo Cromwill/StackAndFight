@@ -8,15 +8,15 @@ public class PlayerUpgradeSystem : MonoBehaviour
     [SerializeField] private List<Upgrade> _upgrades;
     [SerializeField] private UpgradeView _viewPrefab;
 
-    private Player _player;
+    public Player Player { get; private set; }
 
     private void Start()
     {
-        _player = FindObjectOfType<Player>();
+        Player = FindObjectOfType<Player>();
 
         foreach (var upgrade in _upgrades)
         {
-            upgrade.Init(_player);
+            upgrade.Init(Player);
         }
 
         foreach (var upgrade in _upgrades)
@@ -30,7 +30,7 @@ public class PlayerUpgradeSystem : MonoBehaviour
     {
         Upgrade upgrade = _upgrades.FirstOrDefault(upgrade => upgrade.Type == upgradeType);
 
-        if (_player.Wallet.TryDecrease(upgrade.CostHandler.Value))
+        if (Player.Wallet.TryDecrease(upgrade.CostHandler.Value))
         {
             upgrade.Buy();
 

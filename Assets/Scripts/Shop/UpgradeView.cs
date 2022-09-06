@@ -13,6 +13,7 @@ public class UpgradeView : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private ButtonAnimation _buttonAnimation;
     [SerializeField] private UIAppearance _uiAppearance;
+    [SerializeField] private GameObject _veil;
 
     private Upgrade _upgrade;
     private PlayerUpgradeSystem _playerUpgradeSystem;
@@ -29,6 +30,7 @@ public class UpgradeView : MonoBehaviour
         _playerUpgradeSystem = playerUpgradeSystem;
         IsMultiplier = upgrade.Type == UpgradeType.MoneyMultiplier;
         UpdateInfo();
+        CheckBuyPossibilty();
     }
 
     public void Buy()
@@ -37,6 +39,7 @@ public class UpgradeView : MonoBehaviour
         {
             UpdateInfo();
             _buttonAnimation.PlayAnimation();
+            CheckBuyPossibilty();
         }
     }
 
@@ -48,5 +51,12 @@ public class UpgradeView : MonoBehaviour
             _value.text = $"{_upgrade.Value.Value}";
         else
             _value.text = $"x{_upgrade.Value.Value}";
+    }
+
+    private void CheckBuyPossibilty()
+    {
+        bool cantBuy = _upgrade.CostHandler.Value > _playerUpgradeSystem.Player.Wallet.Value;
+
+        _veil.SetActive(cantBuy);
     }
 }
