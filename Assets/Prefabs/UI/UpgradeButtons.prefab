@@ -33,6 +33,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8002187863620860223}
+  - {fileID: 3840167070730140892}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54,9 +55,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 60
     m_Right: 0
-    m_Top: 0
+    m_Top: -90
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 0
@@ -129,6 +130,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d539312b0f39264a8383efee900b5f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &709163034677881130
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8222306564044815803}
+    m_Modifications:
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 250.915
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 236.452
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 615
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -130.921
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627048084541415667, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_Name
+      value: UpgradeButton (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627048084541415667, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+--- !u!224 &3840167070730140892 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
+  m_PrefabInstance: {fileID: 709163034677881130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6021608375627132105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -202,11 +309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 400
+      value: 430
       objectReference: {fileID: 0}
     - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -175.921
+      value: -130.921
       objectReference: {fileID: 0}
     - target: {fileID: 4367497263440041462, guid: 27f5704ba5c2fa748b68b93aac7e4948, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
