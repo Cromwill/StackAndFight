@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
     private int _currentLevel;
 
     public int Cost { get; private set; } = 5;
+    public bool IsShielded => _shield != null;
     public EnemyAnimator EnemyAnimator => _animator;
     public RagdollHandler RagdollHandler => _ragdollHandler;
     public EnemyRotation Rotation => _rotation;

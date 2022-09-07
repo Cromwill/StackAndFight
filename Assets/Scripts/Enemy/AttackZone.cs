@@ -13,7 +13,9 @@ public class AttackZone : Interactable
         {
             _enemy.Rotation.Disable();
             _isKicked = true;
-            _enemy.EnemyAnimator.TriggerKick();
+
+            if(_enemy.IsShielded == false)
+                _enemy.EnemyAnimator.TriggerKick();
 
             player.Mover.StopMoving();
 
