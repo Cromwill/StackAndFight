@@ -11,7 +11,7 @@ public class UpgradeViewHider : MonoBehaviour
 
         foreach (var view in upgradeViews)
         {
-            view.UIAppearance.Hide();
+            view.Hide();
         }
     }
 }

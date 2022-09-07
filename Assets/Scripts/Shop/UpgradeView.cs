@@ -20,9 +20,6 @@ public class UpgradeView : MonoBehaviour
     private PlayerUpgradeSystem _playerUpgradeSystem;
     protected bool IsMultiplier;
 
-    public ButtonAnimation ButtonAnimation => _buttonAnimation;
-    public UIAppearance UIAppearance => _uiAppearance;
-
     public void Init(Upgrade upgrade, PlayerUpgradeSystem playerUpgradeSystem)
     {
         _name.text = $"{upgrade.UpgradeName}";
@@ -48,6 +45,13 @@ public class UpgradeView : MonoBehaviour
             if(_levelUpReminder != null)
                 _levelUpReminder.Disable();
         }
+    }
+
+    public void Hide()
+    {
+        _uiAppearance.Hide();
+        if (_levelUpReminder != null)
+            _levelUpReminder.Disable();
     }
 
     private void UpdateInfo()
