@@ -7,12 +7,16 @@ public class LevelUpReminder : MonoBehaviour
     [SerializeField] private GameObject _levelUpReminderPanel;
     [SerializeField] private UIShakeAnimation _uIShakeAnimation;
 
-    public void Init()
+    public void Init(UIAppearance uIAppearance)
     {
         _levelUpReminderPanel.SetActive(SaveSystem.IsRestarted());
-        _uIShakeAnimation.Shake();
+
+        if(SaveSystem.IsRestarted())
+            _uIShakeAnimation.Shake();
 
         SaveSystem.DeleteRestarted();
+
+        uIAppearance.AnimationEnded -= Init;
     }
 
     public void Disable()

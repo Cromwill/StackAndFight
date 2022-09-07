@@ -17,7 +17,6 @@ public class UIShakeAnimation : MonoBehaviour
 
     public void Stop()
     {
-        
         Animate = false;
     }
 

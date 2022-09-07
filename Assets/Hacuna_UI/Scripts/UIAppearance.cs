@@ -20,6 +20,8 @@ public class UIAppearance : MonoBehaviour
     private Vector2 _screenCenter;
     private Vector2 _modifier;
 
+    public event Action<UIAppearance> AnimationEnded;
+
     private void Awake()
     { 
         SetModifier();
@@ -167,6 +169,8 @@ public class UIAppearance : MonoBehaviour
 
             yield return null;
         }
+
+        AnimationEnded?.Invoke(this);
     }
 
     private bool IsComplete(CurrentState currentState, float elapsedTime)

@@ -34,7 +34,7 @@ public class UpgradeView : MonoBehaviour
         CheckBuyPossibilty();
 
         if(_upgrade.CostHandler.Value <= playerUpgradeSystem.Player.Wallet.Value && upgrade.Type == UpgradeType.StartLevel && _levelUpReminder != null)
-            _levelUpReminder.Init();
+            _uiAppearance.AnimationEnded += _levelUpReminder.Init;
     }
 
     public void Buy()
@@ -44,7 +44,9 @@ public class UpgradeView : MonoBehaviour
             UpdateInfo();
             _buttonAnimation.PlayAnimation();
             CheckBuyPossibilty();
-            _levelUpReminder.Disable();
+
+            if(_levelUpReminder != null)
+                _levelUpReminder.Disable();
         }
     }
 
