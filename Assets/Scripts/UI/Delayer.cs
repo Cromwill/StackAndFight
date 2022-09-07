@@ -9,10 +9,13 @@ public class Delayer : MonoBehaviour
     [SerializeField] private HandCanvas _handCanvas;
 
     private SwipeHandler _swipeHandler;
-
+    private const string WasShown = "WasShown";
 
     private void Start()
     {
+        if (PlayerPrefs.HasKey(WasShown))
+            return;
+
         _swipeHandler = FindObjectOfType<SwipeHandler>();
         _swipeHandler.Disable();
         StartCoroutine(Delay(_delay));
@@ -24,5 +27,7 @@ public class Delayer : MonoBehaviour
 
         _background.gameObject.SetActive(true);
         _handCanvas.gameObject.SetActive(true);
+
+        PlayerPrefs.SetString(WasShown, WasShown);
     }
 }
