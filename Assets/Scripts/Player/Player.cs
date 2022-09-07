@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        //SoundHandler.Instance.PlayLandingSound();
+        SoundHandler.Instance.PlayLandingSound();
     }
 
     public void Die()

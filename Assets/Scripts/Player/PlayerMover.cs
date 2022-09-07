@@ -139,7 +139,6 @@ public class PlayerMover : MonoBehaviour
 
     private void Appear()
     {
-        SoundHandler.Instance.PlayLandingSound();
         _animator.JumpAnimation();
         Vector3 initialPosition = transform.position;
         transform.position = transform.position + Vector3.up * 20f;
