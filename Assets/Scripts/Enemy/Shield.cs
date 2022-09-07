@@ -14,6 +14,7 @@ public class Shield : Interactable
         if (_isBroken)
             return;
 
+        SoundHandler.Instance.PlayArrowSound();
         _shakeAnimation.Trigger();
         player.Mover.MoveBack();
     }

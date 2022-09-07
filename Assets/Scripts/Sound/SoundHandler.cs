@@ -13,6 +13,7 @@ public class SoundHandler : MonoBehaviour
     [SerializeField] private AudioSource _gem;
     [SerializeField] private AudioSource _smash;
     [SerializeField] private AudioSource _button;
+    [SerializeField] private AudioSource _arrow;
     [SerializeField] private AudioSource _backgroundBlue;
     [SerializeField] private AudioSource _backgroundOrange;
     [SerializeField] private AudioSource _backgroundPurple;
@@ -38,6 +39,7 @@ public class SoundHandler : MonoBehaviour
     private void Start()
     {
         _backgroundBlue.Play();
+        _currentBackground = _backgroundBlue;
         var settingDecider = FindObjectOfType<LevelSettingDecider>();
         _currentLevelSetting = settingDecider.LevelSetting;
 
@@ -100,6 +102,11 @@ public class SoundHandler : MonoBehaviour
     public void PlayButtonSound()
     {
         _button.Play();
+    }
+
+    public void PlayArrowSound()
+    {
+        _arrow.Play();
     }
 
     public void PlayBackground(LevelSetting levelSetting)
