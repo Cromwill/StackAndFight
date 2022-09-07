@@ -44,6 +44,7 @@ public class UpgradeView : MonoBehaviour
             UpdateInfo();
             _buttonAnimation.PlayAnimation();
             CheckBuyPossibilty();
+            _levelUpReminder.Disable();
         }
     }
 
