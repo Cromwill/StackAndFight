@@ -30,7 +30,7 @@ public class FinishWall : Interactable
         _slowMotion = FindObjectOfType<SlowMotion>();
     }
 
-    public void Init(int level)
+    public void Init(int level, int clampedLevel)
     {
         WallLevel = level;
         _wallLevelUI.UpdateUI(level);

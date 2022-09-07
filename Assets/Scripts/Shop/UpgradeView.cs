@@ -29,6 +29,7 @@ public class UpgradeView : MonoBehaviour
         IsMultiplier = upgrade.Type == UpgradeType.MoneyMultiplier;
         UpdateInfo();
         CheckBuyPossibilty();
+        _playerUpgradeSystem.Player.Wallet.ValueChanged += CheckBuyPossibilty;
 
         if(_upgrade.CostHandler.Value <= playerUpgradeSystem.Player.Wallet.Value && upgrade.Type == UpgradeType.StartLevel && _levelUpReminder != null)
             _uiAppearance.AnimationEnded += _levelUpReminder.Init;
@@ -40,7 +41,6 @@ public class UpgradeView : MonoBehaviour
         {
             UpdateInfo();
             _buttonAnimation.PlayAnimation();
-            CheckBuyPossibilty();
 
             if(_levelUpReminder != null)
                 _levelUpReminder.Disable();
@@ -50,8 +50,12 @@ public class UpgradeView : MonoBehaviour
     public void Hide()
     {
         _uiAppearance.Hide();
+
         if (_levelUpReminder != null)
             _levelUpReminder.Disable();
+
+        if (_playerUpgradeSystem != null)
+            _playerUpgradeSystem.Player.Wallet.ValueChanged -= CheckBuyPossibilty;
     }
 
     private void UpdateInfo()

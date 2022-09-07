@@ -18,7 +18,6 @@ public class Finish : MonoBehaviour
         _finishWalls = GetComponentsInChildren<FinishWall>();
 
         var maxLevel = _enemyInitializer.EnemyLevels;
-        maxLevel = Mathf.Clamp(maxLevel, 0, 500);
 
         _levelStep = maxLevel / _finishWalls.Length;
         _levelStep -= _levelStep % 10;
@@ -30,7 +29,7 @@ public class Finish : MonoBehaviour
             currentLevel += _levelStep;
             int value = currentLevel - (currentLevel % 10);
             value = Mathf.Clamp(value, 5, 1000);
-            finishWall.Init(value);
+            finishWall.Init(value, Mathf.Clamp(maxLevel, 0, 500));
         }
     }
 }
