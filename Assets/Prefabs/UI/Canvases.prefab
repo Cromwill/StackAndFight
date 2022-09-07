@@ -87,8 +87,9 @@ GameObject:
   - component: {fileID: 7120565389105001693}
   - component: {fileID: 5695388421073492141}
   - component: {fileID: 535809101152657957}
+  - component: {fileID: 1300454273079334436}
   m_Layer: 5
-  m_Name: RestartButton
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +104,7 @@ RectTransform:
   m_GameObject: {fileID: 511634021389372756}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4964116647145223801}
   m_Father: {fileID: 6824708103133517055}
@@ -111,7 +112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000001103, y: 0}
+  m_AnchoredPosition: {x: -6.1932983, y: -4.7355347}
   m_SizeDelta: {x: 111.5045, y: 101.3658}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7120565389105001693
@@ -142,7 +143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6ed021d25eda3b5429955b6211cb026c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d5e2a3abf75b7ab42b64ec875bf38b1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -196,9 +197,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2778536381579514253}
-        m_TargetAssemblyTypeName: LevelsHandler, Assembly-CSharp
-        m_MethodName: RestartLevel
+      - m_Target: {fileID: 1300454273079334436}
+        m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -208,18 +209,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2778536381579514253}
-        m_TargetAssemblyTypeName: LevelsHandler, Assembly-CSharp
-        m_MethodName: OnLevelFailed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+--- !u!114 &1300454273079334436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511634021389372756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0cd68c9118b264bba36ae41555a646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 5695388421073492141}
+  _soundOnSprite: {fileID: 21300000, guid: d5e2a3abf75b7ab42b64ec875bf38b1c, type: 3}
+  _soundOffSprite: {fileID: 21300000, guid: 1aa25623159645b4ca5757f46b1407f3, type: 3}
 --- !u!1 &795006798784744166
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6824708103133517055}
   m_Layer: 0
-  m_Name: RestartButtonView
+  m_Name: SoundButtonView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,7 +349,7 @@ GameObject:
   - component: {fileID: 3504418864789709348}
   - component: {fileID: 1394374461479321795}
   m_Layer: 0
-  m_Name: Restart
+  m_Name: Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1946,6 +1950,10 @@ PrefabInstance:
       propertyPath: _walletView
       value: 
       objectReference: {fileID: 9138213683845131003}
+    - target: {fileID: 1068329770264896063, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00024414062
+      objectReference: {fileID: 0}
     - target: {fileID: 1450947221341825999, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
       propertyPath: m_fontSize
       value: 55

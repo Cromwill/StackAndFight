@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        SoundHandler.Instance.PlayLoseSound();
         _isDead = true;
         Fall();
     }

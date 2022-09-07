@@ -175,6 +175,8 @@ public class PlayerMover : MonoBehaviour
 
     private IEnumerator Jumping(PathPoint pathPoint, float jumpTime)
     {
+        SoundHandler.Instance.PlayLandingSound();
+
         _isMoving = true;
 
         float elapsedTime = 0;

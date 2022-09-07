@@ -7,15 +7,19 @@ public class SoundHandler : MonoBehaviour
     [SerializeField] private AudioSource _lose;
     [SerializeField] private AudioSource _landing;
     [SerializeField] private AudioSource _punch;
+    [SerializeField] private AudioSource _kick;
+    [SerializeField] private AudioSource _scream;
     [SerializeField] private AudioSource _ouch;
     [SerializeField] private AudioSource _gem;
     [SerializeField] private AudioSource _smash;
+    [SerializeField] private AudioSource _button;
     [SerializeField] private AudioSource _backgroundBlue;
     [SerializeField] private AudioSource _backgroundOrange;
     [SerializeField] private AudioSource _backgroundPurple;
     [SerializeField] private AudioSource _backgroundGreen;
 
-    public LevelSetting _currentLevelSetting;
+    private LevelSetting _currentLevelSetting;
+    private AudioSource _currentBackground;
 
     public static SoundHandler Instance { get; private set; }
 
@@ -33,25 +37,32 @@ public class SoundHandler : MonoBehaviour
 
     private void Start()
     {
-        //_backgroundBlue.Play();
+        _backgroundBlue.Play();
         var settingDecider = FindObjectOfType<LevelSettingDecider>();
         _currentLevelSetting = settingDecider.LevelSetting;
+
+        if(_currentLevelSetting != LevelSetting.Blue)
+        {
+            _backgroundBlue.Stop();
+        }
     }
 
     public void PlayWinSound()
     {
         _win.Play();
-        //IncreaseLevelCounter();
     }
 
     public void StopWinSound()
     {
-        _win.Stop();
+        if(_win.isPlaying)
+            _win.Stop();
     }
 
     public void PlayLoseSound()
     {
-        //StartCoroutine(StartingLoseSound(_currentBackground));
+        _kick.Play();
+        _scream.Play();
+        StartCoroutine(StartingLoseSound(_currentBackground));
     }
 
     public void PlayOuchSound()
@@ -76,8 +87,8 @@ public class SoundHandler : MonoBehaviour
         //if (_gem.isPlaying)
         //    return;
 
-        //RandomizePitch(_gem);
-        _gem.Play();
+        ////RandomizePitch(_gem);
+        //_gem.Play();
     }
 
     public void PlaySmashSound()
@@ -86,24 +97,45 @@ public class SoundHandler : MonoBehaviour
         _smash.Play();
     }
 
+    public void PlayButtonSound()
+    {
+        _button.Play();
+    }
+
     public void PlayBackground(LevelSetting levelSetting)
     {
-        //if (_currentLevelSetting == levelSetting)
-        //    return;
+        if (_currentLevelSetting == levelSetting)
+            return;
 
-        //if (levelSetting == LevelSetting.Blue)
-        //    _backgroundBlue.Play();
+        if(_currentBackground != null)
+            _currentBackground.Stop();
 
-        //if (levelSetting == LevelSetting.Orange)
-        //    _backgroundOrange.Play();
+        if (levelSetting == LevelSetting.Blue)
+        {
+            _backgroundBlue.Play();
+            _currentBackground = _backgroundBlue;
+        }
 
-        //if (levelSetting == LevelSetting.Purple)
-        //    _backgroundPurple.Play();
+        if (levelSetting == LevelSetting.Orange)
+        {
+            _backgroundOrange.Play();
+            _currentBackground = _backgroundGreen;
+        }
 
-        //if (levelSetting == LevelSetting.Green)
-        //    _backgroundGreen.Play();
+        if (levelSetting == LevelSetting.Purple)
+        {
+            _backgroundPurple.Play();
+            _currentBackground = _backgroundPurple;
+        }
 
-        //_currentLevelSetting = levelSetting;
+        if (levelSetting == LevelSetting.Green)
+        {
+            _backgroundGreen.Play();
+            _currentBackground = _backgroundGreen;
+        }
+
+        _currentLevelSetting = levelSetting;
+        print("ChangeBackground");
     }
 
     private void RandomizePitch(AudioSource sound)
