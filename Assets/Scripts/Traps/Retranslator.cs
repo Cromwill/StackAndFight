@@ -18,6 +18,7 @@ public class Retranslator : MonoBehaviour
             player.Mover.StopMoving();
             player.Mover.Move(_direction, true);
             _arrowRender.Shake();
+            SoundHandler.Instance.PlayArrowSound();
         }
     }
 
