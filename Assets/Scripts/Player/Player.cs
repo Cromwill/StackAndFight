@@ -32,6 +32,11 @@ public class Player : MonoBehaviour
         MoneyMultiplier.LoadAmount();
     }
 
+    private void Start()
+    {
+        //SoundHandler.Instance.PlayLandingSound();
+    }
+
     public void Die()
     {
         _isDead = true;
@@ -50,6 +55,9 @@ public class Player : MonoBehaviour
 
     public void PushEnemy(Enemy enemy)
     {
+        SoundHandler.Instance.PlayPunchSound();
+        SoundHandler.Instance.PlayOuchSound();
+
         float forceValue = 0;
         forceValue = Mathf.Clamp(forceValue, 80, 120) + LevelSystem.Level;
         LevelSystem.IncreaseLevel(enemy.Level);

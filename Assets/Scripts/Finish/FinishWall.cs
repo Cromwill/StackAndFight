@@ -44,7 +44,10 @@ public class FinishWall : Interactable
         _cameraImpulseGenerator.ShakeCamera();
 
         if(WallLevel < player.LevelSystem.Level)
+        {
+            SoundHandler.Instance.PlaySmashSound();
             Break(player);
+        }
         else
             player.Die();
     }

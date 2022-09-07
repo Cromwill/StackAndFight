@@ -20,6 +20,7 @@ public class Currency : Interactable
         if (_isDecorative)
             return;
 
+        SoundHandler.Instance.PlayGemSound();
         player.IncreaseMoney(1);
         _particleSystem.Play();
         _particleSystem.transform.parent = null;

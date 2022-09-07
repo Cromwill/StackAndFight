@@ -44,6 +44,7 @@ public class WinnerDecider : MonoBehaviour
         else
         {
             StartCoroutine(DelayedEnable());
+            SoundHandler.Instance.PlayWinSound();
         }
     }
 

@@ -67,7 +67,7 @@ public class LevelsHandler : MonoBehaviour
         {
             _levelList.GetScene(_levelNumber).LoadSceneAsync();
             //SoundHandler.Instance.TryChangeBackgroundMusic();
-            //SoundHandler.Instance.StopWinSound();
+            SoundHandler.Instance.StopWinSound();
         }
     }
 
