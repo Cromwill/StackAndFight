@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class LevelSystem
 {
-    public ValueHandler AdditionalLevel { get; private set; } = new ValueHandler(2, 500, "PlayerLevel");
+    public ValueHandler AdditionalLevel { get; private set; } = new ValueHandler(223, 10000, "PlayerLevel");
 
     public int Level { get; private set; } 
 
