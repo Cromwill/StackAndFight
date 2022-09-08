@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         SoundHandler.Instance.PlayLandingSound();
+        Wallet.Increase(10000);
     }
 
     public void Die()
