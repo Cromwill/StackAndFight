@@ -60,7 +60,8 @@ public class Player : MonoBehaviour
         SoundHandler.Instance.PlayOuchSound();
 
         float forceValue = 0;
-        forceValue = Mathf.Clamp(forceValue, 80, 120) + LevelSystem.Level;
+        //forceValue = Mathf.Clamp(forceValue, 80, 120) + LevelSystem.Level;
+        forceValue = Mathf.Clamp(forceValue, 80, 120);
         LevelSystem.IncreaseLevel(enemy.Level);
         IncreaseMoney(enemy.Cost);
 
