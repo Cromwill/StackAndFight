@@ -32545,31 +32545,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 654689376346802181, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 45.99729
+      value: 46.000004
       objectReference: {fileID: 0}
     - target: {fileID: 654689376346802181, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.510866
+      value: 16.5
       objectReference: {fileID: 0}
     - target: {fileID: 654689376346802181, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.800087
+      value: 7.800007
       objectReference: {fileID: 0}
     - target: {fileID: 654689376346802181, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5937696
+      value: 0.59339666
       objectReference: {fileID: 0}
     - target: {fileID: 654689376346802181, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2762385
+      value: 0.2767054
       objectReference: {fileID: 0}
     - target: {fileID: 654689376346802181, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6850039
+      value: -0.68503594
       objectReference: {fileID: 0}
     - target: {fileID: 654689376346802181, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.31921723
+      value: 0.31943747
       objectReference: {fileID: 0}
     - target: {fileID: 1119120802906273223, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
       propertyPath: _level
@@ -33963,6 +33963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FogPlaneMoon
       objectReference: {fileID: 0}
+    - target: {fileID: 4286505054021572519, guid: ce31ab13c43c32141b6d11997ed2d1d3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1bd6a11279f8dba4b96ef120f4365e4f, type: 2}
     - target: {fileID: 4286505054021572521, guid: ce31ab13c43c32141b6d11997ed2d1d3, type: 3}
       propertyPath: m_RootOrder
       value: 2
