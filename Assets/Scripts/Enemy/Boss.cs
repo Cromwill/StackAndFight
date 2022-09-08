@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Boss : Enemy
 {
-    
+    private void Start()
+    {
+        EnemyAnimator.SetAggresive();
+    }
 }

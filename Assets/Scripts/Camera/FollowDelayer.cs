@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using DG.Tweening;
 using UnityEngine;
 
 public class FollowDelayer : MonoBehaviour
@@ -16,6 +17,10 @@ public class FollowDelayer : MonoBehaviour
 
     private IEnumerator Delay()
     {
+        yield return new WaitForSeconds(1.5f);
+
+        transform.DOMoveZ(-10f, _delay);
+
         yield return new WaitForSeconds(_delay);
 
         _camera.Follow = _player.transform;

@@ -139,10 +139,7 @@ public class PlayerMover : MonoBehaviour
 
     private void Appear()
     {
-        _animator.JumpAnimation();
-        Vector3 initialPosition = transform.position;
-        transform.position = transform.position + Vector3.up * 20f;
-        StartCoroutine(AnimatingMove(initialPosition, 0.3f, true, OnLanding));
+        StartCoroutine(Delay());
     }
 
     private IEnumerator AnimatingMove(Vector3 targetPosition, float duration, bool isKinematic = false, Action endAction = null)
@@ -253,6 +250,19 @@ public class PlayerMover : MonoBehaviour
         }
 
         _rigidbody.isKinematic = false;
+    }
+
+    private IEnumerator Delay()
+    {
+
+        _animator.JumpAnimation();
+        Vector3 initialPosition = transform.position;
+        transform.position = transform.position + Vector3.up * 20f;
+
+        yield return new WaitForSeconds(4.7f);
+
+        StartCoroutine(AnimatingMove(initialPosition, 0.3f, true, OnLanding));
+        yield return null;
     }
 
     public void StopMoving()
