@@ -38,7 +38,7 @@ public class SoundHandler : MonoBehaviour
 
     private void Start()
     {
-        _backgroundBlue.Play();
+        //_backgroundBlue.Play();
         _currentBackground = _backgroundBlue;
         var settingDecider = FindObjectOfType<LevelSettingDecider>();
         _currentLevelSetting = settingDecider.LevelSetting;

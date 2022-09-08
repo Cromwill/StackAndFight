@@ -236,7 +236,7 @@ public class PlayerMover : MonoBehaviour
         IsMovingBack = false;
         //_animator.TriggerStop();
         _animator.TriggerIdle();
-        _decalSpawner.Spawn(swipeDirection);
+        //_decalSpawner.Spawn(swipeDirection);
         _runField.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
