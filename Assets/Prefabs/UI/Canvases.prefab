@@ -354,7 +354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1713140881223717019
 RectTransform:
   m_ObjectHideFlags: 0
@@ -609,7 +609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2134581236578554492
 RectTransform:
   m_ObjectHideFlags: 0
@@ -718,7 +718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6657448962075090143
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1857,6 +1857,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WalletView
       objectReference: {fileID: 0}
+    - target: {fileID: 6904481982613776761, guid: b8e7498665bc8334a828572ae3660ec7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8144800986842559110, guid: b8e7498665bc8334a828572ae3660ec7, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0.004
@@ -2234,6 +2238,10 @@ PrefabInstance:
     - target: {fileID: 8068516571834083849, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
       propertyPath: m_Name
       value: UpgradeButtons
+      objectReference: {fileID: 0}
+    - target: {fileID: 8068516571834083849, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8222306564044815803, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
       propertyPath: m_Pivot.x
