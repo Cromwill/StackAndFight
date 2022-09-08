@@ -354,7 +354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1713140881223717019
 RectTransform:
   m_ObjectHideFlags: 0
@@ -609,7 +609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2134581236578554492
 RectTransform:
   m_ObjectHideFlags: 0
@@ -718,7 +718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6657448962075090143
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1594,6 +1594,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 230.268
       objectReference: {fileID: 0}
+    - target: {fileID: 4406219997612779974, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468953422660111371, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5354705105921747708, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
       propertyPath: _walletView
       value: 
@@ -1625,6 +1633,14 @@ PrefabInstance:
     - target: {fileID: 5788982937759729247, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
       propertyPath: m_fontSizeMax
       value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7565839125311636883, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750620683394061105, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9222981959993015014, guid: 76b09a931a2bf9c42a7f37772f20c3d3, type: 3}
       propertyPath: m_Pivot.x
@@ -1857,6 +1873,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WalletView
       objectReference: {fileID: 0}
+    - target: {fileID: 6904481982613776761, guid: b8e7498665bc8334a828572ae3660ec7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8144800986842559110, guid: b8e7498665bc8334a828572ae3660ec7, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0.004
@@ -1938,6 +1958,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7250201690181597160}
     m_Modifications:
+    - target: {fileID: 103766709750018388, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 728569503251907171, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
       propertyPath: m_Name
       value: LoseScreen
@@ -1961,6 +1985,14 @@ PrefabInstance:
     - target: {fileID: 1450947221341825999, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
       propertyPath: m_fontSizeMax
       value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209684557182789635, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457614366179049121, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4290462296937076598, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
       propertyPath: m_Pivot.x
@@ -2069,6 +2101,14 @@ PrefabInstance:
     - target: {fileID: 8356201094923349230, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 226
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742151248371942486, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822759434086261147, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82df4c863a2274b408744bbbee2bd89a, type: 3}
@@ -2234,6 +2274,10 @@ PrefabInstance:
     - target: {fileID: 8068516571834083849, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
       propertyPath: m_Name
       value: UpgradeButtons
+      objectReference: {fileID: 0}
+    - target: {fileID: 8068516571834083849, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8222306564044815803, guid: 2d5d516570312274a9d2be68320243f8, type: 3}
       propertyPath: m_Pivot.x

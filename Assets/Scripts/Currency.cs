@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[SelectionBase]
 public class Currency : Interactable
 {
     [SerializeField] private ParticleSystem _particleSystem;

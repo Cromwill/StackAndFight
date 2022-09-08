@@ -10,7 +10,7 @@ public class LevelSettingDecider : MonoBehaviour
 
     private void Start()
     {
-        SoundHandler.Instance.PlayBackground(_levelSetting);
+        //SoundHandler.Instance.PlayBackground(_levelSetting);
     }
 }
 
