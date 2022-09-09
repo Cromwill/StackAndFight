@@ -64,7 +64,7 @@ public class SoundHandler : MonoBehaviour
     {
         _kick.Play();
         _scream.Play();
-        StartCoroutine(StartingLoseSound(_currentBackground));
+        //StartCoroutine(StartingLoseSound(_currentBackground));
     }
 
     public void PlayOuchSound()

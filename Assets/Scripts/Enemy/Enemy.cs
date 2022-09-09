@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
         _loopSaveWord = $"{_id}loop";
         _player = player;
         _rotation.Init(_player);
-        _currentLevel = level;
+        _currentLevel = _level;
 
         if (this is Boss)
             _level = 0;

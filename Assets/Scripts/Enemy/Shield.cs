@@ -17,6 +17,9 @@ public class Shield : Interactable
         SoundHandler.Instance.PlayArrowSound();
         _shakeAnimation.Trigger();
         player.Mover.MoveBack();
+        player.LevelSystem.DecreaseLevel(1);
+        //var mover = FindObjectOfType<CreoTextMover>();
+        //mover.Move();
     }
 
     public void Drop()

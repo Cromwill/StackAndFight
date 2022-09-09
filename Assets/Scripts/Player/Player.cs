@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     private bool _isDead;
 
-    public ValueHandler Wallet { get; private set; } = new ValueHandler(0, 10000, "WalletSaveWord");
+    public ValueHandler Wallet { get; private set; } = new ValueHandler(1000, 10000, "WalletSaveWord");
     public ValueHandler MoneyMultiplier { get; private set; } = new ValueHandler(1, 20, "MoneyMultilierSaveWord");
     public PlayerAnimator PlayerAnimator => _playerAnimator;
     public LevelSystem LevelSystem => _levelSystem;
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        SoundHandler.Instance.PlayLandingSound();
+        //SoundHandler.Instance.PlayLandingSound();
     }
 
     public void Die()

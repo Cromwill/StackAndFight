@@ -30,4 +30,11 @@ public class LevelSystem
         AdditionalLevel.Increase(value);
         IncreaseLevel(value);
     }
+
+    public void DecreaseLevel(int value)
+    {
+        Level -= value;
+
+        LevelChanged?.Invoke(Level);
+    }
 }
