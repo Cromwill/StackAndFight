@@ -34,24 +34,25 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        SoundHandler.Instance.PlayLandingSound();
+        //SoundHandler.Instance.PlayLandingSound();
     }
 
     public void Die()
     {
-        SoundHandler.Instance.PlayLoseSound();
         _isDead = true;
         Fall();
     }
 
     public void Fall()
     {
-        _mover.DisableMovement();
+        SoundHandler.Instance.PlayLoseSound();
+
+        //_mover.DisableMovement();
         _mover.PushBack();
         _playerAnimator.TriggerFall();
         _effectsHandler.PlayDeath();
-        _canvasHandler.Disable();
-        DeathChecked?.Invoke(this);
+        //_canvasHandler.Disable();
+        //DeathChecked?.Invoke(this);
     }
 
     public void PushEnemy(Enemy enemy)

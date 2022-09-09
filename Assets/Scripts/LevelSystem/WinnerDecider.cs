@@ -43,8 +43,8 @@ public class WinnerDecider : MonoBehaviour
         }
         else
         {
-            StartCoroutine(DelayedEnable());
-            SoundHandler.Instance.PlayWinSound();
+            //StartCoroutine(DelayedEnable());
+            //SoundHandler.Instance.PlayWinSound();
         }
     }
 

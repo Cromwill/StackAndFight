@@ -9,9 +9,10 @@ public class BossTrigger : Interactable
     {
         if(_boss.Level < player.LevelSystem.Level)
         {
-            player.CanvasHandler.Disable();
-            player.KillBoss();
-            _winEffectsActivator.Activate();
+            //player.CanvasHandler.Disable();
+            //player.KillBoss();
+            //_winEffectsActivator.Activate();
+            player.PushEnemy(_boss);
         }
     }
 }

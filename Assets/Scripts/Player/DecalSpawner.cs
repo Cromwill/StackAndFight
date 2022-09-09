@@ -17,17 +17,17 @@ public class DecalSpawner : MonoBehaviour
 
     public void Spawn(SwipeDirection direction)
     {
-        Vector3 targetPosition = transform.position + transform.forward - transform.up * 0.7f;
-        var decal = Instantiate(_decal, targetPosition, Quaternion.identity);
+        //Vector3 targetPosition = transform.position + transform.forward - transform.up * 0.7f;
+        //var decal = Instantiate(_decal, targetPosition, Quaternion.identity);
 
-        if (direction == SwipeDirection.Forward)
-            decal.transform.Rotate(new Vector3(0, 180, 0));
-        if (direction == SwipeDirection.Left)
-            decal.transform.Rotate(new Vector3(0, 90, 0));
-        if (direction == SwipeDirection.Right)
-            decal.transform.Rotate(new Vector3(0, -90, 0));
+        //if (direction == SwipeDirection.Forward)
+        //    decal.transform.Rotate(new Vector3(0, 180, 0));
+        //if (direction == SwipeDirection.Left)
+        //    decal.transform.Rotate(new Vector3(0, 90, 0));
+        //if (direction == SwipeDirection.Right)
+        //    decal.transform.Rotate(new Vector3(0, -90, 0));
 
-        StartCoroutine(Fade(decal));
+        //StartCoroutine(Fade(decal));
     }
 
     private IEnumerator Fade(Decal decal)

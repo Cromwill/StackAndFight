@@ -35,6 +35,13 @@ public class Enemy : MonoBehaviour
 
     public event Action<Enemy> Died;
 
+
+    private void Start()
+    {
+        _player = FindObjectOfType<Player>();
+        Level = _level;    
+    }
+
     private void Update()
     {
         if (_isDead)
