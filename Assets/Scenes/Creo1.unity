@@ -20718,7 +20718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2114290282809352178, guid: b21bc96107552e946807c0b0e2e27052, type: 3}
       propertyPath: _level
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2114290282809352179, guid: b21bc96107552e946807c0b0e2e27052, type: 3}
       propertyPath: m_RootOrder
@@ -25659,7 +25659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2114290282809352178, guid: b21bc96107552e946807c0b0e2e27052, type: 3}
       propertyPath: _level
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2114290282809352179, guid: b21bc96107552e946807c0b0e2e27052, type: 3}
       propertyPath: m_RootOrder
@@ -30252,7 +30252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2114290282809352178, guid: b21bc96107552e946807c0b0e2e27052, type: 3}
       propertyPath: _level
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2114290282809352179, guid: b21bc96107552e946807c0b0e2e27052, type: 3}
       propertyPath: m_RootOrder
@@ -38017,6 +38017,10 @@ PrefabInstance:
     - target: {fileID: 2571515553396453552, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0.06094584
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037949885366410207, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_DecayTime
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
