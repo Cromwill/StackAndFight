@@ -8,11 +8,6 @@ public class CreoTextMover : MonoBehaviour
 {
     [SerializeField] private TMP_Text _text;
 
-    private void Update()
-    {
-        transform.rotation = new Quaternion(0, 0, 0, 0);    
-    }
-
     public void Move()
     {
         Sequence sequence = DOTween.Sequence();

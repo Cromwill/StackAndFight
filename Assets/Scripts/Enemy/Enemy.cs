@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour
         if (this is Boss)
             _level = 0;
 
-        Level = LoadLevel(additonalLevels);
+        Level = _level;
     }
 
     public void Push(Vector3 direction)
