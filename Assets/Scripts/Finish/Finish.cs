@@ -28,7 +28,7 @@ public class Finish : MonoBehaviour
         {
             currentLevel += _levelStep;
             int value = currentLevel - (currentLevel % 10);
-            value = Mathf.Clamp(value, 5, 1000);
+            value = Mathf.Clamp(value, 5, 5000);
             finishWall.Init(value, Mathf.Clamp(maxLevel, 0, 500));
         }
     }
