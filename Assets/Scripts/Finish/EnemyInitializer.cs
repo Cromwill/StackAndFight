@@ -39,7 +39,7 @@ public class EnemyInitializer : MonoBehaviour
 
             if (counter%5 == 0 && SaveSystem.LoadLevelNumber() % 3 == 0)
             {
-                enemy.Init(_player, level, Random.Range(2,4), counter);
+                enemy.Init(_player, level, 0, counter);
             }
             else
             {
