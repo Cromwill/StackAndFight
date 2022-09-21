@@ -8,14 +8,17 @@ public class LevelSystem
 {
     public ValueHandler AdditionalLevel { get; private set; } = new ValueHandler(2, 500, "PlayerLevel");
 
-    public int Level { get; private set; } 
+    public int Level { get; private set; }
+    public int CurrentLevel { get; private set; }
 
     public event Action<int> LevelChanged;
+    public event Action<int> DifferenceSet;
 
     public void Init()
     {
         AdditionalLevel.LoadAmount();
         Level =(int)AdditionalLevel.Value;
+        CurrentLevel = Level;
     }
 
     public void IncreaseLevel(int value)
@@ -23,6 +26,7 @@ public class LevelSystem
         Level += value;
 
         LevelChanged?.Invoke(Level);
+        DifferenceSet?.Invoke(value);
     }
 
     public void UpgradeLevels(int value)
