@@ -358,6 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelCanvas: {fileID: 4210449633803474108}
   _level: {fileID: 4210449633916130639}
+  _bacground: {fileID: 4645800332427291758}
 --- !u!114 &8052925328812559830
 MonoBehaviour:
   m_ObjectHideFlags: 0

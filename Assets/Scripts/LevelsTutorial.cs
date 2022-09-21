@@ -6,6 +6,7 @@ public class LevelsTutorial : MonoBehaviour
 {
     [SerializeField] private GameObject _tutorialView;
     [SerializeField] private GameObject _arrow;
+    [SerializeField] private GameObject _cross;
     [SerializeField] private AnimationCurve _scaleCurve;
     [SerializeField] private float _animationDuration;
 
@@ -13,9 +14,11 @@ public class LevelsTutorial : MonoBehaviour
     {
         if(other.TryGetComponent(out Player _))
         {
-            _arrow.gameObject.SetActive(true);
-            _tutorialView.gameObject.SetActive(true);
+            _arrow.SetActive(true);
+            _cross.SetActive(true);
+            _tutorialView.SetActive(true);
             StartCoroutine(ChangingScale());
+            enabled = false;
         }
     }
 
