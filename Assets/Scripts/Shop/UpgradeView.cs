@@ -20,6 +20,16 @@ public class UpgradeView : MonoBehaviour
     private PlayerUpgradeSystem _playerUpgradeSystem;
     protected bool IsMultiplier;
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if(_levelUpReminder != null)
+            {
+                _levelUpReminder.Disable();
+            }
+        }
+    }
     public void Init(Upgrade upgrade, PlayerUpgradeSystem playerUpgradeSystem)
     {
         _name.text = $"{upgrade.UpgradeName}";

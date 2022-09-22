@@ -23,6 +23,7 @@ public class PlayerMover : MonoBehaviour
     private PathPoint _previousPathPoint;
     private PlayerAnimator _animator;
     private JumpAttack _jumpAttack;
+    private SwipeHandler _swipeHandler;
 
 
     public bool IsMovingBack { get; private set; }
@@ -33,6 +34,7 @@ public class PlayerMover : MonoBehaviour
 
     private void Awake()
     {
+        _swipeHandler = FindObjectOfType<SwipeHandler>();
         _currentPathPoint = GetClosestPathPoint();
     }
 
@@ -163,6 +165,9 @@ public class PlayerMover : MonoBehaviour
 
         _rigidbody.isKinematic = isKinematic;
         endAction?.Invoke();
+
+        yield return new WaitForSeconds(0.5f);
+
         _canMove = true;
     }
 

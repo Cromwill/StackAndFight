@@ -18,6 +18,8 @@ public class FinishTrigger : Interactable
         player.Mover.MoveToFinish(_finalPathPoint);
         player.Mover.EnableFinishCollider();
         player.Mover.Disable();
+        var swipeHandler = FindObjectOfType<SwipeHandler>();
+        swipeHandler.Disable();
         _wallsCamera.transform.SetParent(player.transform);
         _wallsCamera.m_LookAt = player.transform;
         //_wallsCamera.Priority = 2;

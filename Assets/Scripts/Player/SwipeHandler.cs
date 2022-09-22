@@ -14,6 +14,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        print("sd");
         Vector2 delta = eventData.delta;
 
         if (_player.Mover.IsMoving)
