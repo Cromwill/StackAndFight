@@ -35,7 +35,7 @@ public class FinishWall : Interactable
         WallLevel = level;
         _wallLevelUI.UpdateUI(level);
         _currencyReward = clampedLevel / 10;
-        _currencyReward = Mathf.Clamp(_currencyReward, 1, 1000);
+        _currencyReward = Mathf.Clamp(_currencyReward, 1, 500);
         SpawnCurrency();
     }
 

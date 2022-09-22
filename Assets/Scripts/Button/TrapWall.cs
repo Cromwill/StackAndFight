@@ -48,12 +48,12 @@ public class TrapWall : Interactable
 
     private IEnumerator Disabling()
     {
-        transform.DOLocalMoveY(-2f, 0.5f);
+        transform.DOLocalMoveY(0.05f, 0.5f);
         _dustEffect.Play();
         _boxCollider.enabled = false;
 
         yield return new WaitForSeconds(0.5f);
 
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

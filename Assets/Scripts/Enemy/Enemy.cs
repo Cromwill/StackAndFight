@@ -49,12 +49,14 @@ public class Enemy : MonoBehaviour
 
         if (_player.LevelSystem.Level < Level)
         {
-            //_enemyRender.SetDefaultd();
             _animator.SetAggresive();
+            _levelCounter.ChangeToRed();
+            //_enemyRender.SetDefaultd();
         }
         else
         {
             _animator.SetDefault();
+            _levelCounter.ChangeToGreen();
             //_enemyRender.SetScared();
         }
     }
