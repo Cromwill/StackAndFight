@@ -212,9 +212,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _meshRenderer: {fileID: 1928677209358792644}
   _color: 0
-  _blue: {r: 0.20392157, g: 0.24705882, b: 0.5647059, a: 1}
-  _orange: {r: 0.5803922, g: 0.3372549, b: 0.16862746, a: 1}
-  _purple: {r: 0.2509804, g: 0.22352941, b: 0.6745098, a: 1}
+  _blue: {r: 0.518, g: 0.301, b: 0.15049998, a: 1}
+  _orange: {r: 0.5176471, g: 0.3019608, b: 0.14901961, a: 1}
+  _purple: {r: 0.5176471, g: 0.3019608, b: 0.14901961, a: 1}
 --- !u!114 &2636855904476012905
 MonoBehaviour:
   m_ObjectHideFlags: 0
