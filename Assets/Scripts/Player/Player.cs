@@ -64,10 +64,12 @@ public class Player : MonoBehaviour
         //forceValue = Mathf.Clamp(forceValue, 80, 120) + LevelSystem.Level;
         forceValue = Mathf.Clamp(forceValue, 80, 120);
 
-        if(enemy is Boss == false)
-        {
-            LevelSystem.IncreaseLevel(enemy.Level);
-        }
+        //if(enemy is Boss == false)
+        //{
+        //    LevelSystem.IncreaseLevel(enemy.Level);
+        //}
+        LevelSystem.IncreaseLevel(enemy.Level);
+
 
         IncreaseMoney(enemy.Cost);
         Vector3 veloctiy = (transform.forward + transform.up)* forceValue;
