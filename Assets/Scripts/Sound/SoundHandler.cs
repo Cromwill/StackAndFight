@@ -38,7 +38,7 @@ public class SoundHandler : MonoBehaviour
 
     private void Start()
     {
-        _backgroundBlue.Play();
+        //_backgroundBlue.Play();
         _currentBackground = _backgroundBlue;
         var settingDecider = FindObjectOfType<LevelSettingDecider>();
         _currentLevelSetting = settingDecider.LevelSetting;
@@ -64,7 +64,7 @@ public class SoundHandler : MonoBehaviour
     {
         _kick.Play();
         _scream.Play();
-        StartCoroutine(StartingLoseSound(_currentBackground));
+        //StartCoroutine(StartingLoseSound(_currentBackground));
     }
 
     public void PlayOuchSound()
@@ -111,38 +111,38 @@ public class SoundHandler : MonoBehaviour
 
     public void PlayBackground(LevelSetting levelSetting)
     {
-        if (_currentLevelSetting == levelSetting)
-            return;
+        //if (_currentLevelSetting == levelSetting)
+        //    return;
 
-        if(_currentBackground != null)
-            _currentBackground.Stop();
+        //if(_currentBackground != null)
+        //    _currentBackground.Stop();
 
-        if (levelSetting == LevelSetting.Blue)
-        {
-            _backgroundBlue.Play();
-            _currentBackground = _backgroundBlue;
-        }
+        //if (levelSetting == LevelSetting.Blue)
+        //{
+        //    _backgroundBlue.Play();
+        //    _currentBackground = _backgroundBlue;
+        //}
 
-        if (levelSetting == LevelSetting.Orange)
-        {
-            _backgroundOrange.Play();
-            _currentBackground = _backgroundGreen;
-        }
+        //if (levelSetting == LevelSetting.Orange)
+        //{
+        //    _backgroundOrange.Play();
+        //    _currentBackground = _backgroundGreen;
+        //}
 
-        if (levelSetting == LevelSetting.Purple)
-        {
-            _backgroundPurple.Play();
-            _currentBackground = _backgroundPurple;
-        }
+        //if (levelSetting == LevelSetting.Purple)
+        //{
+        //    _backgroundPurple.Play();
+        //    _currentBackground = _backgroundPurple;
+        //}
 
-        if (levelSetting == LevelSetting.Green)
-        {
-            _backgroundGreen.Play();
-            _currentBackground = _backgroundGreen;
-        }
+        //if (levelSetting == LevelSetting.Green)
+        //{
+        //    _backgroundGreen.Play();
+        //    _currentBackground = _backgroundGreen;
+        //}
 
-        _currentLevelSetting = levelSetting;
-        print("ChangeBackground");
+        //_currentLevelSetting = levelSetting;
+        //print("ChangeBackground");
     }
 
     private void RandomizePitch(AudioSource sound)
