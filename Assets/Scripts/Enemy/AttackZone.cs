@@ -19,24 +19,13 @@ public class AttackZone : Interactable
 
             player.Mover.StopMoving();
 
-            if (_enemy is Boss)    
-                player.Fall();
-            else
-                player.Die();
+            player.Fall();
+            _isKicked = false;
 
-            // StartCoroutine(Delay(player, _enemy));
+            //if (_enemy is Boss)    
+            //    player.Fall();
+            //else
+            //    player.Die();
         }
     }
-
-    //private IEnumerator Delay(Player player, Enemy enemy)
-    //{
-    //    yield return new WaitForSeconds(0.025f);
-
-    //    player.Mover.StopMoving();
-
-    //    if (enemy is Enemy)
-    //        player.Die();
-    //    else
-    //        player.Fall();
-    //}
 }

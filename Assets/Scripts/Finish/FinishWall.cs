@@ -49,7 +49,12 @@ public class FinishWall : Interactable
             Break(player);
         }
         else
-            player.Die();
+        {
+            player.Fall(true);
+            player.Mover.StopMoving();
+            player.Mover.Disable();
+            player.CanvasHandler.Disable();
+        }
     }
 
     private void Break(Player player)

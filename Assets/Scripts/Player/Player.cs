@@ -44,14 +44,25 @@ public class Player : MonoBehaviour
         Fall();
     }
 
-    public void Fall()
+    public void Fall(bool contactWithFinishWall = false)
     {
-        _mover.DisableMovement();
+        SoundHandler.Instance.PlayScreamSound();
+        //_mover.DisableMovement();
         _mover.PushBack();
-        _playerAnimator.TriggerFall();
+
+        if(contactWithFinishWall == false)
+        {
+            _playerAnimator.TriggerFall();
+        }
+
         _effectsHandler.PlayDeath();
-        _canvasHandler.Disable();
-        DeathChecked?.Invoke(this);
+        //_canvasHandler.Disable();
+
+        if (contactWithFinishWall)
+        {
+            DeathChecked?.Invoke(this);
+            _playerAnimator.PlayFinishFall();
+        }
     }
 
     public void PushEnemy(Enemy enemy)

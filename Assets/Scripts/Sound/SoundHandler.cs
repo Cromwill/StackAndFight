@@ -67,6 +67,11 @@ public class SoundHandler : MonoBehaviour
         StartCoroutine(StartingLoseSound(_currentBackground));
     }
 
+    public void PlayScreamSound()
+    {
+        _scream.Play();
+    }
+
     public void PlayOuchSound()
     {
         RandomizePitch(_ouch);
@@ -142,7 +147,6 @@ public class SoundHandler : MonoBehaviour
         }
 
         _currentLevelSetting = levelSetting;
-        print("ChangeBackground");
     }
 
     private void RandomizePitch(AudioSource sound)

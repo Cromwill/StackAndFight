@@ -248,7 +248,7 @@ public class PlayerMover : MonoBehaviour
     private IEnumerator PushingBack()
     {
         float timer = 0;
-        Vector3 targetPosition = transform.position - transform.forward * 3;
+        Vector3 targetPosition = transform.position - transform.forward;
 
         while (timer < 1f)
         {
@@ -257,7 +257,7 @@ public class PlayerMover : MonoBehaviour
             yield return null;
         }
 
-        _rigidbody.isKinematic = false;
+        //_rigidbody.isKinematic = false;
     }
 
     public void StopMoving()
