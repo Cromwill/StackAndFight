@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +13,7 @@ public class SoundButton : MonoBehaviour
 
     private void Start()
     {
-        if(PlayerPrefs.GetInt(Sound) == 0)
+        if (PlayerPrefs.GetInt(Sound) == 0)
         {
             EnableSound();
             return;
@@ -31,20 +29,18 @@ public class SoundButton : MonoBehaviour
         }
     }
 
-    private void OnDisable()
-    {
-        PlayerPrefs.SetInt(Sound, GetSoundState());
-    }
-
     public void OnButtonClick()
     {
         if (_isSoundEnabled)
         {
             DisableSound();
+            PlayerPrefs.SetInt(Sound, GetSoundState());
+
             return;
         }
 
         EnableSound();
+        PlayerPrefs.SetInt(Sound, GetSoundState());
     }
 
     private void DisableSound()
@@ -66,3 +62,4 @@ public class SoundButton : MonoBehaviour
         return _isSoundEnabled ? 2 : 1;
     }
 }
+
