@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     {
         SoundHandler.Instance.PlayScreamSound();
         //_mover.DisableMovement();
+        StartCoroutine(DisablingMover());
         _mover.PushBack();
 
         if(contactWithFinishWall == false)
@@ -141,5 +142,14 @@ public class Player : MonoBehaviour
 
             yield return new WaitForSeconds(0.1f);
         }
+    }
+
+    private IEnumerator DisablingMover()
+    {
+        _mover.Disable();
+
+        yield return new WaitForSeconds(1f);
+
+        _mover.Enable();
     }
 }

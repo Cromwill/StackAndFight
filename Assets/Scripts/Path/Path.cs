@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[SelectionBase]
 public class Path : MonoBehaviour
 {
     [SerializeField] private PathCellRenderer _pathCellRenderer;

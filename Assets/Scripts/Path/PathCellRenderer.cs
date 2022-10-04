@@ -8,6 +8,8 @@ public class PathCellRenderer : MonoBehaviour
     [SerializeField] private Color _orange;
     [SerializeField] private Color _purple;
     [SerializeField] private Color _red;
+    [SerializeField] private Color _green;
+    [SerializeField] private Color _birch;
     [SerializeField] private bool _isFinishCell;
 
     public bool IsFinishCell => _isFinishCell;
@@ -30,6 +32,12 @@ public class PathCellRenderer : MonoBehaviour
 
         if (_color == CellColor.Red)
             _meshRenderer.material.color = _red;
+
+        if (_color == CellColor.Green)
+            _meshRenderer.material.color = _green;
+
+        if (_color == CellColor.Birch)
+            _meshRenderer.material.color = _birch;
     }
 
     public enum CellColor
@@ -37,6 +45,8 @@ public class PathCellRenderer : MonoBehaviour
         Blue,
         Orange,
         Purple,
-        Red
+        Red,
+        Green,
+        Birch
     }
 }

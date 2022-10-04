@@ -128,6 +128,11 @@ public class PlayerMover : MonoBehaviour
         _canMove = false;
     }
 
+    public void Enable()
+    {
+        _canMove = true;
+    }
+
     public void PushBack()
     {
         StartCoroutine(PushingBack());
