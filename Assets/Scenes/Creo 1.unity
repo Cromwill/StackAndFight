@@ -29936,6 +29936,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundHandler
       objectReference: {fileID: 0}
+    - target: {fileID: 6510663274494295192, guid: 70a4375aaba467b4b9fb31bb5616b878, type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70a4375aaba467b4b9fb31bb5616b878, type: 3}
 --- !u!1001 &1414626615
@@ -45331,6 +45335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish
       objectReference: {fileID: 0}
+    - target: {fileID: 654689376346802178, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
+      propertyPath: field of view
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 654689376346802181, guid: afbc5ca256533db4cb8effa0dff9d502, type: 3}
       propertyPath: m_LocalPosition.x
       value: 95.00001
@@ -46532,6 +46540,10 @@ PrefabInstance:
     - target: {fileID: 1291548102169863960, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
       propertyPath: m_Follow
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291548102169863960, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 1291548102169863962, guid: be695df383ce6fd4e93dcca133f9e261, type: 3}
       propertyPath: m_RootOrder
