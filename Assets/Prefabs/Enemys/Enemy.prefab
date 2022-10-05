@@ -1900,6 +1900,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8127125225994783829, guid: 40584b69a9e3f48489b87466dd4cf8ad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40584b69a9e3f48489b87466dd4cf8ad, type: 3}
 --- !u!114 &8057337258481442668 stripped

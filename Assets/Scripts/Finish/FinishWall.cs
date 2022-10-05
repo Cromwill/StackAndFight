@@ -11,6 +11,7 @@ public class FinishWall : Interactable
     [SerializeField] private Currency _currencyPrefab;
     [SerializeField] private BoxCollider _boxCollider;
     [SerializeField] private Transform _exlodePoint;
+    [SerializeField] private int _wallLevel;
 
     private Brick[] _bricks;
     private List<Currency> _currencies = new List<Currency>();
@@ -32,8 +33,8 @@ public class FinishWall : Interactable
 
     public void Init(int level, int clampedLevel)
     {
-        WallLevel = level;
-        _wallLevelUI.UpdateUI(level);
+        WallLevel = _wallLevel;
+        _wallLevelUI.UpdateUI(_wallLevel);
         _currencyReward = clampedLevel / 10;
         _currencyReward = Mathf.Clamp(_currencyReward, 1, 500);
         SpawnCurrency();
